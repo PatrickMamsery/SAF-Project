@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
 
 Route::get('/', function () {
     return view('index');

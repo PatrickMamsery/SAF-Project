@@ -1,266 +1,51 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="grid">
-            <div class="grid-col grid-col--1">
+   <div class="container-fluid" style="margin-top: 70px">
+       <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000"> 
+        {{-- Carousel Indicators --}}
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+            <li data-target="#carousel" data-slide-to="3"></li>
+            <li data-target="#carousel" data-slide-to="4"></li>
+        </ol>
 
-            </div>
-            <div class="grid-col grid-col--2">
-
-            </div>
-            <div class="grid-col grid-col--3">
-
-            </div>
-            <div class="grid-col grid-col--4">
-
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img1.jpeg" alt="pic">
+        {{-- Carousel Content --}}
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
             </div>
 
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img36.jpg" alt="pic">
+            <div class="carousel-item">
+                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
             </div>
 
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img3.jpeg" alt="pic">
+            <div class="carousel-item">
+                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
             </div>
 
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img37.jpg" alt="pic">
+            <div class="carousel-item">
+                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
             </div>
 
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img5.jpeg" alt="pic">
+            <div class="carousel-item">
+                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
             </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img6.jpeg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img39.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img8.jpeg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img40.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img10.jpeg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img11.jpeg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img12.jpeg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img13.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img14.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img15.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img16.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img17.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img18.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img19.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img20.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img21.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img22.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img23.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img24.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img25.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img26.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img27.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img28.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img29.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img30.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img31.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img32.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img33.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img34.jpg" alt="pic">
-            </div>
-
-            <div class="grid-item">
-                <div class="content">
-                    <h2>Photo</h2>
-                </div>
-                <img src="img/img35.jpg" alt="pic">
-            </div>
-
         </div>
-    </div>
+        {{-- End Carousel Content --}}
+
+        {{-- Previous & Next Buttons --}}
+        <a href="#carousel" class="carousel-control-prev" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </a>
+
+        <a href="#carousel" class="carousel-control-next" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </a>
+        {{-- End Previous & Next Buttons --}}
+
+       </div>
+   </div>
 @endsection

@@ -40,6 +40,26 @@ img {
   font-size: 1em;
 }
 
+/* =================== CAROUSEL CONTENT ================ */
+#carousel {
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  max-height: 38rem !important;
+}
+
+/*---Change Carousel Transition Speed --*/
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  -webkit-transition: -webkit-transform 1.2s ease;
+  transition: -webkit-transform 1.2s ease;
+  transition: transform 1.2s ease;
+  transition: transform 1.2s ease, -webkit-transform 1.2s ease;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 90%;
