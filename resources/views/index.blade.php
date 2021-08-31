@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-   <div class="container-fluid" style="margin-top: 70px">
+   <div class="container-fluid">
        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000"> 
         {{-- Carousel Indicators --}}
         <ol class="carousel-indicators">
@@ -16,6 +16,21 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
+                <div class="carousel-caption">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-8 bg-custom d-none d-lg-block py-3 px-0">
+								<h1>St. Augustine Family</h1>
+								<div class="border-top border-primary w-50 mx-auto my-3"></div>
+								<h3 class="pb-3">Welcome to St. Augustine Family</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+
+            <div class="carousel-item">
+                <img src="img/carousel/img8.jpg" alt="Carousel Image" class="w-100">
             </div>
 
             <div class="carousel-item">
@@ -23,11 +38,7 @@
             </div>
 
             <div class="carousel-item">
-                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
-            </div>
-
-            <div class="carousel-item">
-                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
+                <img src="img/carousel/img8.jpg" alt="Carousel Image" class="w-100">
             </div>
 
             <div class="carousel-item">
@@ -47,5 +58,8 @@
         {{-- End Previous & Next Buttons --}}
 
        </div>
+   </div>
+   <div class="" style="margin-bottom: 100px">
+
    </div>
 @endsection
