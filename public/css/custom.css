@@ -102,6 +102,7 @@ img {
   color: white !important;
 }
 
+/* =================== CUSTOM COLORS ================ */
 .bg-custom1 {
   background-color: #EC902E;
   border-radius: 1rem;
@@ -167,7 +168,7 @@ img {
 
 /* ========== ABOUT CHOIR SECTION ============= */
 .about-section {
-  margin-top: 20px;
+  margin: 50px auto;
 }
 
 .about-section .about-img {
@@ -186,6 +187,33 @@ img {
   margin: auto;
   width: 100%;
   padding: 10px;
+}
+
+/* ========== WORKS SECTION ============= */
+.works-section {
+  margin: 50px auto;
+}
+
+.works-section .row .col-md-3 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+}
+
+.works-section .row .col-md-3 .work-img {
+  overflow: hidden;
+}
+
+.works-section .row .col-md-3 .work-img img {
+  margin-bottom: 0 !important;
+}
+
+.works-section .row .col-md-3 .work-caption {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  background-color: #fff;
 }
 
 /* ========== FOOTER CONTENT ============= */

@@ -61,7 +61,7 @@
    </div>
 
    <div class="about-section">
-    <div class="container-fluid">
+    <div class="container">
         <h2 class="text-center">About Choir</h2>
         <div class="bg-custom1 w-25 mx-auto d-none d-lg-block py-1 px-0"></div>
             <div class="row d-flex">
@@ -75,7 +75,7 @@
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue purus at porta tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla commodo posuere felis a dignissim. In arcu enim, tincidunt sed massa eget, dictum lacinia lorem. Donec porta vitae dui in pulvinar. Phasellus id mollis eros. Nunc in mattis ante, id volutpat ex. Sed tempor ligula in orci ornare semper. Donec dignissim porta tortor, in auctor sem suscipit ac. Sed semper id ante ac imperdiet.
                             Sed a diam vel enim faucibus congue maximus vitae elit. Nam finibus ex commodo nulla ullamcorper, sed lobortis massa interdum. Ut nec dictum urna. Sed eu maximus augue, eu aliquam elit. Etiam a condimentum quam. Morbi feugiat lectus sit amet orci lobortis vulputate. Donec tempor dolor a urna porta ornare.
-                            Phasellus cursus ultricies libero, iaculis lacinia risus posuere id. Duis interdum interdum ligula eu dapibus. Ut felis risus, commodo vel convallis a, venenatis vel mauris. Sed in molestie augue, non elementum nunc. Cras eget ornare sapien. Donec vulputate neque enim, ut dictum dolor faucibus id. Ut mollis tortor dolor, ac suscipit neque finibus at. Duis risus tellus, placerat sed accumsan ut, ultricies vel urna. Proin lorem ligula, fringilla sed pulvinar vel, maximus pharetra tellus. 
+                            Phasellus cursus ultricies libero, iaculis lacinia risus posuere id. Duis interdum interdum ligula eu dapibus. Ut felis risus, commodo vel convallis a, venenatis vel mauris. Sed in molestie augue, non elementum nunc. 
                         </p>
                         <button class="btn btn-md btn-custom">Read More</button>
                     </div>
@@ -84,7 +84,50 @@
         </div>
    </div>
 
-   
+   <div class="works-section">
+       <div class="container">
+           <h2 class="text-center">Works</h2>
+           <div class="bg-custom1 w-25 mx-auto d-none d-lg-block py-1 px-0"></div>
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <div class="work-img">
+                    <img src="/img/img53.jpg" alt="">
+                </div>
+                <div class="work-caption">
+                    <h4>Album 1</h4>
+                    <a href="">Find out more</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="work-img">
+                    <img src="/img/img53.jpg" alt="">
+                </div>
+                <div class="work-caption">
+                    <h4>Icheli</h4>
+                    <a href="">Find out more</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="work-img">
+                    <img src="/img/img53.jpg" alt="">
+                </div>
+                <div class="work-caption">
+                    <h4>Dini ya Kweli</h4>
+                    <a href="">Find out more</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="work-img">
+                    <img src="/img/img53.jpg" alt="">
+                </div>
+                <div class="work-caption">
+                    <h4>Album 4</h4>
+                    <a href="">Find out more</a>
+                </div>
+            </div>
+        </div>
+       </div>
+   </div>
 
    <div class="" style="margin-bottom: 100px">
 
