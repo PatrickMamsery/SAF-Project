@@ -102,6 +102,20 @@ img {
   color: white !important;
 }
 
+.bg-custom1 {
+  background-color: #EC902E;
+  border-radius: 1rem;
+}
+
+.btn-custom {
+  background-color: #EC902E;
+}
+
+.btn-custom:hover {
+  background-color: #cf904d;
+  color: white;
+}
+
 /* =================== CAROUSEL CONTENT ================ */
 #carousel {
   -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
@@ -149,6 +163,29 @@ img {
 .carousel-caption h3 {
   font-size: 2.2rem;
   text-shadow: 0.1rem 0.1rem 0.2rem black;
+}
+
+/* ========== ABOUT CHOIR SECTION ============= */
+.about-section {
+  margin-top: 20px;
+}
+
+.about-section .about-img {
+  margin: auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid #EC902E;
+  padding: 50px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.about-section .row .col-md-8 .about-content {
+  margin: auto;
+  width: 100%;
+  padding: 10px;
 }
 
 /* ========== FOOTER CONTENT ============= */
