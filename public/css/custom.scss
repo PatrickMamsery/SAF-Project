@@ -80,6 +80,9 @@ img {
 }
 
 /* =================== NAV CONTENT ================ */
+.fixed-top {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .19)!important;
+}
 .active {
     background-color: #EC902E;
     box-sizing: border-box;
@@ -181,9 +184,12 @@ img {
 
             .work-img {
                 overflow: hidden;
-                // margin-bottom: 0!important;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
                 img {
                     margin-bottom: 0!important;
+                    width: 100%;
+                    transform: scale(1);
+                    transition: all 0.6s ease-out 0s;
                 }
             }
             .work-caption {
@@ -191,7 +197,64 @@ img {
                 text-align: center;
                 padding: 20px 20px 20px 20px;
                 background-color: #fff;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             }
+        }
+    }
+}
+
+/* ==========   TRENDING POSTS SECTION ============= */
+.trending {
+    margin: 50px auto;
+
+    .row {
+        .col-md-2 {
+            box-sizing: border-box;
+            display: block;
+            
+
+            .img {
+                // opacity: 100%;
+                translate: transform(-50%, -50%);
+                display: block;
+                fill: #EC902E!important;
+                
+                .overlay {
+                    position: absolute;
+                    height: inherit!important;
+                    width: inherit!important;
+                    border-radius: 5px!important;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    opacity: 0;
+                    transition: .5s ease;
+                    background: rgba(0, 0, 0, .4)!important;
+
+                    .content {
+                        position: absolute;
+                        top: 25%;
+                        left: 40%;
+                        opacity: 1;
+                        translate: transform(-50%, -50%);
+                        color: #fff;
+                        font-size: 20px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            .img:hover .overlay {
+                opacity: 1;
+                // opacity: 50%!important;
+                // transition: opacity 1s!important;
+            }
+            // img {
+            //     cursor: pointer;
+            //     width: 100%;
+            //     transform: scale(1);
+            //     transition: all 0.6s ease-out 0s!important;
+            // }
         }
     }
 }

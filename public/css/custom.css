@@ -88,6 +88,11 @@ img {
 }
 
 /* =================== NAV CONTENT ================ */
+.fixed-top {
+  -webkit-box-shadow: 0 10px 15px rgba(0, 0, 0, 0.19) !important;
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.19) !important;
+}
+
 .active {
   background-color: #EC902E;
   -webkit-box-sizing: border-box;
@@ -202,10 +207,17 @@ img {
 
 .works-section .row .col-md-3 .work-img {
   overflow: hidden;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .works-section .row .col-md-3 .work-img img {
   margin-bottom: 0 !important;
+  width: 100%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-out 0s;
+  transition: all 0.6s ease-out 0s;
 }
 
 .works-section .row .col-md-3 .work-caption {
@@ -214,6 +226,55 @@ img {
   text-align: center;
   padding: 20px 20px 20px 20px;
   background-color: #fff;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* ==========   TRENDING POSTS SECTION ============= */
+.trending {
+  margin: 50px auto;
+}
+
+.trending .row .col-md-2 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+}
+
+.trending .row .col-md-2 .img {
+  translate: transform(-50%, -50%);
+  display: block;
+  fill: #EC902E !important;
+}
+
+.trending .row .col-md-2 .img .overlay {
+  position: absolute;
+  height: inherit !important;
+  width: inherit !important;
+  border-radius: 5px !important;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+.trending .row .col-md-2 .img .overlay .content {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  opacity: 1;
+  translate: transform(-50%, -50%);
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.trending .row .col-md-2 .img:hover .overlay {
+  opacity: 1;
 }
 
 /* ========== FOOTER CONTENT ============= */

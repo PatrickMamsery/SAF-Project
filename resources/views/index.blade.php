@@ -129,6 +129,129 @@
        </div>
    </div>
 
+   <div class="trending">
+       <div class="container">
+        <h2 class="text-center">Trending</h2>
+        <div class="bg-custom1 w-25 mx-auto d-none d-lg-block py-1 px-0"></div>
+
+        <h4>Photos</h4>
+           <div class="row mt-3">
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img54.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">View</div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img54.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">View</div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img54.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">View</div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img54.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">View</div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img54.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">View</div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img54.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">View</div>
+                    </div>
+                </div>
+               </div>
+           </div>
+
+           <h4>Videos</h4>
+           <div class="row mt-3">
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img55.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">
+                            <img src="/icons/play-button.svg" style="width: 50px; fill: #fff;" alt="">
+                        </div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img55.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">
+                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                        </div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img55.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">
+                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                        </div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img55.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">
+                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                        </div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img55.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">
+                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                        </div>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-2">
+                <div class="rounded-circle img">
+                    <img src="/img/img55.jpg" class="rounded" alt="">
+                    <div class="overlay">
+                        <div class="content">
+                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                        </div>
+                    </div>
+                </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
    <div class="" style="margin-bottom: 100px">
 
    </div>
