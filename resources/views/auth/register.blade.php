@@ -9,7 +9,8 @@
               </div>
               <div class="row clearfix">
                 <div class="">
-                  <form>
+                  <form method="POST" action="{{ route('register') }}">
+                    @csrf
                     <div class="input_field"> <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
                       <input type="email" name="email" placeholder="Email" required />
                     </div>
@@ -17,17 +18,17 @@
                       <input type="password" name="password" placeholder="Password" required />
                     </div>
                     <div class="input_field"> <span><i class="fa fa-lock" aria-hidden="true"></i></span>
-                      <input type="password" name="password" placeholder="Re-type Password" required />
+                      <input type="password" name="password_confirmation" placeholder="Re-type Password" required />
                     </div>
                     <div class="row clearfix">
                       <div class="col_half">
                         <div class="input_field"> <span><i class="fa fa-user"></i></span>
-                          <input type="text" name="name" placeholder="First Name" />
+                          <input type="text" name="fname" placeholder="First Name" />
                         </div>
                       </div>
                       <div class="col_half">
                         <div class="input_field"> <span><i class="fa fa-user"></i></span>
-                          <input type="text" name="name" placeholder="Last Name" required />
+                          <input type="text" name="sname" placeholder="Surname" required />
                         </div>
                       </div>
                     </div>

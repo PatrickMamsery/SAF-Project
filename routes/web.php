@@ -17,7 +17,11 @@ use App\Http\Controllers\GalleryController;
 */
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+
+/* Register routes */
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 Route::get('/', function () {
