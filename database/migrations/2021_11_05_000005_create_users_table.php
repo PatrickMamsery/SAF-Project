@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('sname', 45)->nullable();
             $table->unsignedInteger('user_role_id');
             $table->integer('phone')->nullable();
-            $table->string('role', 45)->nullable();
+            $table->enum('role', ['root', 'admin', 'user'])->nullable();
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable()->default(null);
             $table->string('password');
@@ -46,6 +46,10 @@ class CreateUsersTable extends Migration
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });
+
+        DB::table('users')->insert([
+            'fname' => 'Test', 'mname' => NULL, 'sname' => 'User', 'user_role_id' => 1, 'phone' => '0629134542', 'role' => 'admin', 'email' => 'test@example.com', 'password' => bcrypt('123456')
+        ]);
     }
 
     /**

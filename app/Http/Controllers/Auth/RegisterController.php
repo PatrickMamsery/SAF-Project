@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\UserRole;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -37,8 +38,13 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        $user_role = UserRole::where('title', 'admin')->first();
         $user = new User;
-            $user->name = $request->fname;
+            $user->fname = $request->fname;
+            $user->sname = $request->sname;
+            $user->role = $request->role ? 1 : NULL;
+            $user->phone = $request->phone;
+            $user->user_role_id = $user_role->id;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
             $user->save();

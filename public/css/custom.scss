@@ -407,7 +407,7 @@ $grey:#cccccc;
 		}
 	}
 	input {
-    &[type="text"], &[type="email"], &[type="password"] {
+    &[type="text"], &[type="email"], &[type="phone"], &[type="password"] {
       width: 100%;
       padding: 8px 10px 9px 35px;
       height: 35px;
@@ -419,10 +419,10 @@ $grey:#cccccc;
       -ms-transition: all 0.30s ease-in-out;
       transition: all 0.30s ease-in-out;
     }
-    &[type="text"]:hover, &[type="email"]:hover, &[type="password"]:hover {
+    &[type="text"]:hover, &[type="email"]:hover, &[type="phone"]:hover, &[type="password"]:hover {
       background: #fafafa;
     }
-    &[type="text"]:focus, &[type="email"]:focus, &[type="password"]:focus {
+    &[type="text"]:focus, &[type="email"]:focus, &[type="phone"]:focus, &[type="password"]:focus {
       -webkit-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
       -moz-box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
       box-shadow: 0 0 2px 1px rgba(255, 169, 0, 0.5);
