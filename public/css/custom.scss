@@ -241,6 +241,14 @@ img {
                         color: #fff;
                         font-size: 20px;
                         text-transform: uppercase;
+
+                        a {
+                          text-decoration: none!important;
+                          color: whitesmoke!important;
+                        }
+                        a:hover {
+                            color: #EC902E!important;
+                        }
                     }
                 }
             }

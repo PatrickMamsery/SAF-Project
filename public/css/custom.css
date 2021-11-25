@@ -273,6 +273,15 @@ img {
   text-transform: uppercase;
 }
 
+.trending .row .col-md-2 .img .overlay .content a {
+  text-decoration: none !important;
+  color: whitesmoke !important;
+}
+
+.trending .row .col-md-2 .img .overlay .content a:hover {
+  color: #EC902E !important;
+}
+
 .trending .row .col-md-2 .img:hover .overlay {
   opacity: 1;
 }

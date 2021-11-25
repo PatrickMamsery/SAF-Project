@@ -21,16 +21,32 @@
                 <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="{{ route('about') }}">About</a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0" style="font-size: 18px!important">
-              <li class="nav-item">
-                <a href="{{ route('register') }}" class="nav-link">Register</a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('login') }}" class="nav-link">Login</a>
-              </li>
+              @auth
+                <li class="nav-item">
+                  <a href="" class="nav-link">{{ auth()->user()->fname }} {{ auth()->user()->sname }}</a>
+                </li>
+                <li class="nav-item">
+                  <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <a href="" class="nav-link">
+                      <button type="submit" style="all:unset">Logout</button>
+                    </a>
+                  </form>
+                </li>
+              @endauth
+              
+              @guest
+                <li class="nav-item">
+                  <a href="{{ route('register') }}" class="nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('login') }}" class="nav-link">Login</a>
+                </li>
+              @endguest
             </ul>
           </div>
         </div>

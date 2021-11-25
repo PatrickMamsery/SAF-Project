@@ -9,7 +9,8 @@
               </div>
               <div class="row clearfix" style="justify-content: center">
                 <div class="">
-                  <form>
+                  <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="input_field"> <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
                       <input type="email" name="email" placeholder="Email" required />
                     </div>

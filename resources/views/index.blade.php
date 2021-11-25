@@ -140,7 +140,7 @@
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
-                        <div class="content">View</div>
+                        <div class="content"><a href="#">VIEW</a></div>
                     </div>
                 </div>
                </div>
@@ -148,7 +148,7 @@
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
-                        <div class="content">View</div>
+                        <div class="content"><a href="#">VIEW</a></div>
                     </div>
                 </div>
                </div>
@@ -156,7 +156,7 @@
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
-                        <div class="content">View</div>
+                        <div class="content"><a href="#">VIEW</a></div>
                     </div>
                 </div>
                </div>
@@ -164,7 +164,7 @@
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
-                        <div class="content">View</div>
+                        <div class="content"><a href="#">VIEW</a></div>
                     </div>
                 </div>
                </div>
@@ -172,7 +172,7 @@
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
-                        <div class="content">View</div>
+                        <div class="content"><a href="#">VIEW</a></div>
                     </div>
                 </div>
                </div>
@@ -180,7 +180,7 @@
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
-                        <div class="content">View</div>
+                        <div class="content"><a href="#">VIEW</a></div>
                     </div>
                 </div>
                </div>
@@ -193,7 +193,7 @@
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
                         <div class="content">
-                            <img src="/icons/play-button.svg" style="width: 50px; fill: #fff;" alt="">
+                            <i class="far fa-play-circle"></i>
                         </div>
                     </div>
                 </div>
@@ -247,6 +247,27 @@
                         </div>
                     </div>
                 </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="container">
+       <h2 class="text-center">Upcoming Events</h2>
+       <div class="row mt-3">
+           <div class="col-sm-4">
+                <div class="rounded-circle img">
+                    <img src="/img/img60.jpg" class="rounded" alt="Event 1">
+                </div>
+           </div>
+           <div class="col-sm-4">
+                <div class="rounded-circle img">
+                    <img src="/img/img57.jpg" class="rounded" alt="Event 2">
+                </div>
+           </div>
+           <div class="col-sm-4">
+               <div class="rounded-circle img">
+                   <img src="/img/img58.jpg" class="rounded" alt="Event 3">
                </div>
            </div>
        </div>
