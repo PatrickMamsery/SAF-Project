@@ -32,7 +32,7 @@ class LoginController extends Controller
         }
 
         //redirect
-        return redirect()->route('gallery');
+        return redirect()->route('dashboard'); // TODO::check this out
     }
 
     public function logout(Request $request)

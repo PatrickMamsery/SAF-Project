@@ -11,10 +11,10 @@
                 <div class="">
                   <form method="POST" action="{{ route('login') }}">
                     @csrf
-                    <div class="input_field"> <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    <div class="input_field"> <span><i class="material-icons">email</i></span>
                       <input type="email" name="email" placeholder="Email" required />
                     </div>
-                    <div class="input_field"> <span><i class="fa fa-lock" aria-hidden="true"></i></span>
+                    <div class="input_field"> <span><i class="material-icons">lock</i></span>
                       <input type="password" name="password" placeholder="Password" required />
                     </div>
                     

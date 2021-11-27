@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    <link rel="stylesheet" href="/css/app.css">
     {{-- <link rel="stylesheet" href="/css/bootstrap.min.css"> --}}
-    <link rel="stylesheet" href="{{ secure_asset('css/custom.css') }}">
+    <link rel="stylesheet" href="/css/custom.css">
+    {{-- <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/footer.css"> --}} 
+    TODO::check this point
     <link rel="stylesheet" href="/css/snackbar.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/packages/snackbar/dist/snackbar.min.js"></script>
     <title>St. Augustine Family</title>
 </head>
@@ -32,7 +36,7 @@
 
 
     <script src="https://unpkg.com/colcade@0/colcade.js"></script>
-    <script src="{{ secure_asset('js/app.js') }}"></script>
+    <script src="js/app.js"></script>
 
     <script>
         var colc = new Colcade( '.grid', {

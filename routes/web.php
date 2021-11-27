@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagesController;
 
 /*
@@ -17,6 +18,9 @@ use App\Http\Controllers\PagesController;
 |
 */
 
+/* Dashboard routes */
+Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 
@@ -27,7 +31,8 @@ Route::post('/register', [RegisterController::class, 'register']);
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/', function () {
     return view('index');

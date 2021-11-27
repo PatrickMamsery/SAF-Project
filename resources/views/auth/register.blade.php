@@ -11,30 +11,31 @@
                 <div class="">
                   <form method="POST" action="{{ route('register') }}">
                     @csrf
-                    <div class="input_field"> <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
-                      <input type="email" name="email" placeholder="Email" required />
-                    </div>
-                    <div class="input_field"> <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                      <input type="phone" name="phone" placeholder="Phone Number" required />
-                    </div>
-                    <div class="input_field"> <span><i class="fa fa-lock" aria-hidden="true"></i></span>
-                      <input type="password" name="password" placeholder="Password" required />
-                    </div>
-                    <div class="input_field"> <span><i class="fa fa-lock" aria-hidden="true"></i></span>
-                      <input type="password" name="password_confirmation" placeholder="Re-type Password" required />
-                    </div>
                     <div class="row clearfix">
                       <div class="col_half">
-                        <div class="input_field"> <span><i class="fa fa-user"></i></span>
+                        <div class="input_field"> <span><i class="material-icons">person</i></span>
                           <input type="text" name="fname" placeholder="First Name" />
                         </div>
                       </div>
                       <div class="col_half">
-                        <div class="input_field"> <span><i class="fa fa-user"></i></span>
+                        <div class="input_field"> <span><i class="material-icons">person</i></span>
                           <input type="text" name="sname" placeholder="Surname" required />
                         </div>
                       </div>
                     </div>
+                    <div class="input_field"> <span><i class="material-icons">email</i></span>
+                      <input type="email" name="email" placeholder="Email" required />
+                    </div>
+                    <div class="input_field"> <span><i class="material-icons">phone</i></span>
+                      <input type="phone" name="phone" placeholder="Phone Number" required />
+                    </div>
+                    <div class="input_field"> <span><i class="material-icons">lock</i></span>
+                      <input type="password" name="password" placeholder="Password" required />
+                    </div>
+                    <div class="input_field"><span><i class="material-icons">lock</i></span>
+                      <input type="password" name="password_confirmation" placeholder="Re-type Password" required />
+                    </div>
+                    
                           <div class="input_field radio_option">
                         <input type="radio" name="radiogroup1" id="rd1">
                         <label for="rd1">Male</label>

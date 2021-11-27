@@ -779,4 +779,14 @@ img {
     padding-bottom: 20px;
   }
 }
+
+/* ======= DASHBOARD PAGE ========== */
+.saf-active {
+  background-color: #EC902E;
+  border-radius: 50px;
+}
+
+.saf-active a {
+  color: white;
+}
 /*# sourceMappingURL=custom.css.map */
