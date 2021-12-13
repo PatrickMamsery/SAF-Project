@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/app.css">
     {{-- <link rel="stylesheet" href="/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/about.css">
     {{-- <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/footer.css"> --}} 
     TODO::check this point

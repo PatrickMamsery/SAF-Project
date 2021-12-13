@@ -42,6 +42,7 @@ class RegisterController extends Controller
         $user = new User;
             $user->fname = $request->fname;
             $user->sname = $request->sname;
+            $user->gender = $request->gender;
             $user->role = $request->role ? 1 : NULL;
             $user->phone = $request->phone;
             $user->user_role_id = $user_role->id;

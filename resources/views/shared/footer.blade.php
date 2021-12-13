@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <img src="img/logo.png"alt="Logo" style="object-fit: contain;">
+                <img src="img/logo.png" alt="Logo" style="object-fit: contain;">
             </div>
             <div class="col-md-9">
                 <div class="row mt-4">

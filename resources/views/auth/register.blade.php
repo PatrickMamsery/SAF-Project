@@ -37,9 +37,9 @@
                     </div>
                     
                           <div class="input_field radio_option">
-                        <input type="radio" name="radiogroup1" id="rd1">
+                        <input type="radio" name="gender" id="rd1" value="male">
                         <label for="rd1">Male</label>
-                        <input type="radio" name="radiogroup1" id="rd2">
+                        <input type="radio" name="gender" id="rd2" value="female">
                         <label for="rd2">Female</label>
                         </div>
                         <div class="input_field select_option">
