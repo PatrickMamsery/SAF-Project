@@ -14,9 +14,19 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
-              </li>
+
+              @auth
+                @if (auth()->user()->user_role_id == 1 || auth()->user()->user_role_id == 2)
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user_dash') }}">Dashboard</a>
+                  </li>
+                @else
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('user_dash') }}">Dashboard</a>
+                  </li>
+                @endif
+              @endauth
+              
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
               </li>

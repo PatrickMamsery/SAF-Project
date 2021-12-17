@@ -38,7 +38,7 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-        $user_role = UserRole::where('title', 'admin')->first();
+        $user_role = UserRole::where('title', 'user')->first();
         $user = new User;
             $user->fname = $request->fname;
             $user->sname = $request->sname;

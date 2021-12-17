@@ -43,12 +43,15 @@
                         <div class="admin-info">
                             <p>Welcome</p>
                             <p class="admin-name">{{Auth::guard('web')->user()?Auth::guard('web')->user()->fname.' '.Auth::guard('web')->user()->sname:'Guest User'}}</p>
-                    </div>
+                        </div>
                     </li>
           
                     <li class="nav-link {{\Request::path()=='dashboard'?'saf-active':''}}">
 
-                        <a href="/"><i class="fa fa-dashboard"></i>Dashboard</a>
+                        <a href="/">
+                            <span class="icon"><i class="fa fa-dashboard"></i></span>
+                            <span class="title">Dashboard</span>
+                        </a>
                     </li>
                    
 
@@ -56,15 +59,24 @@
                     
                     <li class="nav-link {{\Request::path()=='posts'?'saf-active':''}}">
 
-                        <a href="/posts"><i class="fa-solid fa-layer-group"></i>Posts</a>
+                        <a href="/posts">
+                            <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                            <span class="title">Posts</span>
+                        </a>
                     </li>
                   
                     <li class="nav-link">
-                        <a href="#"><i class="fas fa-cog"></i>Settings</a>
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-cog"></i></span>
+                            <span class="title">Settings</span>
+                        </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="{{ route('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                        <a href="{{ route('logout') }}">
+                            <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                            <span class="title">Logout</span>
+                        </a>
                     </li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
@@ -74,7 +86,10 @@
 
                     @if(!Auth::check())
                     <li class="nav-link">
-                        <a href="/auth"><i class="fas fa-sign-in-alt"></i>Login</a>
+                        <a href="/auth">
+                            <span class="icon"><i class="fas fa-sign-in-alt"></i></span>
+                            <span class="title">Login</span>
+                        </a>
                     </li>
                     @endif
                    

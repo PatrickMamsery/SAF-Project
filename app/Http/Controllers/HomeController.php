@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('dashboard.home');
     }
+
+    public function indexDash()
+    {
+        return view('dashboard.content');
+    }
+
+    public function userDash()
+    {
+        return view('dashboard.user_content');
+    }
 }

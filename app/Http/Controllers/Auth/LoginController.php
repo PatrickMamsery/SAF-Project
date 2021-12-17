@@ -21,18 +21,29 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
+
+        // var_dump($request->password);
+        // exit();
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
         //login in user
-        if(!auth()->attempt($request->only('email', 'password'), $request->remember)){
+        if(!auth()->attempt($request->only('email', 'password'))){
             return redirect()->back()->with('msg', 'Invalid login details');
         }
 
-        //redirect
-        return redirect()->route('dashboard'); // TODO::check this out
+
+        if (auth()->user()->user_role_id == 1 || auth()->user()->user_role_id == 2) {
+            //redirect
+            return redirect()->route('dash'); // TODO::check this out
+        }
+        else {
+            return redirect('/');
+        }
+        
     }
 
     public function logout(Request $request)
