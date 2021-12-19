@@ -18,7 +18,7 @@
               @auth
                 @if (auth()->user()->user_role_id == 1 || auth()->user()->user_role_id == 2)
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('user_dash') }}">Dashboard</a>
+                    <a class="nav-link" href="{{ route('dash') }}">Dashboard</a>
                   </li>
                 @else
                   <li class="nav-item">
