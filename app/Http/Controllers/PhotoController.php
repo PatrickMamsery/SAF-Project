@@ -29,8 +29,8 @@ class PhotoController extends Controller
         try {
             DB::transaction(function () use ($photo, $request) {
                 $photo->save();
-                $upload_name = $request->photo;
-                var_dump($request->photo); exit();
+                $upload_name = $request->resized_photo;
+                var_dump($request->all()); exit();
                 if($request->hasFile('photo')) $this->createUpload($user_id, $upload_name, $request);
             });
         } catch (Exception $e) {

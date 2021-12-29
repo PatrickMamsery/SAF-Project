@@ -73,8 +73,9 @@ function uploadPhoto(file) {
   const input = document.createElement('input');
   input.className = "custom-file-input";
   input.setAttribute('type', 'file');
+  input.setAttribute('id', 'resized_photo');
   input.setAttribute('value', file);
-  input.className = "photo";
+  input.getElementById('resized_photo').name = "resized_photo";
   document.getElementById('root').append(input);
 }
 

@@ -316,7 +316,7 @@
                 </div> --}}
 
                 <div class="custom-file text-center" id="root">
-                    <input type="file" id="img-input" class="custom-file-input" required>
+                    <input type="file" id="img-input" class="custom-file-input" name="photo" required>
                     <label for="img-input" class="custom-file-label">Choose photo...</label>
                 </div>
     
