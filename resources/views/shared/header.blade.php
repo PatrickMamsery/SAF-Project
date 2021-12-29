@@ -12,26 +12,26 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto mb-2 mb-lg-0" style="font-size: 18px!important;">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" aria-current="page" href="/">Home</a>
               </li>
 
               @auth
                 @if (auth()->user()->user_role_id == 1 || auth()->user()->user_role_id == 2)
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dash') }}">Dashboard</a>
+                    <a class="nav-link {{ (request()->is('dash')) ? 'active' : '' }}" href="{{ route('dash') }}">Dashboard</a>
                   </li>
                 @else
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ route('user_dash') }}">Dashboard</a>
+                    <a class="nav-link {{ (request()->is('user_dash')) ? 'active' : '' }}" href="{{ route('user_dash') }}">Dashboard</a>
                   </li>
                 @endif
               @endauth
               
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('gallery') }}">Gallery</a>
+                <a class="nav-link {{ (request()->is('gallery')) ? 'active' : '' }}" href="{{ route('gallery') }}">Gallery</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('about') }}">About</a>
+                <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="{{ route('about') }}">About</a>
               </li>
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0" style="font-size: 18px!important">
@@ -51,10 +51,10 @@
               
               @guest
                 <li class="nav-item">
-                  <a href="{{ route('register') }}" class="nav-link">Register</a>
+                  <a href="{{ route('register') }}" class="nav-link {{ (request()->is('register')) ? 'active' : '' }}">Register</a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('login') }}" class="nav-link">Login</a>
+                  <a href="{{ route('login') }}" class="nav-link {{ (request()->is('login')) ? 'active' : '' }}">Login</a>
                 </li>
               @endguest
             </ul>
