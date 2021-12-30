@@ -39,6 +39,8 @@ input.onchange = function (ev) {
       QUALITY
     );
     document.getElementById("root").append(canvas);
+    // console.log(blobToFile(file, 'resized_photo'));
+    // console.log(uploadPhoto(blob));
   };
 };
 
@@ -70,13 +72,21 @@ function calculateSize(img, maxWidth, maxHeight) {
 // }
 
 function uploadPhoto(file) {
+  const resized_photo = blobToFile(file, 'resized_photo');
   const input = document.createElement('input');
+  // console.log(input);
+  // console.log(sessionStorage);
   input.className = "custom-file-input";
   input.setAttribute('type', 'file');
   input.setAttribute('id', 'resized_photo');
-  input.setAttribute('value', file);
-  input.getElementById('resized_photo').name = "resized_photo";
+  input.setAttribute('value', resized_photo);
+  // document.getElementById('resized_photo').name = "resized_photo";
+  input.setAttribute('name', 'resized_photo');
   document.getElementById('root').append(input);
+}
+
+function blobToFile(theBlob, fileName) {
+  return new File([theBlob], fileName, { lastModified: new Date().getTime(), type: theBlob.type });
 }
 
 function readableBytes(bytes) {

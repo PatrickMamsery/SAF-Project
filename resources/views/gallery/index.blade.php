@@ -292,7 +292,7 @@
                   aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
-              <form id="photos-form" method="POST" action="addPhoto">
+              <form id="photos-form" method="POST" enctype="multipart/form-data" action="addPhoto">
 
                 <input type="hidden" class="form-control form-custom" id="user_id" name="user_id"
                   value="{{ auth()->user()->id }}">

@@ -11,6 +11,7 @@ use App\Models\Comment;
 use App\Models\Photo;
 use App\Models\Video;
 use App\Models\Tag;
+use App\Models\Upload;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -105,5 +106,10 @@ class User extends Authenticatable
     public function news()
     {
         return $this->belongsTo(News::class);
+    }
+
+    public function upload()
+    {
+        return $this->belongsTo(Upload::class);
     }
 }

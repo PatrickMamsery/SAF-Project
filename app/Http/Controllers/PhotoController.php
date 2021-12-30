@@ -27,11 +27,13 @@ class PhotoController extends Controller
         $photo->comment_id = $comment ? $comment->id : 0;
 
         try {
-            DB::transaction(function () use ($photo, $request) {
+            DB::transaction(function () use ($photo, $user_id, $request) {
                 $photo->save();
-                $upload_name = $request->resized_photo;
-                var_dump($request->all()); exit();
-                if($request->hasFile('photo')) $this->createUpload($user_id, $upload_name, $request);
+                $upload_name = 'resized_photo';
+                // dd($request->all()); exit();
+                var_dump($request->hasFile('resized_photo')); exit();
+                // dd($request->hasFile('photo'));
+                if($request->hasFile('resized_photo')) $this->createUpload($user_id, $upload_name, $request);
             });
         } catch (Exception $e) {
             return redirect()->back()->with('msg', 'Failed to post photo');
@@ -46,7 +48,7 @@ class PhotoController extends Controller
         $upload->path = str_replace('public', '', $request->file($upload_name)->store('public/img/uploads'));
         $upload->created_at = Carbon\Carbon::now();
         $upload->updated_at = Carbon\Carbon::now();
-
+        // var_dump($upload); exit();
         $upload->save();
 
         // if ($upload->save()) {
