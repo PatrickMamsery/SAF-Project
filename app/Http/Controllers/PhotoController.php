@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+// namespace Verot\Upload;
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -8,8 +9,10 @@ use App\Models\Photo;
 use App\Models\Upload;
 use App\Models\Caption;
 use App\Models\Comment;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Carbon;
 use DB;
+use Auth;
 
 class PhotoController extends Controller
 {
@@ -17,8 +20,16 @@ class PhotoController extends Controller
     {
         $photo = new Photo;
         $user_id = auth()->user()->id;
-        $caption = Caption::find($user_id);
-        $comment = Comment::find($user_id);
+
+        $caption = new Caption;
+        $caption->user_id = Auth::user()->id;
+        $caption->body = 'Cool';
+        $caption->save();
+
+        $comment = new Comment;
+        $comment->user_id = Auth::user()->id;
+        $comment->body = 'Cool';
+        $comment->save();
 
         $photo->posted_on = Carbon\Carbon::now();
         $photo->user_id = $user_id;
@@ -28,12 +39,8 @@ class PhotoController extends Controller
 
         try {
             DB::transaction(function () use ($photo, $user_id, $request) {
+                if($request->hasFile('photo')) $this->uploadPhoto($user_id, $request);
                 $photo->save();
-                $upload_name = 'resized_photo';
-                // dd($request->all()); exit();
-                var_dump($request->hasFile('resized_photo')); exit();
-                // dd($request->hasFile('photo'));
-                if($request->hasFile('resized_photo')) $this->createUpload($user_id, $upload_name, $request);
             });
         } catch (Exception $e) {
             return redirect()->back()->with('msg', 'Failed to post photo');
@@ -41,21 +48,36 @@ class PhotoController extends Controller
         return redirect()->back()->with('msg', 'Photo posted successfully');
     }
 
-    public function createUpload($user_id, $upload_name, $request)
+    public function uploadPhoto($user_id, $request)
     {
-        $upload = new Upload;
-        $upload->name = $request->file($upload_name)->getClientOriginalName();
-        $upload->path = str_replace('public', '', $request->file($upload_name)->store('public/img/uploads'));
-        $upload->created_at = Carbon\Carbon::now();
-        $upload->updated_at = Carbon\Carbon::now();
-        // var_dump($upload); exit();
-        $upload->save();
+        $handle = new \Verot\Upload\Upload($_FILES['photo']);
 
-        // if ($upload->save()) {
-        //     Photo::insert([
-        //         'user_id' => $user_id,
-        //         ''
-        //     ]);
-        // }
+        if ($handle->uploaded){
+            $handle->file_new_name_body = $request->file('photo')->getClientOriginalName();
+            $handle->image_resize = true;
+            $handle->image_x = rand(100, 320);
+            $handle->image_ratio_y = true;
+            // $path = 'img/newphotos/';
+            $cloudinary_path = Cloudinary::upload($request->file('photo')->getRealPath(), [
+                'folder' => 'SAF'
+            ])->getSecurePath();
+            $handle->process();
+            // var_dump($handle); die;
+
+
+            if ($handle->processed){
+                $upload = new Upload;
+                $upload->name = $handle->file_dst_name;
+                $upload->path = $cloudinary_path;
+                $upload->created_at = Carbon\Carbon::now();
+                $upload->updated_at = Carbon\Carbon::now();
+
+                $upload->save();
+                // return redirect()->back()->with('msg', 'Image resized'); 
+            }
+            else {
+                echo 'error : ' . $handle->error;
+            }
+        }
     }
 }
