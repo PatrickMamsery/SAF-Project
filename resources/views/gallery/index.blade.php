@@ -16,7 +16,16 @@
 
             </div>
 
-            <div class="grid-item">
+            @foreach ($photos as $photo)
+                <div class="grid-item">
+                    <div class="content">
+                        <h2>Photo</h2>
+                    </div>
+                    <img src="{{ $photo->path }}" alt="pic">
+                </div>
+            @endforeach
+
+            {{-- <div class="grid-item">
                 <div class="content">
                     <h2>Photo</h2>
                 </div>
@@ -259,7 +268,7 @@
                     <h2>Photo</h2>
                 </div>
                 <img src="img/img35.jpg" alt="pic">
-            </div>
+            </div> --}}
 
         </div>
     </div>
@@ -280,7 +289,7 @@
                 <i class="material-icons pmd-sm">add</i> 
             </a> 
         </div>
-    @endauth
+    
 
     <!-- Add Photo Modal -->
     <div class="modal fade" id="addPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -300,7 +309,7 @@
                 <div class="form-group form-elements form-group-custom label-floating co-md-12">
                   <label for="name" class="control-label">Uploaded by</label>
                   <input type="text" class="form-control form-custom" id="name" name="name"
-                    value="{{ auth()->user()->fname }}" disabled>
+                    value="{{ auth()->user()->fname }} {{ auth()->user()->sname }}" disabled required>
                 </div>
 
                 {{-- <div class="form-group">
@@ -331,4 +340,5 @@
           </div>
         </div>
     </div>
+    @endauth
 @endsection

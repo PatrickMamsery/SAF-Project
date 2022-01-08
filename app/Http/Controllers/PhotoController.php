@@ -13,11 +13,20 @@ use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Carbon;
 use DB;
 use Auth;
+use Validator;
 
 class PhotoController extends Controller
 {
     public function addPhoto(Request $request)
     {
+        // validate the incoming request 
+        $validator = Validator::make($request->all(), [
+            'photo' => 'required|file',
+            'photo.*' => 'mimes:jpeg,image/jpeg,jpg,png,gif,csv,txt,pdf'            
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->with('msg', 'Invalid data submited');
+
         $photo = new Photo;
         $user_id = auth()->user()->id;
 
@@ -39,8 +48,8 @@ class PhotoController extends Controller
 
         try {
             DB::transaction(function () use ($photo, $user_id, $request) {
-                if($request->hasFile('photo')) $this->uploadPhoto($user_id, $request);
-                $photo->save();
+                if($request->hasFile('photo')) $this->uploadPhoto($user_id, $photo, $request);
+                //
             });
         } catch (Exception $e) {
             return redirect()->back()->with('msg', 'Failed to post photo');
@@ -48,7 +57,7 @@ class PhotoController extends Controller
         return redirect()->back()->with('msg', 'Photo posted successfully');
     }
 
-    public function uploadPhoto($user_id, $request)
+    public function uploadPhoto($user_id, $photo, $request)
     {
         $handle = new \Verot\Upload\Upload($_FILES['photo']);
 
@@ -73,7 +82,9 @@ class PhotoController extends Controller
                 $upload->updated_at = Carbon\Carbon::now();
 
                 $upload->save();
-                // return redirect()->back()->with('msg', 'Image resized'); 
+                
+                $photo->path = $cloudinary_path;
+                $photo->save();
             }
             else {
                 echo 'error : ' . $handle->error;

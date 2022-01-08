@@ -24,7 +24,7 @@ Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/dash', [HomeController::class, 'indexDash'])->name('dash');
 Route::get('/user_dash', [HomeController::class, 'userDash'])->name('user_dash');
 
-Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/gallery', [GalleryController::class, 'getPhotos'])->name('gallery');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 
 /* Register routes */
