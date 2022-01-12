@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/dash.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/snackbar.min.css">
 
     <script src="/packages/snackbar/dist/snackbar.min.js"></script>
@@ -16,7 +17,13 @@
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="header_img"> 
-            <img src="/img/logo.png" alt="Profile_pic">
+            @if ($user->gender == 'male')
+                <img src="img/profile_photos/avatar.png" alt="user_profile">
+            @elseif ($user->gender == 'female')
+                <img src="img/profile_photos/avatar-female.png" alt="user_profile">
+            @else
+                <img src="/img/logo.png" alt="user_profile">
+            @endif
             <!--<i class="bx bx-user-circle"></i> -->
         </div>
     </header>
@@ -32,7 +39,7 @@
                          <i class='bx bx-home nav_icon'></i> 
                          <span class="nav_name">Website</span> 
                     </a> 
-                    <a href="#" class="nav_link"> 
+                    <a href="#users" class="nav_link"> 
                         <i class='bx bx-user nav_icon'></i> 
                         <span class="nav_name">Users</span> 
                     </a> 
@@ -77,6 +84,7 @@
 
         </nav>
     </div>
+    
     <!--Container Main start-->
     <div class="content bg-light height-100">
         {{-- <h4>Main Components</h4> --}}

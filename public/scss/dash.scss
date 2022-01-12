@@ -26,6 +26,20 @@ body {
     transition: .5s
 }
 
+/* Custom Button Styling */
+.bg-custom1 {
+    background-color: var(--first-color);
+    border-radius: 1rem;
+}
+
+.btn-custom {
+    background-color: var(--first-color);
+}
+.btn-custom:hover {
+    background-color: var(--first-color-light);
+    color: white;
+}
+
 a {
     text-decoration: none!important;
 }
@@ -203,4 +217,40 @@ a {
 
 .user_img img {
     width: 50px;
+}
+
+.custom-title {
+    background-color: var(--first-color);
+    border-radius: 5px;
+    justify-content: space-between;
+    text-align: center;
+    left: 0;
+    width: auto;
+    color: var(--white-color);
+}
+
+/* Dash table CSS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif
+}
+
+.search {
+    top: 6px;
+    left: 10px
+}
+
+.form-control {
+    border: none;
+    padding-left: 32px
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: none
+}
+
+.green {
+    color: green
 }

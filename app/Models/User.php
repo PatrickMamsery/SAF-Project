@@ -108,6 +108,11 @@ class User extends Authenticatable
         return $this->belongsTo(News::class);
     }
 
+    public function profilePhoto()
+    {
+        return $this->belongsTo(ProfilePhoto::class);
+    }
+
     public function upload()
     {
         return $this->belongsTo(Upload::class);

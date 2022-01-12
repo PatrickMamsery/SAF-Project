@@ -20,7 +20,6 @@ use App\Http\Controllers\PhotoController;
 */
 
 /* Dashboard routes */
-Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/dash', [HomeController::class, 'indexDash'])->name('dash');
 Route::get('/user_dash', [HomeController::class, 'userDash'])->name('user_dash');
 
@@ -39,6 +38,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 /* Add Photo Posts routes */
 Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
+Route::post('/addProfilePhoto', [ProfilePhotosController::class, 'addProfilePhoto']);
 
 Route::get('/', function () {
     return view('index');

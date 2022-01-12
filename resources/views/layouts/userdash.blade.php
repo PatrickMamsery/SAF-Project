@@ -17,7 +17,13 @@
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="header_img"> 
-            <img src="/img/logo.png" alt="Profile_pic">
+            @if ($user->gender == 'male')
+                <img src="img/profile_photos/avatar.png" alt="user_profile">
+            @elseif ($user->gender == 'female')
+                <img src="img/profile_photos/avatar-female.png" alt="user_profile">
+            @else
+                <img src="img/profile_photos/avatar.png" alt="user_profile">
+            @endif
             <!--<i class="bx bx-user-circle"></i> -->
         </div>
     </header>
