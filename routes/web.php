@@ -7,6 +7,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\ProfilePhotosController;
 
 /*
 |--------------------------------------------------------------------------
