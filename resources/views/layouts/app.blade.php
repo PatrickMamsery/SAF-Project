@@ -8,6 +8,7 @@
     {{-- <link rel="stylesheet" href="/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="/css/custom.css">
     <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/form.css">
     {{-- <link rel="stylesheet" href="/css/register.css">
     <link rel="stylesheet" href="/css/footer.css"> --}} 
     <link rel="stylesheet" href="/css/snackbar.min.css">
@@ -32,6 +33,7 @@
         @endif
 
         @yield('content')
+        @yield('template')
     </div>
     {{-- @yield('content') --}}
     @include('shared.footer')
@@ -54,6 +56,6 @@
     <script src="/packages/propeller/propeller.min.js"></script>
     <script src="js/photo_resize.js"></script>
 
-
+    @yield('javascript');
 </body>
 </html>

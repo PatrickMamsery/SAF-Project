@@ -27,6 +27,9 @@ Route::get('/user_dash', [HomeController::class, 'userDash'])->name('user_dash')
 Route::get('/gallery', [GalleryController::class, 'getPhotos'])->name('gallery');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 
+/* Membership form routes */
+Route::get('/membership_form', [PagesController::class, 'membership_form'])->name('membership_form');
+
 /* Register routes */
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);

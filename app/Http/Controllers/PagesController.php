@@ -10,4 +10,9 @@ class PagesController extends Controller
     {
         return view('layouts.about');
     }
+
+    public function membership_form()
+    {
+        return view('membership_form');
+    }
 }

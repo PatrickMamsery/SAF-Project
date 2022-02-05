@@ -1,3 +1,13 @@
+@push('head')
+    <link
+        href="/favicon.ico"
+        id="favicon"
+        rel="icon"
+    >
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+@endpush
+
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="padding: 0!important">
         <div class="container-fluid">
