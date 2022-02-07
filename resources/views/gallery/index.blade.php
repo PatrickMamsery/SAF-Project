@@ -98,4 +98,12 @@
         </div>
     </div>
     @endauth
+
+    <script src="https://unpkg.com/colcade@0/colcade.js"></script>
+    <script>
+        var colc = new Colcade( '.grid', {
+            columns: '.grid-col',
+            items: '.grid-item'
+        });
+    </script>
 @endsection

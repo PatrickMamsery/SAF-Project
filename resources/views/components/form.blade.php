@@ -27,7 +27,7 @@
               <li></li> 
               <li></li>
               <li></li>
-              <li></li>
+              {{-- <li></li> --}}
               <li></li>
             </ul>
             <!-- fieldsets -->
@@ -75,14 +75,14 @@
                     <input type="text" name="name" class="form-control">
                   </div>
                   <div class="col-md-6">
-                    <label for="exampleFormControlInput1" class="form-label">Date of Birth</label>
-                    <input type="date" class="form-control" name="birthdate"  >
+                    <label for="exampleFormControlInput1" class="form-label">Joined in Year</label>
+                    <input type="date" class="form-control" name="joindate"  >
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-6">
-                    <label for="exampleFormControlInput1" class="form-label">Place of Birth</label>
-                    <input type="text" class="form-control" name="birthplace"  >
+                    <label for="exampleFormControlInput1" class="form-label">Date of Entry</label>
+                    <input type="date" class="form-control" name="currentdate"  >
                   </div>
                   <div class="col-md-6">
                     <label for="exampleFormControlInput1" class="form-label">Citizenship</label>
@@ -102,7 +102,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <label for="exampleFormControlInput1" class="form-label">Designation</label>
-                    <input type="text" class="form-control" name="designation"  >
+                    <input type="text" class="form-control" name="designation"  disabled>
                   </div>
                   <div class="col-md-6">
                     <label for="exampleFormControlInput1" class="form-label">Work Address</label>
@@ -135,7 +135,6 @@
                       <option selected>Select Gender</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
-                      <option value="other">Other</option>
                     </select>
                   </div>
                 </div>            
@@ -219,7 +218,7 @@
                       <input type="text" class="form-control" name="employment_company"  >
                     </div>
                     <div class="col-md-6">
-                      <label for="exampleFormControlInput1" class="form-label">Title/Responsebility</label>
+                      <label for="exampleFormControlInput1" class="form-label">Title/Responsibility</label>
                       <input type="text" class="form-control" name="employment_title"  >
                     </div>
                   </div>
@@ -252,53 +251,6 @@
                
             </fieldset>
             
-            <!-- Referees -->
-            <fieldset>
-              <div class="inner-title">4.0 REFEREES</div>
-              <div class="form-body">
-                <div id="referee-forms-wrapper">
-                  <div class="default">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <label for="exampleFormControlInput1" class="form-label">Name</label>
-                        <input type="text" name="referee_name"  class="form-control"  >
-                      </div>
-                      <div class="col-md-6 phone-mt">
-                        <label for="exampleFormControlInput1" class="form-label">Address</label>
-                        <input type="text" name="referee_address" class="form-control"  >
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <label for="exampleFormControlInput1" class="form-label">Telephone</label>
-                        <input type="number" name="referee_phone" class="form-control"  >
-                      </div>
-                      <div class="col-md-6 phone-mt">
-                        <label for="exampleFormControlInput1" class="form-label">Work/Title</label>
-                        <input type="text" name="referee_title"  class="form-control"  >
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <label for="exampleFormControlInput1" class="form-label">Fax</label>
-                        <input type="text" name="referee_fax" class="form-control"  >
-                      </div>
-                      <div class="col-md-6 phone-mt">
-                        <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-                        <input type="email" name="referee_email" class="form-control"  >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-5 text-center">
-                <a  class="" style="font-weight: 700" onclick="addRefereeForm('referee-forms-wrapper')" >Add Referee</a>
-                <div class="row"><div class="col-12 bg-custom d-none d-lg-block py-custom px-0 my-3"></div></div>
-              </div>
-              <button type="button" class="action-button previous previous_button mt-5">Back</button> 
-              <button type="button" class="next action-button mb-5">Continue</button>   
-              
-            </fieldset>
             
             <!-- Submission requirements -->
             <fieldset>
@@ -320,26 +272,6 @@
                         <img src="/icons/upload.svg" width="37px" alt="">
                             <input type="file" name="passport" class="custom-file-input" id="upload1">
                             <label class="custom-file-label" for="upload1"><i class="ion-android-cloud-outline"></i> Passport Size</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 upload-wrapper">
-                        <div class="input-group ">
-                          <div class="custom-file">
-                        <img src="/icons/upload.svg" width="37px" alt="">
-                            <input type="file" name="letter_one" class="custom-file-input" id="upload2">
-                            <label class="custom-file-label" for="upload2"><i class="ion-android-cloud-outline"></i> Referee's Letter</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6 upload-wrapper">
-                        <div class="input-group ">
-                          <div class="custom-file">
-                        <img src="/icons/upload.svg" width="37px" alt="">
-                            <input type="file" name="letter_two"  class="custom-file-input" id="upload3">
-                            <label class="custom-file-label" for="upload3"><i class="ion-android-cloud-outline"></i> Referee's Letter</label>
                           </div>
                         </div>
                       </div>
