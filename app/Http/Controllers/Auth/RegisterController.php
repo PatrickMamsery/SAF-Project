@@ -51,7 +51,7 @@ class RegisterController extends Controller
             $user->save();
 
         if ($user->save()) {
-            return redirect()->back()->with('msg', 'Registration Successful');
+            return redirect()->route('login')->with('msg', 'Registration Successful');
         }
         else return redirect()->back()->with('msg', 'Failed registration');
     }

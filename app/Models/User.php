@@ -5,6 +5,10 @@ use App\Models\UserRole;
 use App\Models\Caption;
 use App\Models\Contact;
 use App\Models\Profession;
+use App\Models\EmploymentRecord;
+use App\Models\EducationRecord;
+use App\Models\ProfessionalRecord;
+use App\Models\Document;
 use App\Models\View;
 use App\Models\Like;
 use App\Models\Comment;
@@ -116,5 +120,20 @@ class User extends Authenticatable
     public function upload()
     {
         return $this->belongsTo(Upload::class);
+    }
+
+    public function education_records()
+    {
+        return $this->hasMany(EducationRecord::class);
+    }
+
+    public function employment_records()
+    {
+        return $this->hasMany(EmploymentRecord::class);
+    }
+
+    public function documents()
+    {
+        return $this->hasMany(Document::class);
     }
 }

@@ -29,6 +29,12 @@ class CreateUsersTable extends Migration
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->unsignedInteger('user_role_id');
             $table->integer('phone')->nullable();
+            $table->string('joindate')->nullable();
+            $table->string('entrydate')->nullable();
+            $table->string('citizenship')->nullable();
+            $table->string('work_address')->nullable();
+            $table->string('voice')->nullable();
+            $table->enum('marital_status', ['single', 'married'])->nullable();
             $table->enum('role', ['root', 'admin', 'user'])->nullable();
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable()->default(null);

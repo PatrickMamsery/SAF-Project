@@ -14,6 +14,9 @@
                     <h5 class="text-center">User Details</h5>
                     <label for="Name">Name</label> {{ $user->fname }} {{ $user->sname }}
                 </div>
+                <a href="{{ route('membership_form') }}">
+                    <button class="btn btn-custom">Complete Profile</button>
+                </a>
             </div>
             <div class="col-md-6">
                 <div class="border border-success rounded py-5 px-2 mt-3">

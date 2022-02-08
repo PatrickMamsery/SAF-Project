@@ -7,7 +7,7 @@
         
               <!-- Start Multiform HTML -->
           <section class="multi_step_form">  
-          <form id="msform" action="" method="POST" enctype="multipart/form-data"> 
+          <form id="msform" action="addUserDetails" method="POST" enctype="multipart/form-data"> 
             {{ csrf_field() }}
             <!-- Tittle -->
             <div class="tittle">
@@ -72,7 +72,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="name" class="form-control" value="{{ $user->fname }} {{ $user->sname }}">
                   </div>
                   <div class="col-md-6">
                     <label for="exampleFormControlInput1" class="form-label">Joined in Year</label>
@@ -82,7 +82,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <label for="exampleFormControlInput1" class="form-label">Date of Entry</label>
-                    <input type="date" class="form-control" name="currentdate"  >
+                    <input type="date" class="form-control" name="entrydate"  >
                   </div>
                   <div class="col-md-6">
                     <label for="exampleFormControlInput1" class="form-label">Citizenship</label>
@@ -92,11 +92,11 @@
                 <div class="row">
                   <div class="col-md-6">
                     <label for="exampleFormControlInput1" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" name="email"  >
+                    <input type="email" class="form-control" name="email" value="{{ $user->email }}" >
                   </div>
                   <div class="col-md-6">
                     <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
-                    <input type="phone" class="form-control" name="phone"  >
+                    <input type="phone" class="form-control" name="phone" value="{{ $user->phone }}" >
                   </div>
                 </div>
                 <div class="row">
@@ -111,27 +111,26 @@
                 </div>
                 <div class="row">
                   <div class="col-md-4 phone-mt">
-                    <label for="exampleFormControlInput1" class="form-label">Religion</label>
-                    <select class="form-select" name="religion" aria-label=".form-select-lg example">
-                      <option selected>Select Religion</option>
-                      <option value="christianity">Christianity</option>
-                      <option value="islam">Islam</option>
-                      <option value="hindu">Hindu</option>
-                      <option value="other">Other</option>
+                    <label for="exampleFormControlInput1" class="form-label">Voice</label>
+                    <select class="form-control form-select" name="voice" aria-label=".form-select-lg example">
+                      <option selected>Select Voice</option>
+                      <option value="soprano">Soprano (1)</option>
+                      <option value="alto">Alto (2)</option>
+                      <option value="tenor">Tenor (3)</option>
+                      <option value="bass">Bass (4)</option>
                     </select>
                   </div>
                   <div class="col-md-4 phone-mt">
                     <label for="exampleFormControlInput1" class="form-label">Marital Status</label>
-                    <select class="form-select" name="marital_status" aria-label=".form-select-lg example">
+                    <select class="form-control form-select" name="marital_status" aria-label=".form-select-lg example">
                       <option selected>Select Status</option>
                       <option value="single">Single</option>
                       <option value="married">Married</option>
-                      <option value="divorced">Divorced</option>
                     </select>
                   </div>
                   <div class="col-md-4 phone-mt">
                     <label for="exampleFormControlInput1" class="form-label">Gender</label>
-                    <select class="form-select" name="gender" aria-label=".form-select-lg example">
+                    <select class="form-control form-select" name="gender" aria-label=".form-select-lg example">
                       <option selected>Select Gender</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
@@ -220,12 +219,6 @@
                     <div class="col-md-6">
                       <label for="exampleFormControlInput1" class="form-label">Title/Responsibility</label>
                       <input type="text" class="form-control" name="employment_title"  >
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="mb-3">
-                      <label for="exampleFormControlTextarea1" class="form-label">Remarks</label>
-                      <textarea class="form-control" id="exampleFormControlTextareaa1" rows="3" name="remarks"></textarea>
                     </div>
                   </div>
                   <div class="row">

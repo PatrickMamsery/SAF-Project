@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagesController;
@@ -28,7 +29,8 @@ Route::get('/gallery', [GalleryController::class, 'getPhotos'])->name('gallery')
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 
 /* Membership form routes */
-Route::get('/membership_form', [PagesController::class, 'membership_form'])->name('membership_form');
+Route::get('/membership_form', [UserController::class, 'index'])->name('membership_form');
+Route::post('/addUserDetails', [UserController::class, 'store']);
 
 /* Register routes */
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
