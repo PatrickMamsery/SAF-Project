@@ -9,6 +9,7 @@ use App\Models\EmploymentRecord;
 use App\Models\EducationRecord;
 use App\Models\ProfessionalRecord;
 use App\Models\Document;
+use App\Models\UserDocument;
 use App\Models\View;
 use App\Models\Like;
 use App\Models\Comment;

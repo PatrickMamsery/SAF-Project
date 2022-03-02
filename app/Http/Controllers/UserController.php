@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\EducationRecord;
 use App\Models\EmploymentRecord;
 use App\Models\ProfessionalRecord;
+use App\Models\UserDocument;
 use App\Models\Upload;
 use App\Models\Document;
 use Carbon\Carbon;
@@ -21,6 +22,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $user_id = auth()->user()->id;
@@ -90,11 +97,7 @@ class UserController extends Controller
                 
                 // store documents
                     if($request->hasFile('passport')) $this->createDocumentRecord($member_id,'passport',$request);
-                    if($request->hasFile('certificate')) $this->createDocumentRecord($member_id,'certificate',$request);
-                    if($request->hasFile('letter_one')) $this->createDocumentRecord($member_id,'letter_one',$request);
-                    if($request->hasFile('letter_two')) $this->createDocumentRecord($member_id,'letter_two',$request);
-
-            
+                    if($request->hasFile('cv')) $this->createDocumentRecord($member_id,'cv',$request);
                     
             });
 

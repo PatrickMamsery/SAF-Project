@@ -253,16 +253,16 @@
                       <div class="col-md-6 upload-wrapper">
                         <div class="input-group ">
                           <div class="custom-file">
-                        <img src="/icons/upload.svg" width="37px" alt="">
-                            <input type="file" name="certificate" class="custom-file-input" id="upload">
-                            <label class="custom-file-label" for="upload"><i class="ion-android-cloud-outline"></i> Education Certificates</label>
+                        <img class="file-input-img" src="/icons/upload.svg" width="37px" alt="">
+                            <input type="file" name="cv" class="custom-file-input" id="upload">
+                            <label class="custom-file-label" for="upload"><i class="ion-android-cloud-outline"></i> Curriculum Vitae (CV)</label>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-6 upload-wrapper">
                         <div class="input-group ">
                           <div class="custom-file">
-                        <img src="/icons/upload.svg" width="37px" alt="">
+                        <img class="file-input-img" src="/icons/upload.svg" width="37px" alt="">
                             <input type="file" name="passport" class="custom-file-input" id="upload1">
                             <label class="custom-file-label" for="upload1"><i class="ion-android-cloud-outline"></i> Passport Size</label>
                           </div>

@@ -392,9 +392,9 @@ fieldset{
 
   .upload-wrapper{
     @include display-flex(row,space-between);
-    img{
-    margin-right: 50px;
-
+    .file-input-img{
+      margin-right: 50px;
+      width: 37px;
     }
   }
 
