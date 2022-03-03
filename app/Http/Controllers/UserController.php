@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\EducationRecord;
 use App\Models\EmploymentRecord;
 use App\Models\ProfessionalRecord;
+use App\Models\ProfilePhoto;
 use App\Models\UserDocument;
 use App\Models\Upload;
 use App\Models\Document;
@@ -27,7 +28,7 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $user_id = auth()->user()->id;
@@ -98,6 +99,15 @@ class UserController extends Controller
                 // store documents
                     if($request->hasFile('passport')) $this->createDocumentRecord($member_id,'passport',$request);
                     if($request->hasFile('cv')) $this->createDocumentRecord($member_id,'cv',$request);
+
+                // create default profile photo
+                    $profile_photo = new ProfilePhoto;
+                    $profile_photo->path = $member->gender == 'male' || $member->gender == NULL ? 'img/profile_photos/avatar.png' : 'img/profile_photos/avatar-female.png';
+                    $profile_photo->user_id = $member_id;
+
+                    if(!$profile_photo->save()){
+                        Log::error("Default profile photo failed to be saved. ///".$request);
+                    }    
                     
             });
 

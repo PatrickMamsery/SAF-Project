@@ -40,7 +40,7 @@
                             <td>{{ $i++ }}</td>
                             <td>1 Oct, 21</td>
                             <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">Paid</span></td>
-                            <td><img src="https://i.imgur.com/VKOeFyS.png" width="25"> {{ $user->fname }} {{ $user->sname }}</td>
+                            <td><img src="img/profile_photos/avatar.png" width="25"> {{ $user->fname }} {{ $user->sname }}</td>
                             <td>{{ $user->userRole->title }}</td>
                             <td class="text-end"><span class="fw-bolder">$0.99</span> </td>
                             <td><i class='bx bxs-trash-alt'></i> <i class='bx bxs-edit'></i></td>

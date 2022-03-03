@@ -30,7 +30,8 @@ class HomeController extends Controller
 
     public function indexDash()
     {
-        if($users = User::all()) {
+        if($users = User::with('profilePhoto')->get()) {
+            // var_dump($users[1]->profilePhoto); die;
             return view('dashboard.content',
                 ['users' => $users]
             );

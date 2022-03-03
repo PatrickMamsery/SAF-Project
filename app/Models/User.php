@@ -10,6 +10,7 @@ use App\Models\EducationRecord;
 use App\Models\ProfessionalRecord;
 use App\Models\Document;
 use App\Models\UserDocument;
+use App\Models\ProfilePhoto;
 use App\Models\View;
 use App\Models\Like;
 use App\Models\Comment;
@@ -115,7 +116,7 @@ class User extends Authenticatable
 
     public function profilePhoto()
     {
-        return $this->belongsTo(ProfilePhoto::class);
+        return $this->belongsTo(ProfilePhoto::class, 'user_id');
     }
 
     public function upload()

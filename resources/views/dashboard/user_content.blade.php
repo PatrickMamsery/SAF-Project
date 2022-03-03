@@ -30,7 +30,7 @@
                             </div>
                         @elseif ($user->gender == 'female')
                         <div class="profile_img">
-                            <img class="user_img" src="img/profile_photos/avatar_female.png" alt="user_profile">
+                            <img class="user_img" src="img/profile_photos/avatar-female.png" alt="user_profile">
                             <div class="overlay">
                                 <i class="bx bx-home"></i>
                             </div>
