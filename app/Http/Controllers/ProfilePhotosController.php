@@ -65,6 +65,7 @@ class ProfilePhotosController extends Controller
                 $upload->save();
                 
                 $profile_photo->path = $cloudinary_path;
+                $profile_photo->user_id = $user_id;
                 $profile_photo->save();
             }
             else {

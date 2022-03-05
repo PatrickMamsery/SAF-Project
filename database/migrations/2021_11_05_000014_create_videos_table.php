@@ -27,12 +27,10 @@ class CreateVideosTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('path')->nullable();
             $table->string('link')->nullable();
-            $table->unsignedInteger('caption_id');
+            $table->string('caption', 2000)->nullable();
             $table->unsignedInteger('comment_id');
 
             $table->index(["user_id"], 'fk_videos_users_idx');
-
-            $table->index(["caption_id"], 'fk_videos_captions1_idx');
 
             $table->index(["comment_id"], 'fk_videos_comments1_idx');
             $table->nullableTimestamps();
@@ -43,10 +41,6 @@ class CreateVideosTable extends Migration
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
-            $table->foreign('caption_id', 'fk_videos_captions1_idx')
-                ->references('id')->on('captions')
-                ->onDelete('no action')
-                ->onUpdate('no action');
 
             $table->foreign('comment_id', 'fk_videos_comments1_idx')
                 ->references('id')->on('comments')

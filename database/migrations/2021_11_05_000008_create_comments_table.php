@@ -27,8 +27,11 @@ class CreateCommentsTable extends Migration
             $table->string('title')->nullable();
             $table->string('body')->nullable();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('photo_id');
 
             $table->index(["user_id"], 'fk_comments_users1_idx');
+
+            $table->index(["photo_id"], 'fk_comments_photos1_idx');
             $table->nullableTimestamps();
 
 
@@ -36,6 +39,11 @@ class CreateCommentsTable extends Migration
                 ->references('id')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
+
+            $table->foreign('photo_id', 'fk_comments_photos1_idx')
+            ->references('id')->on('photos')
+            ->onDelete('no action')
+            ->onUpdate('no action');
         });
     }
 

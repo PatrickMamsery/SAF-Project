@@ -3,7 +3,6 @@
 namespace App\Models;
 use App\Models\User;
 use App\Models\Comment;
-use App\Models\Caption;
 use App\Models\View;
 use App\Models\Like;
 use App\Models\Tag;
@@ -14,10 +13,10 @@ use Illuminate\Database\Eloquent\Model;
 class Photo extends Model
 {
     use HasFactory;
-
+    
     public function users()
     {
-        return $this->hasMany(User::class);
+        return $this->hasOne(User::class);
     }
 
     public function views()
@@ -33,5 +32,10 @@ class Photo extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function tags()
+    {
+        return $this->hasMany(Tag::class);
     }
 }

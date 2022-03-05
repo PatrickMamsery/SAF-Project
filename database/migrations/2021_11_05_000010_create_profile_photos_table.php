@@ -23,7 +23,7 @@ class CreateProfilePhotosTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('path', 45)->nullable();
+            $table->string('path', 255)->nullable();
             $table->unsignedBigInteger('user_id');
 
             $table->index(["user_id"], 'fk_profile_photos_users1_idx');

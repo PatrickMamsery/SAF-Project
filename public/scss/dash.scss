@@ -232,6 +232,44 @@ a {
     color: var(--white-color);
 }
 
+/* ========== WORKS SECTION ============= */
+.works-section {
+    margin: 50px auto;
+
+    .row {
+        .col-md-3 {
+            box-sizing: border-box;
+            display: block;
+
+            .work-img {
+                overflow: hidden;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                img {
+                    margin-bottom: 0!important;
+                    width: 100%;
+                    max-height: 120px!important;
+                    object-fit: cover;
+                    transform: scale(1);
+                    transition: all 0.6s ease-out 0s;
+                }
+            }
+            .work-caption {
+                align-content: center;
+                text-align: center;
+                padding: 20px 20px 20px 20px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                .captions {
+                    .a {
+                        text-decoration: none!important;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
 /* Profile Photo Styling */
 .profile_image {
     position: relative;

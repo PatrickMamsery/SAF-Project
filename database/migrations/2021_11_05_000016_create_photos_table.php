@@ -27,14 +27,10 @@ class CreatePhotosTable extends Migration
             $table->string('posted_on', 45)->nullable();
             $table->string('link')->nullable();
             $table->string('path')->nullable();
-            $table->unsignedInteger('caption_id');
-            $table->unsignedInteger('comment_id');
+            $table->string('caption', 2000)->nullable();
 
             $table->index(["user_id"], 'fk_photos_users1_idx');
 
-            $table->index(["caption_id"], 'fk_photos_captions1_idx');
-
-            $table->index(["comment_id"], 'fk_photos_comments1_idx');
             $table->nullableTimestamps();
 
 
@@ -42,16 +38,7 @@ class CreatePhotosTable extends Migration
                 ->references('id')->on('users')
                 ->onDelete('no action')
                 ->onUpdate('no action');
-
-            $table->foreign('caption_id', 'fk_photos_captions1_idx')
-                ->references('id')->on('captions')
-                ->onDelete('no action')
-                ->onUpdate('no action');
-
-            $table->foreign('comment_id', 'fk_photos_comments1_idx')
-                ->references('id')->on('comments')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                
         });
     }
 

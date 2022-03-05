@@ -24,13 +24,21 @@ class CreateTagsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('photo_id');
 
             $table->index(["user_id"], 'fk_tags_users1_idx');
+
+            $table->index(["photo_id"], 'fk_tags_photos1_idx');
             $table->nullableTimestamps();
 
 
             $table->foreign('user_id', 'fk_tags_users1_idx')
                 ->references('id')->on('users')
+                ->onDelete('no action')
+                ->onUpdate('no action');
+
+            $table->foreign('photo_id', 'fk_tags_photos1_idx')
+                ->references('id')->on('photos')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

@@ -40,10 +40,10 @@
                             <td>{{ $i++ }}</td>
                             <td>1 Oct, 21</td>
                             <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">Paid</span></td>
-                            <td><img src="img/profile_photos/avatar.png" width="25"> {{ $user->fname }} {{ $user->sname }}</td>
+                            <td><img src="{{ $user->profilePhoto != NULL ? $user->profilePhoto->path : 'img/profile_photos/avatar.png' }}" width="25"> {{ $user->fname }} {{ $user->sname }}</td>
                             <td>{{ $user->userRole->title }}</td>
                             <td class="text-end"><span class="fw-bolder">$0.99</span> </td>
-                            <td><i class='bx bxs-trash-alt'></i> <i class='bx bxs-edit'></i></td>
+                            <td></i></td>
                         </tr>
                         @endforeach
                         
@@ -88,6 +88,36 @@
             </div>
         </div>
 
+        <!-- Posts Section -->
+        <div class="works-section mb-3" id="photo_posts">
+            <div class="row mt-3">
+                @foreach ($photos as $photo)
+                    <div class="col-md-3">
+                        <div class="work-img">
+                            <img src="{{ $photo->path }}" alt="">
+                        </div>
+                        <div class="work-caption">
+                            <p class="text-center" style="text-align: justify;">{{ $photo->caption == NULL ? 'No Caption' : strip_tags(substr($photo->caption,0,300)) }}</p>
+                            <div class="actions">
+                                <a href="javascript:void(0);" class="btn btn-xs delete-photo" data-toggle="modal" data-target="#deletePhoto" data-photo_id="{{ $photo->id }}" data-user_id="{{ $photo->user_id }}" style="text-decoration: none!important;" >
+                                    <i class='bx bxs-trash-alt'></i>
+                                </a> 
+                                <a href="" class="btn btn-sm" data-title="View Photo" data-toggle="modal" data-target="#viewPhoto">
+                                    <i class='bx bx-show'></i>
+                                </a>
+                                <a href="" class="btn btn-sm" data-title="Edit Photo" data-toggle="modal" data-target="#editPhoto">
+                                    <i class='bx bxs-edit'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                
+            </div>
+        </div>
+
+        
+
         {{-- <div id="users">
             @foreach ($users as $user)
                 <p>{{ $user->fname }}</p>
@@ -95,4 +125,64 @@
         </div> --}}
     </div>
 </div>
+
+<!-- MODALS -->
+
+<!-- Update Photo post modal -->
+
+<!-- Delete Photo post modal -->
+<div class="modal fade" id="deletePhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Delete Photo</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <p class="text-center">
+                Are you sure you want to delete this photo?
+            </p>
+            <div class="modal-footer">
+            <form method="POST" enctype="multipart/form-data" action="{{ route('admin.deletePhoto') }}">
+                {{ csrf_field() }}
+                <input type="hidden" class="form-control form-custom" id="user_id" name="user_id">
+                <input type="hidden" class="form-control form-custom" id="photo-delete" name="photo_id">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-custom">Delete</button>
+            </form>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Script tags -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+    // function deletePhoto(photo_id) {
+    //   result = confirm("Are you sure you want to delete this photo permanently?");
+    //   if (result) {
+    //     var url = '/admin/delete_photo/' + photo_id;
+    //     var form = $('<form action="' + url + '" method="POST">' +
+    //       '{{ csrf_field() }}' +
+    //       '</form>');
+    //     $('body').append(form);
+    //     form.submit();
+    //   }
+    // }
+
+
+    $(document).ready(function () {
+        $('.delete-photo').click(function(){
+            $('#photo-delete').val($(this).data('photo_id'));
+        });
+    });
+</script>
 @endsection

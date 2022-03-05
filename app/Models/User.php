@@ -116,7 +116,7 @@ class User extends Authenticatable
 
     public function profilePhoto()
     {
-        return $this->belongsTo(ProfilePhoto::class, 'user_id');
+        return $this->hasOne(ProfilePhoto::class,'user_id');
     }
 
     public function upload()

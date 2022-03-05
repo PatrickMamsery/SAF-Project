@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
@@ -24,6 +25,12 @@ use App\Http\Controllers\ProfilePhotosController;
 /* Dashboard routes */
 Route::get('/dash', [HomeController::class, 'indexDash'])->name('dash');
 Route::get('/user_dash', [HomeController::class, 'userDash'])->name('user_dash');
+
+/* Administrative dashboard routes */
+Route::post('/adminDeletePhoto', [AdminPhotoController::class, 'deletePhoto'])->name('admin.deletePhoto');
+
+/* User Dashboard routes */
+Route::post('/deletePhoto', [PhotoController::class, 'deletePhoto'])->name('deletePhoto');
 
 Route::get('/gallery', [GalleryController::class, 'getPhotos'])->name('gallery');
 Route::get('/about', [PagesController::class, 'about'])->name('about');

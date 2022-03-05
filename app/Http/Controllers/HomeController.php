@@ -31,9 +31,11 @@ class HomeController extends Controller
     public function indexDash()
     {
         if($users = User::with('profilePhoto')->get()) {
-            // var_dump($users[1]->profilePhoto); die;
+            // var_dump($users[1]->profilePhoto->path); die;
+            $photos = Photo::all();
             return view('dashboard.content',
-                ['users' => $users]
+                ['users' => $users],
+                ['photos' => $photos],
             );
         }
     }
@@ -43,9 +45,12 @@ class HomeController extends Controller
     
         $user_id = auth()->user()->id;
 
-        if($user = User::find($user_id)) {
+        if($user = User::with('profilePhoto')->find($user_id)) {
+            $photos = Photo::where('user_id', $user_id)->get();
+            // dd($photos);
             return view('dashboard.user_content',
                 ['user' => $user],
+                ['photos' => $photos],
             );
         }
     }
