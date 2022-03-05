@@ -29,21 +29,20 @@ class PhotoController extends Controller
         $photo = new Photo;
         $user_id = auth()->user()->id;
 
-        $comment = new Comment;
-        $comment->user_id = Auth::user()->id;
-        $comment->body = 'Cool';
-        $comment->save();
-
         $photo->posted_on = Carbon\Carbon::now();
         $photo->user_id = $user_id;
         $photo->link = $request->photo ? $request->photo : NULL;
         $photo->caption = $request->caption ? $request->caption : NULL;
-        $photo->comment_id = $comment ? $comment->id : 0;
 
         try {
             DB::transaction(function () use ($photo, $user_id, $request) {
                 if($request->hasFile('photo')) $this->uploadPhoto($user_id, $photo, $request);
-                //
+                
+                $comment = new Comment;
+                $comment->user_id = Auth::user()->id;
+                $comment->photo_id = $photo->id;
+                $comment->body = 'Cool';
+                $comment->save();
             });
         } catch (Exception $e) {
             return redirect()->back()->with('msg', 'Failed to post photo');
