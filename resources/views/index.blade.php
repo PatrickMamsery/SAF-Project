@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('styles-links')
+<link rel="stylesheet" href="/css/gallery.css">
+@endsection
+
 @section('content')
    <div class="container-fluid">
        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000"> 

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-@section('styles-link')
+@section('styles-links')
+<link rel="stylesheet" href="/css/form.css">
+<link rel="stylesheet" href="/css/gallery.css">
 @endsection
 @section('template')
     @include('components.form')

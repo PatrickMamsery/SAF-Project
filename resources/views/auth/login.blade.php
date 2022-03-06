@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('styles-links')
+<link rel="stylesheet" href="/css/register.css">
+<link rel="stylesheet" href="/css/gallery.css">
+@endsection
+
 @section('content')
     <div class="container">
         <div class="form_wrapper">

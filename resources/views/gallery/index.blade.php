@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('styles-links')
+<link rel="stylesheet" href="/css/gallery.css">
+@endsection
+
 @section('content')
     <div class="container">
         <div class="grid">
@@ -20,7 +24,15 @@
             @foreach ($photos as $photo)
                 <div class="grid-item">
                     <div class="content">
-                        <h2>Photo</h2>
+                        {{-- <h2>Photo</h2> --}}
+                        <div>
+                            <button class="btn btn-dark btn-circle btn-xs">
+                                <i class="material-icons">visibility</i>
+                            </button>
+                            <button class="btn btn-dark btn-circle btn-xs">
+                                <i class="material-icons">favorite_border</i>
+                            </button>
+                        </div>
                     </div>
                     <img src="{{ $photo->path }}" alt="pic">
                 </div>

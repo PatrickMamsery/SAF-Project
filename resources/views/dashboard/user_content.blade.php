@@ -134,10 +134,10 @@
                         <div class="work-caption">
                             {{-- <p class="list-group-item-text" style="text-align: justify;">{{strip_tags(substr($photo->caption,0,300))}}</p> --}}
                             <div class="actions">
-                                <a href="" class="btn btn-sm delete-photo" data-title="Add Photo" data-toggle="modal" data-target="#deletePhoto" data-photo_id="{{ $photo->id }}" data-user_id="{{ $photo->user_id }}">
+                                <a href="" class="btn btn-sm delete-photo" data-title="Delete Photo" data-toggle="modal" data-target="#deletePhoto" data-photo_id="{{ $photo->id }}" data-user_id="{{ $photo->user_id }}">
                                     <i class='bx bxs-trash-alt'></i>
                                 </a> 
-                                <a href="" class="btn btn-sm" data-title="Add Photo" data-toggle="modal" data-target="#viewPhoto">
+                                <a href="" class="btn btn-sm view-photo" data-title="View Photo" data-toggle="modal" data-target="#viewPhoto" data-photo_id="{{ $photo->id }}" data-photo_path="{{ $photo->path }}">
                                     <i class='bx bx-show'></i>
                                 </a>
                                 <a href="" class="btn btn-sm" data-title="Add Photo" data-toggle="modal" data-target="#editPhoto">
@@ -156,6 +156,39 @@
 <!-- MODALS -->
 
 <!-- Update Photo post modal -->
+<div class="modal fade" id="viewPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Photo</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="photo-view" src="" alt="photo" style="width: 100%">
+                </div>
+                <div class="col-md-6">
+                    <h6 class="text-center">Photo Details</h6>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+            <form method="POST" enctype="multipart/form-data" action="{{ route('deletePhoto') }}">
+                {{ csrf_field() }}
+                <input type="hidden" class="form-control form-custom" id="user_id" name="user_id">
+                <input type="hidden" class="form-control form-custom" id="photo-delete" name="photo_id">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-custom">Delete</button>
+            </form>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
 
 <!-- Delete Photo post modal -->
 <div class="modal fade" id="deletePhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -188,11 +221,19 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
     $(document).ready(function () {
         $('.delete-photo').click(function(){
             // alert($(this).data('photo_id'));
             $('#photo-delete').val($(this).data('photo_id'));
+        });
+    });
+
+    $(document).ready(function () {
+        $('.view-photo').click(function(){
+            // alert($(this).data('photo_id'));
+            $('#photo-view').attr("src", $(this).data('photo_path'));
         });
     });
 </script>
