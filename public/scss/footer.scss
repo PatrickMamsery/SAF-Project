@@ -40,9 +40,11 @@
             img {
                 width: 25px;
             }
-        }
-        li:hover {
-            background-color: #EC902E;
+            a:hover {
+                border-radius: 100px!important;
+                background: #EC902E;
+                
+            }
         }
     }
 }

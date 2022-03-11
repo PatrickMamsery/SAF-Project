@@ -43,10 +43,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
     
-    <script src="js/app.js"></script>
+    {{-- <script src="js/app.js"></script> --}}
 
     <script src="/packages/propeller/propeller.min.js"></script>
-    <script src="js/photo_resize.js"></script>
 
     @yield('javascript');
 </body>

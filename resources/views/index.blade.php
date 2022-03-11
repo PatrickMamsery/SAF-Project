@@ -20,7 +20,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
-                <div class="carousel-caption">
+                <div class="carousel-caption1">
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-8 bg-custom d-none d-lg-block py-3 px-0">
@@ -77,11 +77,12 @@
                 <div class="col-md-8">
                     <div class="about-content">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque congue purus at porta tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla commodo posuere felis a dignissim. In arcu enim, tincidunt sed massa eget, dictum lacinia lorem. Donec porta vitae dui in pulvinar. Phasellus id mollis eros. Nunc in mattis ante, id volutpat ex. Sed tempor ligula in orci ornare semper. Donec dignissim porta tortor, in auctor sem suscipit ac. Sed semper id ante ac imperdiet.
-                            Sed a diam vel enim faucibus congue maximus vitae elit. Nam finibus ex commodo nulla ullamcorper, sed lobortis massa interdum. Ut nec dictum urna. Sed eu maximus augue, eu aliquam elit. Etiam a condimentum quam. Morbi feugiat lectus sit amet orci lobortis vulputate. Donec tempor dolor a urna porta ornare.
-                            Phasellus cursus ultricies libero, iaculis lacinia risus posuere id. Duis interdum interdum ligula eu dapibus. Ut felis risus, commodo vel convallis a, venenatis vel mauris. Sed in molestie augue, non elementum nunc. 
+                            St. Augustine's Choir is a choir that serves in the weekly Mass in the University Parish.
+                            The choir is headquartered in Dar es Salaam, due to the fact that a large percentage of its choristers are located at the University of Dar es Salaam.
+                            The choir was formed in 1970, with only 17 choristers, the only choir that serves Mass every Sunday at the University of Dar es Salaam.
+                            A large group of these choristers are found at the University of Dar es Salaam, the Water Institute, the University of the Land and non-students from various parts of the country. 
                         </p>
-                        <button class="btn btn-md btn-custom">Read More</button>
+                        <a href="{{ route('about') }}" class="btn btn-md btn-custom">Read More</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +94,7 @@
            <h2 class="text-center">Works</h2>
            <div class="bg-custom1 w-25 mx-auto d-none d-lg-block py-1 px-0"></div>
         <div class="row mt-3">
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="work-img">
                     <img src="/img/img53.jpg" alt="">
                 </div>
@@ -102,7 +103,7 @@
                     <a href="">Find out more</a>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="work-img">
                     <img src="/img/img53.jpg" alt="">
                 </div>
@@ -111,7 +112,7 @@
                     <a href="">Find out more</a>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="work-img">
                     <img src="/img/img53.jpg" alt="">
                 </div>
@@ -120,7 +121,7 @@
                     <a href="">Find out more</a>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 mb-3">
                 <div class="work-img">
                     <img src="/img/img53.jpg" alt="">
                 </div>
@@ -140,7 +141,7 @@
 
         <h4>Photos</h4>
            <div class="row mt-3">
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -148,7 +149,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -156,7 +157,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -164,7 +165,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -172,7 +173,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -180,7 +181,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img54.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -192,7 +193,7 @@
 
            <h4>Videos</h4>
            <div class="row mt-3">
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -202,7 +203,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -212,7 +213,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -222,7 +223,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -232,7 +233,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -242,7 +243,7 @@
                     </div>
                 </div>
                </div>
-               <div class="col-md-2">
+               <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
@@ -259,17 +260,17 @@
    <div class="container">
        <h2 class="text-center">Upcoming Events</h2>
        <div class="row mt-3">
-           <div class="col-sm-4">
+           <div class="col-sm-4 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img60.jpg" class="rounded" alt="Event 1">
                 </div>
            </div>
-           <div class="col-sm-4">
+           <div class="col-sm-4 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img57.jpg" class="rounded" alt="Event 2">
                 </div>
            </div>
-           <div class="col-sm-4">
+           <div class="col-sm-4 mb-3">
                <div class="rounded-circle img">
                    <img src="/img/img58.jpg" class="rounded" alt="Event 3">
                </div>

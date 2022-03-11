@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="text-center bg-dark w-100 text-light
 " style="position: absolute; margin-bottom: 0;">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
                 <img src="img/logo.png" alt="Logo" style="object-fit: contain;">
@@ -12,9 +12,9 @@
                         <strong><h6>Site Map</h6></strong>
                         <div class="site-map">
                             <ul style="padding-left: 0!important;">
-                                <li><a href="">Home</a></li>
-                                <li><a href="">Gallery</a></li>
-                                <li><a href="">About</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                                <li><a href="{{ route('about') }}">About</a></li>
                                 <li><a href="">Contacts</a></li>
                             </ul>
                         </div>
@@ -30,10 +30,10 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 text-center">
                         <h6>Follow us on</h6>
-                        <div class="social-media">
-                            <ul>
+                        <div class="social-media d-flex justify-content-center">
+                            <ul style="padding-left: 0%!important">
                                 <li><a href="">
                                     <img src="/icons/facebook.svg" alt="">
                                 </a>

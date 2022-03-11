@@ -118,4 +118,5 @@
             items: '.grid-item'
         });
     </script>
+    <script src="js/photo_resize.js"></script>
 @endsection
