@@ -92,7 +92,7 @@
         <div class="works-section mb-3" id="photo_posts">
             <div class="row mt-3">
                 @foreach ($photos as $photo)
-                    <div class="col-md-3">
+                    <div class="col-md-3 my-3">
                         <div class="work-img">
                             <img src="{{ $photo->path }}" alt="">
                         </div>

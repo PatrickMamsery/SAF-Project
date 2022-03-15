@@ -13,21 +13,21 @@
     <div class="container row my-3">
         <div class="col-md-3 mb-3">
             <div class="card" style="width: 100%;">
-                <img src="/img/augustine/augustine1.jpeg" class="card-img-top" alt="...">
+                <img src="/img/augustine/choir.webp" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">About Patron</h5>
-                  <p class="card-text">Our patron saint is St. Augustine, who is known by his famous quote "he who sings well prays twice."</p>
-                  <a href="#about_patron" class="btn btn-custom" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="about_patron">Learn more</a>
+                  <h5 class="card-title">About Choir</h5>
+                  <p class="card-text">St. Augustine's Choir is one amongst several choirs that serves in the weekly Mass in the University Parish. Amongst other...</p>
+                  <a href="#about_choir" class="btn btn-custom" role="button" data-toggle="collapse">Learn more</a>
                 </div>
             </div>
         </div>
         <div class="col-md-3 mb-3">
             <div class="card" style="width: 100%;">
-                <img src="/img/augustine/choir.webp" class="card-img-top" alt="...">
+                <img src="/img/augustine/augustine1.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">About Choir</h5>
-                  <p class="card-text">St. Augustine's Choir is amongst choirs that serves in the weekly Mass in the University Parish...</p>
-                  <a href="#about_choir" class="btn btn-custom" role="button" data-toggle="collapse">Learn more</a>
+                  <h5 class="card-title">About Patron</h5>
+                  <p class="card-text">Our patron saint is St. Augustine, who is known by his famous quote "he who sings well prays twice." Adhering to this note our choir...</p>
+                  <a href="#about_patron" class="btn btn-custom" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="about_patron">Learn more</a>
                 </div>
             </div>
         </div>
@@ -46,10 +46,28 @@
                 <img src="/img/augustine/album.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Works | Album</h5>
-                  <p class="card-text">So far the choir has a total of three albums, which are in the form of video and audio with ranging flavours...</p>
+                  <p class="card-text">So far the choir has a total of three albums, which are in the form of video and audio with ranging flavors...</p>
                   <a href="#works" class="btn btn-custom" role="button" data-toggle="collapse">Learn more</a>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+    <!-- About Choir Content -->
+    <div class="collapse mb-3" id="about_choir">
+        <div class="container">
+            <p class="px-4">
+                St. Augustine's Choir is a choir that serves in the weekly Mass in the University Parish.
+                The choir is headquartered in Dar es Salaam, due to the fact that a large percentage of its choristers are located at the University of Dar es Salaam.
+                The St. Augustine Choir was formed in 1979 by Father Stephan Mbuga with only twelve (12) choristers without a teacher, two years later in 1981 this choir received the very first teacher who was D. R. Mbilinyi.
+                A large group of these choristers are found at the University of Dar es Salaam, the Water Institute, the University of the Land and non-students from various parts of the country.
+                The choir consists of student choristers (also called BAC) and non-student choristers (called BBC). To date the choir has more than 100 choristers serving in various Sunday Masses at the University Parish and more than 500 choristers who are from different parts of Tanzania and different countries in the world who have sung in this choir and are still part of this choir because when they get a chance they join us.
+                The majority of these choristers are found in Dar es Salaam, Tanzania.
+                In the country, other choristers are found in various regions including Arusha, Kilimanjaro, Katavi, Tanga, Zanzibar, Dodoma and Mwanza.
+                Also, a small number of choristers are found in Ghana as well as Germany.
+                The proliferation of choristers in different parts of the world is due to the idea that, these choristers join the choir during their studies at the University of Dar es Salaam, and then complete their studies to work in different parts of the country and even abroad.
+            </p>
         </div>
     </div>
 
@@ -115,23 +133,6 @@
         </div>
     </div>
 
-    <!-- About Choir Content -->
-    <div class="collapse mb-3" id="about_choir">
-        <div class="container">
-            <p class="px-4">
-                St. Augustine's Choir is a choir that serves in the weekly Mass in the University Parish.
-                The choir is headquartered in Dar es Salaam, due to the fact that a large percentage of its choristers are located at the University of Dar es Salaam.
-                The choir was formed in 1970, with only 17 choristers, the only choir that serves Mass every Sunday at the University of Dar es Salaam.
-                A large group of these choristers are found at the University of Dar es Salaam, the Water Institute, the University of the Land and non-students from various parts of the country.
-                So far the choir has a total of no less than five hundred choristers, located in various parts of the World.
-                The majority of these choristers are found in Dar es Salaam, Tanzania.
-                In the country, other choristers are found in various regions including Arusha, Kilimanjaro, Katavi, Tanga, Zanzibar, Dodoma and Mwanza.
-                Also, a small number of choristers are found in Ghana as well as Germany.
-                The proliferation of choristers in different parts of the world is due to the idea that, these choristers join the choir during their studies at the University of Dar es Salaam, and then complete their studies to work in different parts of the country and even abroad.
-            </p>
-        </div>
-    </div>
-
     <!-- Leardership Content -->
     <div class="collapse" id="leadership">
         <div class="container">
@@ -139,7 +140,8 @@
                 The St. Augustine Choir is led by five elected student leaders, who in turn appoint other leaders to work with in the leadership.
                 The elected leaders are the Chairman, the vice-chairman, the general secretary, the assistant secretary and the treasurer.
                 This leadership comes to power every year with the votes of the choristers.
-                Until 2019, the vice-chairman and assistant secretary were being selected from a group of already graduates, that is, non-students, but in 2019, the late Monsignor Deogratius Hukumu Mbiku issued a directive that all five leaders be elected from the choristers continuing their studies at the University.
+                Until 2019, the vice-chairman and assistant secretary were being selected from a group of already graduates, that is, non-students, but in 2019, the late Monsignor Deogratius Hukumu Mbiku issued a directive that all five leaders be elected from the choristers continuing their studies at the University, a system that is still in use currently.
+                For non-student choristers; they also have their own leaders who are Chairman, Secretary and Treasurer who collaborate with leaders who are students to perform various choir roles.
             </p>
 
             <a href="#currentLeadership" target="">
@@ -156,7 +158,7 @@
                 These albums include
                 <ul style="list-style: none">
                     <li>
-                        
+                       Namtegemea Mungu 
                     </li>
                     <li>
                         I Cieli Narrano (Heaven proclaims the glory of God) of 2013
@@ -257,10 +259,10 @@
                 </p>
                 <div>
                     <ul class="social pt-3">
-                        <li><a href="https://www.facebook.com/" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+                        <li><a href="https://web.facebook.com/Kwaya-ya-MtAugustino-Parokia-ya-chuo-kikuu-110038991299260/" target="_blank"><i class="bx bxl-facebook"></i></a></li>
                         <li><a href="https://www.twitter.com/" target="_blank"><i class="bx bxl-twitter"></i></a></li>
-                        <li><a href="https://www.youtube.com/" target="_blank"><i class="bx bxl-youtube"></i></a></li>
-                        <li><a href="https://www.instagram.com/" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCxSb1bv9YHMR7eYUHSRu-1w" target="_blank"><i class="bx bxl-youtube"></i></a></li>
+                        <li><a href="https://www.instagram.com/st_augustine_choir_udsm/" target="_blank"><i class="bx bxl-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>

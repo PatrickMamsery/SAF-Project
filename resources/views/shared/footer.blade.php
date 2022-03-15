@@ -34,7 +34,7 @@
                         <h6>Follow us on</h6>
                         <div class="social-media d-flex justify-content-center">
                             <ul style="padding-left: 0%!important">
-                                <li><a href="">
+                                <li><a href="https://web.facebook.com/Kwaya-ya-MtAugustino-Parokia-ya-chuo-kikuu-110038991299260/">
                                     <img src="/icons/facebook.svg" alt="">
                                 </a>
                                 </li>
@@ -44,12 +44,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="https://www.instagram.com/st_augustine_choir_udsm/">
                                         <img src="/icons/instagram.svg" alt="">
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="https://www.youtube.com/channel/UCxSb1bv9YHMR7eYUHSRu-1w">
                                         <img src="/icons/youtube.svg" alt="">
                                     </a>
                                 </li>
