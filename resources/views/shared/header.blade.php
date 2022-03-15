@@ -9,7 +9,7 @@
 @endpush
 
 <div class="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="padding: 0!important">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-0">
         <div class="container-fluid" style="justify-content: space-between!important; flex-direction: row!important;">
 
           <a href="/" class="navbar-brand my-2">
