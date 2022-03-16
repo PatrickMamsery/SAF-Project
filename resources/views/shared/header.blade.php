@@ -13,7 +13,7 @@
         <div class="container-fluid" style="justify-content: space-between!important; flex-direction: row!important;">
 
           <a href="/" class="navbar-brand my-2">
-            <img src="img/logo.png" style="margin-bottom: 0" height="50" width="50" alt="Logo" title="Logo">
+            <img class="header-img" src="img/logo.png" style="margin-bottom: 0" height="50" width="50" alt="Logo" title="Logo">
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
