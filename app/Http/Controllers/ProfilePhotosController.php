@@ -38,6 +38,37 @@ class ProfilePhotosController extends Controller
         return redirect()->back()->with('msg', 'Profile photo changed successfully');
     }
 
+    public function editProfilePhoto(Request $request)
+    {
+        //validate the incoming request
+        $validator = Validator::make($request->all(), [
+            'profile_photo' => 'required|file',
+            'profile_photo.*' => 'mimes:jpeg,image/jpeg,jpg,png,gif,csv,txt,pdf,svg'
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->with('msg', 'Invalid data submited');
+
+        $profile_photo = ProfilePhoto::find($request->profile_photo_id);
+        // dd($profile_photo);
+
+        // Delete asset in cloudinary
+        $public_id = preg_match("/upload\/(?:v\d+\/)?([^\.]+)/", $profile_photo->path, $matches);
+                // dd($matches);
+        Cloudinary::destroy($matches[1]);
+
+        $user_id = $request->user_id;
+        
+        try {
+            DB::transaction(function () use ($profile_photo, $user_id, $request) {
+                if($request->hasFile('profile_photo')) $this->uploadProfilePhoto($user_id, $profile_photo, $request);
+                //
+            });
+        } catch (Exception $e) {
+            return redirect()->back()->with('msg', 'Failed to change profile photo');
+        }
+        return redirect()->back()->with('msg', 'Profile photo changed successfully');
+    }
+
     public function uploadProfilePhoto($user_id, $profile_photo, $request)
     {
         $handle = new \Verot\Upload\Upload($_FILES['profile_photo']);

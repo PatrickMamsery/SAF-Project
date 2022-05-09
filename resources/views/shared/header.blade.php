@@ -46,9 +46,15 @@
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0" style="font-size: 18px!important">
               @auth
+                
                 <li class="nav-item">
-                  <a href="" class="nav-link">{{ auth()->user()->fname }} {{ auth()->user()->sname }}</a>
+                  {{-- <img class="rounded-circle" src="{{ $user->profilePhoto->path }}" width="50" height="50" alt="profile_pic"> --}}
+                  <a href="" class="nav-link bg-custom1 d-none d-lg-block">
+                    <span class="text-center py-2"><i class="material-icons">notifications_active</i></span>
+                    {{ mb_substr(auth()->user()->fname, 0, 1) }}{{ mb_substr(auth()->user()->sname, 0, 1) }}
+                  </a>
                 </li>
+                
                 <li class="nav-item">
                   <form action="{{ route('logout') }}" method="POST">
                     @csrf
@@ -60,6 +66,26 @@
               @endauth
               
               @guest
+                {{-- <li class="dropdown dropdown-notifications nav-item">
+                  <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
+                    <i data-count="0" class="material-icons notification-icon">notifications</i>
+                  </a>
+          
+                  <div class="dropdown-container">
+                  <div class="dropdown-toolbar">
+                    <div class="dropdown-toolbar-actions">
+                    <a href="#">Mark all as read</a>
+                    </div>
+                    <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">0</span>)</h3>
+                  </div>
+                  <ul class="dropdown-menu">
+                  </ul>
+                  <div class="dropdown-footer text-center">
+                    <a href="#">View All</a>
+                  </div>
+                  </div>
+                </li> --}}
+
                 <li class="nav-item">
                   <a href="{{ route('register') }}" class="nav-link {{ (request()->is('register')) ? 'active' : '' }}">Register</a>
                 </li>

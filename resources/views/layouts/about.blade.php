@@ -177,7 +177,7 @@
     </div>
 
 <!-- Social Activities Section -->
-    <div class="container-fluid my-3" id="social">
+    <div class="container my-3" id="social">
         <h2 class="text-center">Social Activities</h2>
         <div class="bg-custom1 w-25 mx-auto d-none d-lg-block py-1 px-0"></div>
         <div class="row mt-3">
@@ -310,45 +310,101 @@
     <div class="container mt-4" id="currentLeadership">
         <h4 class="ml-4 mt-3">Executive Committee</h4>
         <div class="row">
-            <div class="col">
-                <img class="rounded-circle" src="img/augustine/avatar-female.png" alt="leader1">
-            </div>
-            <div class="col">
-                <img class="rounded-circle" src="img/augustine/avatar.png" alt="leader1">
-            </div>
-            <div class="col">
-                <div class="center-leader">
-                    <img class="rounded-circle" src="img/augustine/avatar.png" alt="leader1">
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/about_photos/eun.jpg" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">Eunice Crispin Kazimili</p>
+                        <p class="pg">Treasurer</p>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <img class="rounded-circle" src="img/augustine/avatar.png" alt="leader1">
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/about_photos/chair2.png" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">Maria Peter</p>
+                        <p class="pg">Vice Chairman</p>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                <img class="rounded-circle" src="img/augustine/avatar-female.png" alt="leader1">
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/about_photos/chair.png" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">Sitta Majesy</p>
+                        <p class="pg">Chairman</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/about_photos/secretary.jpg" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">Laurent Luziga</p>
+                        <p class="pg">Secretary</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/about_photos/secretary2.jpg" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">William Richard Kidala</p>
+                        <p class="pg">Vice Secretary</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="container mt-4">
-        <h4 class="ml-4 mt-3">Technical Committee</h4>
+        <h4 class="ml-4 mt-3">Music & Technical Committee</h4>
         <div class="row">
-            <div class="col">
-                <img class="rounded-circle" src="img/augustine/avatar-female.png" alt="leader1">
-            </div>
-            <div class="col">
-                <img class="rounded-circle" src="img/augustine/avatar.png" alt="leader1">
-            </div>
-            <div class="col">
-                <div class="center-leader">
-                    <img class="rounded-circle" src="img/augustine/avatar.png" alt="leader1">
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/about_photos/msabila.png" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">David Msabila</p>
+                        <p class="pg">Music Director</p>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <img class="rounded-circle" src="img/augustine/avatar.png" alt="leader1">
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/about_photos/pat.jpg" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">Patrick Robert Mamsery</p>
+                        <p class="pg">Chief Organist</p>
+                    </div>
+                </div>
             </div>
-            <div class="col">
-                <img class="rounded-circle" src="img/augustine/avatar-female.png" alt="leader1">
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/about_photos/john.png" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">John Michael Ng'hwaya</p>
+                        <p class="pg">Chief Music Director</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/about_photos/patiu.jpg" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">Lazaro Patiu</p>
+                        <p class="pg">Organist</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm mb-3">
+                <div class="desc-leader">
+                    <img class="rounded-circle" width="50" height="200" style="object-fit: cover;" src="img/augustine/avatar-female.png" alt="leader1">
+                    <div class="overlay">
+                        <p class="pg">William Richard Kidala</p>
+                        <p class="pg">Vice Secretary</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -19,9 +19,25 @@
                             </a>
                         </div>
                     </div>
-                    <label for="Name">Name: </label> {{ $user->fname }} {{ $user->sname }} <br>
+                    {{-- <label for="Name">Name: </label> {{ $user->fname }} {{ $user->sname }} <br>
                     <label for="Voice">Voice: </label> {{ $user->voice }} <br>
-                    <label for="Gender">Gender: </label> {{ $user->gender }}
+                    <label for="Gender">Gender: </label> {{ $user->gender }} --}}
+                    <table class="table table-borderless table-sm">
+                        <tbody>
+                            <tr>
+                                <td>Name: </td>
+                                <td>{{ $user->fname }} {{ $user->sname }}</td>
+                            </tr>
+                            <tr>
+                                <td>Voice: </td>
+                                <td>{{ ucfirst($user->voice) }}</td>
+                            </tr>
+                            <tr>
+                                <td>Gender: </td>
+                                <td>{{ ucfirst($user->gender) }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 
             </div>
@@ -58,10 +74,11 @@
                         @endif
 
                     @elseif ($user->profilePhoto)
+                    {{-- {{ dd($user->profilePhoto->path) }} --}}
                     <div class="profile_img">
                         <img class="user_img" src="{{ $user->profilePhoto->path }}" alt="user_profile">
                         <div class="overlay">
-                            <a class="btn btn-default btn-circle" data-title="Add Photo" data-toggle="modal" data-target="#addProfilePhoto">
+                            <a class="btn btn-default btn-circle edit-profile-photo" data-title="Add Photo" data-toggle="modal" data-target="#editProfilePhoto" data-photo_id="{{ $user->profilePhoto->id }}" data-user_id="{{ $user->id }}">
                                 <i class='bx bxs-image-add'></i>
                             </a>
                         </div>
@@ -106,6 +123,43 @@
                                     <input type="file" id="img-input" class="custom-file-input" name="profile_photo" required>
                                     <label for="img-input" class="custom-file-label">Choose photo...</label>
                                 </div>
+                    
+                                {{ csrf_field() }}
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-custom">Add photo</button>
+                                </div>
+                            </form>
+                            </div>
+                    
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Edit Profile Photo Modal -->
+                    <div class="modal fade" id="editProfilePhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">Change Profile Photo</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                            <form id="photos-form" method="POST" enctype="multipart/form-data" action="editProfilePhoto">
+                    
+                                <div class="form-group form-elements form-group-custom label-floating co-md-12">
+                                <label for="name" class="control-label">Uploaded by</label>
+                                <input type="text" class="form-control form-custom" id="name" name="name"
+                                    value="{{ auth()->user()->fname }} {{ auth()->user()->sname }}" disabled required>
+                                </div>
+
+                                <div class="custom-file text-center" id="root">
+                                    <input type="file" id="img-input" class="custom-file-input" name="profile_photo" required>
+                                    <label for="img-input" class="custom-file-label">Choose photo...</label>
+                                </div>
+                                <input type="hidden" class="form-control form-custom" id="user_profile" name="user_id">
+                                <input type="hidden" class="form-control form-custom" id="profile-photo-edit" name="profile_photo_id">
                     
                                 {{ csrf_field() }}
                                 <div class="modal-footer">
@@ -177,8 +231,8 @@
             <div class="modal-footer">
             <form method="POST" enctype="multipart/form-data" action="{{ route('deletePhoto') }}">
                 {{ csrf_field() }}
-                <input type="hidden" class="form-control form-custom" id="user_id" name="user_id">
-                <input type="hidden" class="form-control form-custom" id="photo-delete" name="photo_id">
+                {{-- <input type="hidden" class="form-control form-custom" id="user_id" name="user_id">
+                <input type="hidden" class="form-control form-custom" id="photo-delete" name="photo_id"> --}}
 
                 <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                 <button type="submit" class="btn btn-custom">Delete</button>
@@ -223,6 +277,15 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+    $(document).ready(function () {
+        $('.edit-profile-photo').click(function(){
+            // alert($(this).data('photo_id'));
+            // alert($(this).data('user_id'));
+            $('#profile-photo-edit').val($(this).data('photo_id'));
+            $('#user_profile').val($(this).data('user_id'));
+        });
+    });
+
     $(document).ready(function () {
         $('.delete-photo').click(function(){
             // alert($(this).data('photo_id'));

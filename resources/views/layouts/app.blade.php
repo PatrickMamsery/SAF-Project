@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/propeller.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/packages/snackbar/dist/snackbar.min.js"></script>
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 
     <title>St. Augustine Family</title>
 </head>

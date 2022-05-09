@@ -60,6 +60,7 @@ class UserController extends Controller
         //create user or check presence to update
             $user_id = auth()->user()->id;
             $member = User::find($user_id);
+            $member->mname = $request->mname;
             $member->joindate = $request->joindate;
             $member->entrydate = $request->entrydate;
             $member->citizenship = $request->citizenship ? $request->citizenship : 'Tanzanian';

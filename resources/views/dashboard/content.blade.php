@@ -13,7 +13,7 @@
             <div class="mb-2 d-flex justify-content-between align-items-center">
                 <div class="position-relative"> 
                     {{-- <span class="position-absolute search"><i class="fa fa-search"></i></span>  --}}
-                    <input class="form-control w-100" placeholder="Search by order#, name..."> 
+                    <input class="form-control w-100" placeholder="Search by name..."> 
                 </div>
                 <div class="px-2"> <span>Filters <i class="fa fa-angle-down"></i></span> <i class="fa fa-ellipsis-h ms-3"></i> </div>
             </div>
@@ -40,10 +40,13 @@
                             <td>{{ $i++ }}</td>
                             <td>1 Oct, 21</td>
                             <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">Paid</span></td>
-                            <td><img src="{{ $user->profilePhoto != NULL ? $user->profilePhoto->path : 'img/profile_photos/avatar.png' }}" width="25"> {{ $user->fname }} {{ $user->sname }}</td>
+                            <td><img class="rounded-circle" src="{{ $user->profilePhoto != NULL ? $user->profilePhoto->path : 'img/profile_photos/avatar.png' }}" width="25" height="25" style="object-fit: cover; border-radius: 50%"> {{ $user->fname }} {{ $user->sname }}</td>
                             <td>{{ $user->userRole->title }}</td>
-                            <td class="text-end"><span class="fw-bolder">$0.99</span> </td>
-                            <td></i></td>
+                            <td class="text-end"><span class="fw-bolder">$0.19</span> </td>
+                            <td>
+                                <span><i class="bx bxs-trash-alt"></i></span>
+                                <span><i class="bx bxs-edit"></i></span>
+                            </td>
                         </tr>
                         @endforeach
                         
@@ -56,33 +59,6 @@
                             <td>Altroz furry</td>
                             <td class="text-end"><span class="fw-bolder">$0.19</span> <i class="fa fa-ellipsis-h ms-2"></i></td>
                         </tr>
-                        <tr>
-                            <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                            <td>17</td>
-                            <td>1 Nov, 21</td>
-                            <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">Paid</span></td>
-                            <td><img src="https://i.imgur.com/VKOeFyS.png" width="25"> Althan Travis</td>
-                            <td>Apple Macbook air</td>
-                            <td class="text-end"><span class="fw-bolder">$1.99</span> <i class="fa fa-ellipsis-h ms-2"></i></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                            <td>90</td>
-                            <td>19 Oct, 21</td>
-                            <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">Paid</span></td>
-                            <td><img src="https://i.imgur.com/VKOeFyS.png" width="25"> Travis head</td>
-                            <td>Apple Macbook Pro</td>
-                            <td class="text-end"><span class="fw-bolder">$9.99</span> <i class="fa fa-ellipsis-h ms-2"></i></td>
-                        </tr>
-                        <tr>
-                            <th scope="row"><input class="form-check-input" type="checkbox"></th>
-                            <td>12</td>
-                            <td>1 Oct, 21</td>
-                            <td><i class="fa fa-check-circle-o green"></i><span class="ms-1">Paid</span></td>
-                            <td><img src="https://i.imgur.com/nmnmfGv.png" width="25"> Althan Travis</td>
-                            <td>Wirecard for figma</td>
-                            <td class="text-end"><span class="fw-bolder">$0.99</span> <i class="fa fa-ellipsis-h ms-2"></i></td>
-                        </tr> --}}
                     </tbody>
                 </table>
             </div>
@@ -130,7 +106,7 @@
 
 <!-- Update Photo post modal -->
 <div class="modal fade" id="viewPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
         <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel">Photo</h4>

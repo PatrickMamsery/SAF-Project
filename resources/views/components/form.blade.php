@@ -91,34 +91,34 @@
                 <input type="text" name="name" class="form-control" value="{{ $user->fname }} {{ $user->sname }}">
               </div>
               <div class="col-md-6">
-                <label for="exampleFormControlInput1" class="form-label">Joined in Year</label>
-                <input type="date" class="form-control" name="joindate"  >
+                <label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+                <input type="text" class="form-control" name="mname">
               </div>
             </div>
             <div class="row">
+              <div class="col-md-6">
+                <label for="exampleFormControlInput1" class="form-label">Joined in Year</label>
+                <input type="date" class="form-control" name="joindate">
+              </div>
               <div class="col-md-6">
                 <label for="exampleFormControlInput1" class="form-label">Date of Entry</label>
                 <input type="date" class="form-control" name="entrydate"  >
               </div>
+            </div>
+            <div class="row">
               <div class="col-md-6">
                 <label for="exampleFormControlInput1" class="form-label">Citizenship</label>
                 <input type="text" class="form-control" name="citizenship"  >
               </div>
-            </div>
-            <div class="row">
               <div class="col-md-6">
                 <label for="exampleFormControlInput1" class="form-label">Email Address</label>
                 <input type="email" class="form-control" name="email" value="{{ $user->email }}" >
               </div>
-              <div class="col-md-6">
-                <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
-                <input type="phone" class="form-control" name="phone" value="{{ $user->phone }}" >
-              </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <label for="exampleFormControlInput1" class="form-label">Designation</label>
-                <input type="text" class="form-control" name="designation"  disabled>
+                <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
+                <input type="phone" class="form-control" name="phone" value="{{ $user->phone }}" >
               </div>
               <div class="col-md-6">
                 <label for="exampleFormControlInput1" class="form-label">Work Address</label>

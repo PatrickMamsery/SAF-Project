@@ -2,6 +2,7 @@
 
 @section('styles-links')
 <link rel="stylesheet" href="/css/gallery.css">
+<link rel="stylesheet" href="/css/bootstrap-notifications.min.css">
 @endsection
 
 @section('content')
@@ -19,7 +20,7 @@
         {{-- Carousel Content --}}
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
+                <img src="img/carousel/carousel3.jpg" alt="Carousel Image" class="w-100">
                 <div class="carousel-caption1">
 					<div class="container">
 						<div class="row justify-content-center">
@@ -34,19 +35,19 @@
             </div>
 
             <div class="carousel-item">
-                <img src="img/carousel/img8.jpg" alt="Carousel Image" class="w-100">
+                <img src="img/carousel/new/img1.jpg" alt="Carousel Image" class="w-100">
             </div>
 
             <div class="carousel-item">
-                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
+                <img src="img/carousel/new/img2.jpg" alt="Carousel Image" class="w-100">
             </div>
 
             <div class="carousel-item">
-                <img src="img/carousel/img8.jpg" alt="Carousel Image" class="w-100">
+                <img src="img/carousel/new/img3.jpg" alt="Carousel Image" class="w-100">
             </div>
 
             <div class="carousel-item">
-                <img src="img/carousel/img7.jpg" alt="Carousel Image" class="w-100">
+                <img src="img/carousel/new/img4.jpg" alt="Carousel Image" class="w-100">
             </div>
         </div>
         {{-- End Carousel Content --}}
@@ -99,7 +100,7 @@
                     <img src="/img/img53.jpg" alt="">
                 </div>
                 <div class="work-caption">
-                    <h4>Album 1</h4>
+                    <h4>Namtegemea Mungu</h4>
                     <a href="">Find out more</a>
                 </div>
             </div>
@@ -108,7 +109,7 @@
                     <img src="/img/img53.jpg" alt="">
                 </div>
                 <div class="work-caption">
-                    <h4>Icheli</h4>
+                    <h4>Icheli Narrano</h4>
                     <a href="">Find out more</a>
                 </div>
             </div>
@@ -126,7 +127,7 @@
                     <img src="/img/img53.jpg" alt="">
                 </div>
                 <div class="work-caption">
-                    <h4>Album 4</h4>
+                    <h4>Nami Nimezitumainia Fadhili Zake</h4>
                     <a href="">Find out more</a>
                 </div>
             </div>
@@ -191,14 +192,14 @@
                </div>
            </div>
 
-           <h4>Videos</h4>
+           {{-- <h4>Videos</h4>
            <div class="row mt-3">
                <div class="col-md-2 mb-3">
                 <div class="rounded-circle img">
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
                         <div class="content">
-                            <i class="far fa-play-circle"></i>
+                            <i class="material-icons">play_circle_outline</i>
                         </div>
                     </div>
                 </div>
@@ -208,7 +209,7 @@
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
                         <div class="content">
-                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                            <i class="material-icons">play_circle_outline</i>
                         </div>
                     </div>
                 </div>
@@ -218,7 +219,7 @@
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
                         <div class="content">
-                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                            <i class="material-icons">play_circle_outline</i>
                         </div>
                     </div>
                 </div>
@@ -228,7 +229,7 @@
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
                         <div class="content">
-                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                            <i class="material-icons">play_circle_outline</i>
                         </div>
                     </div>
                 </div>
@@ -238,7 +239,7 @@
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
                         <div class="content">
-                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                            <i class="material-icons">play_circle_outline</i>
                         </div>
                     </div>
                 </div>
@@ -248,14 +249,14 @@
                     <img src="/img/img55.jpg" class="rounded" alt="">
                     <div class="overlay">
                         <div class="content">
-                            <img src="/icons/play-button.svg" style="width: 50px; color: #fff;" alt="">
+                            <i class="material-icons">play_circle_outline</i>
                         </div>
                     </div>
                 </div>
                </div>
            </div>
        </div>
-   </div>
+   </div> --}}
 
    <div class="container">
        <h2 class="text-center">Upcoming Events</h2>
@@ -281,4 +282,59 @@
    <div class="" style="margin-bottom: 100px">
 
    </div>
+@endsection
+
+@section('javascript')
+<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+<script type="text/javascript">
+    var notificationsWrapper   = $('.dropdown-notifications');
+    var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
+    var notificationsCountElem = notificationsToggle.find('i[data-count]');
+    var notificationsCount     = parseInt(notificationsCountElem.data('count'));
+    var notifications          = notificationsWrapper.find('ul.dropdown-menu');
+
+    if (notificationsCount <= 0) {
+      notificationsWrapper.hide();
+    }
+
+    // Enable pusher logging - don't include this in production
+    // Pusher.logToConsole = true;
+
+    var pusher = new Pusher('9ec98ba9455e0f69e474', {
+      encrypted: true
+    });
+
+    // Subscribe to the channel we specified in our Laravel Event
+    var channel = pusher.subscribe('new-registered-member');
+
+    // Bind a function to a Event (the full Laravel class)
+    channel.bind('App\\Events\\NewRegisteredMember', function(data) {
+      var existingNotifications = notifications.html();
+      var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
+      var newNotificationHtml = `
+        <li class="notification active">
+            <div class="media">
+              <div class="media-left">
+                <div class="media-object">
+                  <img src="https://api.adorable.io/avatars/71/`+avatar+`.png" class="img-circle" alt="50x50" style="width: 50px; height: 50px;">
+                </div>
+              </div>
+              <div class="media-body">
+                <strong class="notification-title">`+data.message+`</strong>
+                <!--p class="notification-desc">Extra description can go here</p-->
+                <div class="notification-meta">
+                  <small class="timestamp">about a minute ago</small>
+                </div>
+              </div>
+            </div>
+        </li>
+      `;
+      notifications.html(newNotificationHtml + existingNotifications);
+
+      notificationsCount += 1;
+      notificationsCountElem.attr('data-count', notificationsCount);
+      notificationsWrapper.find('.notif-count').text(notificationsCount);
+      notificationsWrapper.show();
+    });
+  </script>
 @endsection

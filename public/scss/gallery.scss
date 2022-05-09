@@ -31,29 +31,40 @@ img {
 }
 
 .content {
-    position: absolute;
-    background: rgba(0, 0, 0, .8);
-    color: white;
-    margin-top: 1em;
-
-    .btn-circle {
-        .btn-xs {
+    position: relative;
+    .overlay {
+        position: absolute;
+        // background: rgba(0, 0, 0, .8);
+        color: white;
+        margin-top: 1em;
+        .btn {
             width: 30px!important;
             height: 30px!important;
             padding: 6px 0px!important;
-            border-radius: 15px!important;
+            border-radius: 100%!important;
             font-size: 8px!important;
             text-align: center!important;
+            opacity: 0.8;
+            i {
+                font-size: 18px;
+            }
         }
 
-        .btn-md {
-            width: 50px;
-            height: 50px;
-            padding: 7px 10px;
-            border-radius: 25px;
-            font-size: 10px;
-            text-align: center;
+        .btn-red {
+            color: red;
         }
+
+        .text-custom {
+            color: #EC902E;
+        }
+    }
+
+    .bottom-tile {
+        position: absolute;
+        color: white;
+        bottom: 8px!important;
+        right: 16px!important;
+        background: rgba(0, 0, 0, .8);
     }
 
     h2 {
@@ -61,6 +72,7 @@ img {
         font-size: 1em;
     } 
 }
+
 
 @media(min-width: 768px){
     .container{
@@ -77,14 +89,14 @@ img {
         padding: 0 .5em;
     }
     img {
-        margin-bottom: .8em;
+        margin-bottom: 1em;
     }
 
     .content {
         opacity: 0;
         transform: translateX(-.5em);
         transition: all 2s;
-        will-change: opacity, tranform;
+        will-change: opacity, transform;
     }
 
     .grid-item:hover {

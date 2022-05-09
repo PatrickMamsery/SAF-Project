@@ -31,9 +31,15 @@ Route::post('/adminDeletePhoto', [AdminPhotoController::class, 'deletePhoto'])->
 
 /* User Dashboard routes */
 Route::post('/deletePhoto', [PhotoController::class, 'deletePhoto'])->name('deletePhoto');
+Route::post('/addProfilePhoto', [ProfilePhotosController::class, 'addProfilePhoto']);
+Route::post('/editProfilePhoto', [ProfilePhotosController::class, 'editProfilePhoto']);
 
 Route::get('/gallery', [GalleryController::class, 'getPhotos'])->name('gallery');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
+
+/* Photo attributes : Likes, Comments, Views */
+Route::post('/user/addLike', [PhotoController::class, 'addLike']);
+Route::post('/user/addComment', [PhotoController::class, 'addComment'])->name('addComment');
 
 /* Membership form routes */
 Route::get('/membership_form', [UserController::class, 'index'])->name('membership_form');
@@ -51,8 +57,14 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 /* Add Photo Posts routes */
 Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
-Route::post('/addProfilePhoto', [ProfilePhotosController::class, 'addProfilePhoto']);
+
 
 Route::get('/', function () {
+    // $user = App\Models\User::with('profilePhoto')->find(auth()->user()->id);
     return view('index');
+});
+
+Route::get('test', function () {
+	event(new App\Events\NewRegisteredMember('Patrick'));
+	return "Event has been sent!";
 });

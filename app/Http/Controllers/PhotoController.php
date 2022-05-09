@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Photo;
+use App\Models\Like;
+use App\Models\View;
 use App\Models\Upload;
 use App\Models\Comment;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -21,7 +23,7 @@ class PhotoController extends Controller
         // validate the incoming request 
         $validator = Validator::make($request->all(), [
             'photo' => 'required|file',
-            'photo.*' => 'mimes:jpeg,image/jpeg,jpg,png,gif,csv,txt,pdf'            
+            'photo.*' => 'mimes:jpeg,image/jpeg,jpg,png,gif,csv,txt,pdf,svg'            
         ]);
 
         if ($validator->fails()) return redirect()->back()->with('msg', 'Invalid data submitted');
@@ -70,11 +72,41 @@ class PhotoController extends Controller
             }
 
             if ($photo->delete()) {
-                Cloudinary::destroy($photo->path);
+                $public_id = preg_match("/upload\/(?:v\d+\/)?([^\.]+)/", $photo->path, $matches);
+                // dd($matches);
+                Cloudinary::destroy($matches[1]);
                 return redirect()->back()->with('msg', 'Photo deleted successfully');
             } else return redirect()->back()->with('msg', 'Failed to delete photo');
         } else return redirect()->back()->with('msg', 'Photo not found');
     }
+
+    public function addLike(Request $request)
+    {
+        // dd($request);
+        $like = new Like;
+        $like->date = Carbon\Carbon::now();
+        $like->user_id = $request->user_id;
+        $like->photo_id = $request->photo_id;
+        
+        if($like->save()) {
+            return redirect()->back();
+        }
+    }
+
+    public function addComment(Request $request)
+    {
+        // dd($request);
+        $comment = new Comment;
+        $comment->date = Carbon\Carbon::now();
+        $comment->user_id = $request->user_id;
+        $comment->photo_id = $request->photo_id;
+        $comment->body = $request->comment;
+        
+        if($comment->save()) {
+            return redirect()->back();
+        }
+    }
+
 
     // Helper functions
     public function uploadPhoto($user_id, $photo, $request)
