@@ -24,21 +24,19 @@ class CreatePhotosTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
-            $table->string('posted_on', 45)->nullable();
-            $table->string('link')->nullable();
-            $table->string('path')->nullable();
-            $table->string('caption', 2000)->nullable();
+            $table->string('posted_on', 45)->nullable()->default(null);
+            $table->string('link')->nullable()->default(null);
+            $table->string('path')->nullable()->default(null);
+            $table->string('caption')->nullable()->default(null);
 
             $table->index(["user_id"], 'fk_photos_users1_idx');
-
             $table->nullableTimestamps();
 
 
             $table->foreign('user_id', 'fk_photos_users1_idx')
                 ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
-                
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 

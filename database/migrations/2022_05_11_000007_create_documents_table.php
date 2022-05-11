@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfilePhotosTable extends Migration
+class CreateDocumentsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'profile_photos';
+    public $tableName = 'documents';
 
     /**
      * Run the migrations.
-     * @table profile_photos
+     * @table documents
      *
      * @return void
      */
@@ -23,17 +23,10 @@ class CreateProfilePhotosTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('path', 255)->nullable();
-            $table->unsignedBigInteger('user_id');
-
-            $table->index(["user_id"], 'fk_profile_photos_users1_idx');
+            $table->string('name');
+            $table->string('path');
+            $table->enum('owner', ['saf', 'member', 'other']);
             $table->nullableTimestamps();
-
-
-            $table->foreign('user_id', 'fk_profile_photos_users1_idx')
-                ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
         });
     }
 

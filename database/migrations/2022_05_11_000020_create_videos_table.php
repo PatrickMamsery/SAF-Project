@@ -23,11 +23,11 @@ class CreateVideosTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('posted_on', 45)->nullable();
+            $table->string('posted_on', 45)->nullable()->default(null);
             $table->unsignedBigInteger('user_id');
-            $table->string('path')->nullable();
-            $table->string('link')->nullable();
-            $table->string('caption', 2000)->nullable();
+            $table->string('path')->nullable()->default(null);
+            $table->string('link')->nullable()->default(null);
+            $table->text('caption')->nullable()->default(null);
             $table->unsignedInteger('comment_id');
 
             $table->index(["user_id"], 'fk_videos_users_idx');
@@ -36,16 +36,15 @@ class CreateVideosTable extends Migration
             $table->nullableTimestamps();
 
 
-            $table->foreign('user_id', 'fk_videos_users_idx')
-                ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
-
-
             $table->foreign('comment_id', 'fk_videos_comments1_idx')
                 ->references('id')->on('comments')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+
+            $table->foreign('user_id', 'fk_videos_users_idx')
+                ->references('id')->on('users')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 

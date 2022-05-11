@@ -23,13 +23,9 @@ class CreateUserRolesTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('title', 45)->nullable();
+            $table->string('title', 45)->nullable()->default(null);
             $table->nullableTimestamps();
         });
-
-        DB::table('user_roles')->insert(['title' => 'root']);
-        DB::table('user_roles')->insert(['title' => 'admin']);
-        DB::table('user_roles')->insert(['title' => 'user']);
     }
 
     /**
