@@ -52,6 +52,10 @@ class CreateUsersTable extends Migration
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
+        
+        DB::table('users')->insert([
+            'fname' => 'Test', 'mname' => NULL, 'sname' => 'User', 'user_role_id' => 1, 'phone' => '0629134542', 'role' => 'admin', 'email' => 'test@example.com', 'password' => bcrypt('123456')
+        ]);
     }
 
     /**

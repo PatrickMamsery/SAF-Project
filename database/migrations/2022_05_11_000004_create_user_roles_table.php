@@ -26,6 +26,10 @@ class CreateUserRolesTable extends Migration
             $table->string('title', 45)->nullable()->default(null);
             $table->nullableTimestamps();
         });
+        
+        DB::table('user_roles')->insert(['title' => 'root']);
+        DB::table('user_roles')->insert(['title' => 'admin']);
+        DB::table('user_roles')->insert(['title' => 'user']);
     }
 
     /**
