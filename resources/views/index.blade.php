@@ -285,7 +285,7 @@
 @endsection
 
 @section('javascript')
-<script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+{{-- <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
 <script type="text/javascript">
     var notificationsWrapper   = $('.dropdown-notifications');
     var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
@@ -336,5 +336,5 @@
       notificationsWrapper.find('.notif-count').text(notificationsCount);
       notificationsWrapper.show();
     });
-  </script>
+  </script> --}}
 @endsection
