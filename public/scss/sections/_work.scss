@@ -1,0 +1,49 @@
+.work-wrapper{
+    background-color: white;
+    .col-md-4{
+            padding: 1.5rem;
+        .body{
+            position: relative;
+            img{
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                margin-bottom: 1.5rem;
+            }
+            .overlay{
+                transition: 1s;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background: rgb(0,0,0);
+                background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%);
+                @include display-flex(flex-end);
+                flex-direction: column;
+                p{
+                    background: #f12711;  /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #f5af19, #EC902E);  /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #f5af19, #EC902E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 0;
+                    color: white;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+        }
+        .body:hover{
+            .overlay{
+                height: 0;
+                transition: 1s;
+                p{
+                    color: black;
+                }
+            }
+        }
+        
+    }
+}

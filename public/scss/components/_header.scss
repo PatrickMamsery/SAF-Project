@@ -1,0 +1,39 @@
+.header{
+    background: white;
+    .navbar{
+        .navbar-brand{
+            img{
+                width: 50px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        .navbar-collapse{
+            flex-grow: 0;
+            ul{
+                li{
+                    margin-left: 3rem;
+                    a{
+                        font-size: 1rem;
+                        font-weight: 400;
+                        color: black;
+                    }
+                    a:hover{
+                        color: color(primary);
+
+                    }
+                }
+                .auth-btn{
+                    width: fit-content;
+                    border: 1px solid color(primary);
+                    border-radius: 8px;
+                    padding:0.3rem 1.5rem;
+                }
+                .auth-btn:hover{
+                    background-color: color(primary);
+                    color: white;
+                }
+            }
+        }
+    }
+}

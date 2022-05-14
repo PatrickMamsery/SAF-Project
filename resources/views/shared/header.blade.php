@@ -9,11 +9,11 @@
 @endpush
 
 <div class="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top py-0">
-        <div class="container-fluid" style="justify-content: space-between!important; flex-direction: row!important;">
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container" >
 
-          <a href="/" class="navbar-brand my-2">
-            <img class="header-img" src="img/logo.png" style="margin-bottom: 0" height="50" width="50" alt="Logo" title="Logo">
+          <a href="/" class="navbar-brand">
+            <img class="header-img" src="img/logo.png" style="margin-bottom: 0"  alt="Logo" title="Logo">
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,31 +66,11 @@
               @endauth
               
               @guest
-                {{-- <li class="dropdown dropdown-notifications nav-item">
-                  <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
-                    <i data-count="0" class="material-icons notification-icon">notifications</i>
-                  </a>
-          
-                  <div class="dropdown-container">
-                  <div class="dropdown-toolbar">
-                    <div class="dropdown-toolbar-actions">
-                    <a href="#">Mark all as read</a>
-                    </div>
-                    <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">0</span>)</h3>
-                  </div>
-                  <ul class="dropdown-menu">
-                  </ul>
-                  <div class="dropdown-footer text-center">
-                    <a href="#">View All</a>
-                  </div>
-                  </div>
-                </li> --}}
-
-                <li class="nav-item">
-                  <a href="{{ route('register') }}" class="nav-link {{ (request()->is('register')) ? 'active' : '' }}">Register</a>
+                <li class="nav-item ">
+                  <a href="{{ route('register') }}" class="nav-link auth-btn {{ (request()->is('register')) ? 'active' : '' }}">Register</a>
                 </li>
-                <li class="nav-item">
-                  <a href="{{ route('login') }}" class="nav-link {{ (request()->is('login')) ? 'active' : '' }}">Login</a>
+                <li class="nav-item ">
+                  <a href="{{ route('login') }}" class="nav-link auth-btn {{ (request()->is('login')) ? 'active' : '' }}">Login</a>
                 </li>
               @endguest
             </ul>

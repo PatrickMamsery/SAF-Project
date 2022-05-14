@@ -1,0 +1,9 @@
+body{
+    @include font-family(base);
+    background: whitesmoke;
+}
+
+img{
+    object-fit: cover;
+    object-position: center;
+}
