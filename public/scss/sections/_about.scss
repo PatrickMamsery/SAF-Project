@@ -42,6 +42,7 @@
            
             p{
                 color: grey;
+                @include font-family(light);
             }
             a{
                 color: color(primary);

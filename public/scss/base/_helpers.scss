@@ -3,8 +3,8 @@
 .mb-section{margin-bottom: 4rem;}
 .pb-section{padding-bottom: 4rem;}
 .section-title{
-    @include font-family(semi-bold);
-    font-size: 2.5rem;
+    @include font-family(semi_bold);
+    font-size: 2rem;
 }
 .section-subtitle{
     margin-top: 0.5rem;

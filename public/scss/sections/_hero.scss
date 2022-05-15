@@ -28,7 +28,7 @@
         .ml1 {
             font-weight: 900;
             font-size: 3.5em;
-            font-family: font_family(bold);
+            @include font_family(extra_bold);
           }
           
           .ml1 .letter {
