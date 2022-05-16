@@ -1,6 +1,6 @@
-@import 'abstracts/variables',
+@import 'abstracts/functions',
         'abstracts/mixins',
-        'abstracts/functions',
+        'abstracts/variables',
         'abstracts/include-media';
 
 @import 'base/typography',
@@ -14,4 +14,5 @@
         'sections/about',
         'sections/work',
         'sections/upcoming',
-        'sections/trending';
+        'sections/trending',
+        'sections/register.scss';

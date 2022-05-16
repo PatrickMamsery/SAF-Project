@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('styles-links')
-<link rel="stylesheet" href="/css/register.css">
-<link rel="stylesheet" href="/css/gallery.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 @endsection
 
 @section('content')
@@ -18,43 +17,36 @@
                     @csrf
                     <div class="row clearfix">
                       <div class="col_half">
-                        <div class="input_field"> <span><i class="material-icons">person</i></span>
+                        <div class="input_field"> <span><i class="bx bxs-user"></i></span>
                           <input type="text" name="fname" placeholder="First Name" />
                         </div>
                       </div>
                       <div class="col_half">
-                        <div class="input_field"> <span><i class="material-icons">person</i></span>
+                        <div class="input_field"> <span><i class="bx bxs-user"></i></span>
                           <input type="text" name="sname" placeholder="Surname" required />
                         </div>
                       </div>
                     </div>
-                    <div class="input_field"> <span><i class="material-icons">email</i></span>
+                    <div class="input_field"> <span><i class="bx bxs-envelope"></i></span>
                       <input type="email" name="email" placeholder="Email" required />
                     </div>
-                    <div class="input_field"> <span><i class="material-icons">phone</i></span>
+                    <div class="input_field"> <span><i class="bx bxs-phone"></i></span>
                       <input type="phone" name="phone" placeholder="Phone Number" required />
                     </div>
-                    <div class="input_field"> <span><i class="material-icons">lock</i></span>
+                    <div class="input_field"> <span><i class="bx bxs-lock-alt"></i></span>
                       <input type="password" name="password" placeholder="Password" required />
                     </div>
-                    <div class="input_field"><span><i class="material-icons">lock</i></span>
+                    <div class="input_field"><span><i class="bx bxs-lock-alt"></i></span>
                       <input type="password" name="password_confirmation" placeholder="Re-type Password" required />
                     </div>
                     
-                          <div class="input_field radio_option">
-                        <input type="radio" name="gender" id="rd1" value="male">
-                        <label for="rd1">Male</label>
-                        <input type="radio" name="gender" id="rd2" value="female">
-                        <label for="rd2">Female</label>
+                        <div class="input_field radio_option">
+                          <input type="radio" name="gender" id="rd1" value="male">
+                          <label for="rd1">Male</label>
+                          <input type="radio" name="gender" id="rd2" value="female">
+                          <label for="rd2">Female</label>
                         </div>
-                        <div class="input_field select_option">
-                          <select>
-                            <option>Select a country</option>
-                            <option>Option 1</option>
-                            <option>Option 2</option>
-                          </select>
-                          <div class="select_arrow"></div>
-                        </div>
+                        
                       <div class="input_field checkbox_option">
                           <input type="checkbox" id="cb1">
                           <label for="cb1">I agree with terms and conditions</label>

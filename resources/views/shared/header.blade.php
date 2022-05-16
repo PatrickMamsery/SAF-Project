@@ -8,6 +8,10 @@
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
 @endpush
 
+@section('styles-links')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+@endsection
+
 <div class="header">
     <nav class="navbar navbar-expand-lg ">
         <div class="container" >
@@ -44,13 +48,12 @@
                 <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="{{ route('about') }}">About</a>
               </li>
             </ul>
-            <ul class="navbar-nav ml-auto mb-2 mb-lg-0" style="font-size: 18px!important">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
               @auth
                 
                 <li class="nav-item">
                   {{-- <img class="rounded-circle" src="{{ $user->profilePhoto->path }}" width="50" height="50" alt="profile_pic"> --}}
-                  <a href="" class="nav-link bg-custom1 d-none d-lg-block">
-                    <span class="text-center py-2"><i class="material-icons">notifications_active</i></span>
+                  <a href="" class="nav-link">
                     {{ mb_substr(auth()->user()->fname, 0, 1) }}{{ mb_substr(auth()->user()->sname, 0, 1) }}
                   </a>
                 </li>
@@ -58,7 +61,7 @@
                 <li class="nav-item">
                   <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <a href="" class="nav-link">
+                    <a href="" class="nav-link auth-btn">
                       <button type="submit" style="all:unset">Logout</button>
                     </a>
                   </form>

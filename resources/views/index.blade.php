@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
-@section('styles-links')
-<link rel="stylesheet" href="/css/gallery.css">
-<link rel="stylesheet" href="/css/bootstrap-notifications.min.css">
-@endsection
+
 
 @section('content')
 

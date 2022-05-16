@@ -93,7 +93,7 @@
                 Snackbar.show({
                     text: '{{ session('msg') }}',
                     pos: 'bottom-center',
-                    actionTextColor: 'green'
+                    actionTextColor: '#EC902E'
                 });
             </script>
         @endif

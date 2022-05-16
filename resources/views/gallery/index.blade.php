@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('styles-links')
+{{-- @section('styles-links')
 <link rel="stylesheet" href="/css/gallery.css">
 <link rel="stylesheet" href="/css/components/comments.css">
-@endsection
+@endsection --}}
 
 @section('content')
     <div class="container">

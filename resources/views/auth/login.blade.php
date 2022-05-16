@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('styles-links')
-<link rel="stylesheet" href="/css/register.css">
-<link rel="stylesheet" href="/css/gallery.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 @endsection
 
 @section('content')
@@ -16,16 +15,16 @@
                 <div class="">
                   <form method="POST" action="{{ route('login') }}">
                     @csrf
-                    <div class="input_field"> <span><i class="material-icons">email</i></span>
+                    <div class="input_field"> <span><i class="bx bxs-envelope"></i></span>
                       <input type="email" name="email" placeholder="Email" required />
                     </div>
-                    <div class="input_field"> <span><i class="material-icons">lock</i></span>
+                    <div class="input_field"> <span><i class="bx bxs-lock-alt"></i></span>
                       <input type="password" name="password" placeholder="Password" required />
                     </div>
                     
                       <div class="input_field checkbox_option">
                           <input type="checkbox" id="cb1">
-                          <label for="cb1">I agree with terms and conditions</label>
+                          <label for="cb1">Remember me</label>
                       </div>
                     <input class="button" type="submit" value="Login" />
                   </form>
