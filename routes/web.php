@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminPhotoController;
+use App\Http\Controllers\Admin\AdminPagesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProfilePhotosController;
@@ -23,8 +23,10 @@ use App\Http\Controllers\ProfilePhotosController;
 */
 
 /* Dashboard routes */
-Route::get('/dash', [HomeController::class, 'indexDash'])->name('dash');
-Route::get('/user_dash', [HomeController::class, 'userDash'])->name('user_dash');
+// Route::get('/dash', [HomeController::class, 'indexDash'])->name('dash');
+// Route::get('/user_dash', [HomeController::class, 'userDash'])->name('user_dash');
+Route::get('/admin/users', [AdminPagesController::class, 'getUsers'])->name('dash'); // Need to change this
+Route::get('/admin/posts', [AdminPagesController::class, 'getPosts'])->name('posts');
 
 /* Administrative dashboard routes */
 Route::post('/adminDeletePhoto', [AdminPhotoController::class, 'deletePhoto'])->name('admin.deletePhoto');
