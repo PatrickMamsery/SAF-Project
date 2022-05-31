@@ -44,6 +44,18 @@ a {
     top: 3rem;
 }
 
+#loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.75) url("/icons/Settings.gif") no-repeat center center;
+    z-index: 99999;
+}
+
 @media screen and (min-width: 768px) {
     .dash__body {
         margin: calc(3rem + 1rem) 0 0 0;

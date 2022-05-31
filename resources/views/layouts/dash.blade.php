@@ -41,6 +41,9 @@
             </script>
         @endif
         @yield('info')
+        <div id="loader">
+            {{-- <img src="/icons/Settings.gif" alt="Loading..."> --}}
+        </div>
     </div>
     <!--Container Main end-->
 
@@ -48,3 +51,12 @@
     
     @yield('third-party-scripts')
     
+    <script>
+        // $(window).ready(function() {
+        //     $('#loader').show();
+        // })
+        $(window).on('load', function () {
+            console.log("Loading...")
+            $('#loader').hide();
+        }) 
+    </script>
