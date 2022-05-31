@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
-    
+    <!-- Packages -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="/css/snackbar.min.css">
     <script src="/packages/snackbar/dist/snackbar.min.js"></script>
     
