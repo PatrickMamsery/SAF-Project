@@ -9,7 +9,7 @@
 
     @include('sections.about.social_activities')
 
-    @include('sections.about.activities')
+    {{-- @include('sections.about.activities') --}}
 
     @include('sections.about.leaders')
 

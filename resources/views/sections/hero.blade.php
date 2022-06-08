@@ -1,5 +1,5 @@
    <div class="hero-wrapper">
-        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000"> 
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel"> 
          <div class="carousel-inner">
              <div class="carousel-item active">
                  <img src="img/carousel/carousel3.jpg" alt="Carousel Image" class="w-100">

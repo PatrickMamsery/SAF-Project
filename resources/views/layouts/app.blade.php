@@ -40,7 +40,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="/packages/propeller/propeller.min.js"></script>
+    {{-- <script src="/packages/propeller/propeller.min.js"></script> --}}
     <script src="/bootstrap/js/bootstrap.min.js"></script>
 
     @yield('javascript')
