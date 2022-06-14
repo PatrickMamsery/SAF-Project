@@ -69,7 +69,7 @@
                         items:2
                         },
                     600:{
-                        items:5
+                        items:4
                         }
                     }
                     

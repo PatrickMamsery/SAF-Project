@@ -1,0 +1,119 @@
+.gallery {
+    width: 95%;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+    
+   /* with flexbox */
+    .grid {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        gap: .5rem;
+    }
+    
+    .grid-col {
+        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+    }
+
+    .grid-item {
+        .content {
+            margin: .3rem auto;
+            position: relative;
+
+            .overlay {
+                position: absolute;
+                color: white;
+                .btn {
+                    width: 30px!important;
+                    height: 30px!important;
+                    padding: 6px 0px!important;
+                    border-radius: 100%!important;
+                    font-size: 8px!important;
+                    text-align: center!important;
+                    opacity: 0.8;
+                    i {
+                        font-size: 18px;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    
+    /* 2 columns by default, hide columns 2 & 3 */
+    .grid-col--2, .grid-col--3 { display: none }
+
+    
+    /* 3 columns at medium size */
+    @media ( min-width: 768px ) {
+        .grid-col--2 { display: block; } /* show column 2 */
+
+        .overlay {
+            opacity: 0;
+            transform: translateX(-.5em);
+            transition: all 2s;
+            will-change: opacity, transform;
+        }
+    
+        .grid-item:hover {
+            cursor: pointer;
+    
+            .overlay {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+    
+    /* 4 columns at large size */
+    @media ( min-width: 1080px ) {
+        .grid-col--3 { display: block; } /* show column 3 */
+    }
+}
+
+.gallery-ext {
+    .btn-custom {
+        background: color(primary);
+    }
+    .btn-custom:hover {
+        background: color(secondary);
+        color: white;
+    }
+
+    .show {
+        width: 100%!important;
+        display: none;
+    }
+
+    .custom-file {
+        .custom-file-input {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .custom-file-input + label {
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            padding: 10px;
+            margin: .5rem auto;
+            border-radius: 5px;
+            background: #ccc;
+            display: inline-block;
+            cursor: pointer;
+        }
+    }
+}
