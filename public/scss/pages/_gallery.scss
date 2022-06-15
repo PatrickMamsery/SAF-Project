@@ -80,6 +80,12 @@
     }
 }
 
+@media screen and (min-width: 768px){
+    .show {
+         width: 100% !important; 
+    }
+}
+
 .gallery-ext {
     .btn-custom {
         background: color(primary);
@@ -88,11 +94,9 @@
         background: color(secondary);
         color: white;
     }
-
-    .show {
-        width: 100%!important;
-        display: none;
-    }
+    
+    
+    
 
     .custom-file {
         .custom-file-input {
