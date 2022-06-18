@@ -19,7 +19,7 @@
                 <div class="grid-item">
                     <div class="content">
                         <div class="overlay">
-                            <a role="button" class="btn btn-dark btn-circle view-photo" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-bs-photo_id="{{ $photo->id }}" data-bs-user_id="{{ $photo->user_id }}" data-bs-photo_path="{{ $photo->path }}">
+                            <a role="button" class="btn btn-dark btn-circle view-photo" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_id="{{ $photo->id }}" data-user_id="{{ $photo->user_id }}" data-photo_path="{{ $photo->path }}">
                                 <i class="material-icons">visibility</i>
                             </a>
                             <form action="/user/addLike" method="POST">
@@ -32,7 +32,7 @@
                                     <i class="material-icons {{ $photo->likes->count() != 0 ? "text-danger" : ""  }}">favorite_border</i>
                                 </button>
                             </form>
-                            <a href="" class="btn btn-dark btn-circle add-comment" data-bs-title="Add Comment" data-bs-toggle="modal" data-bs-target="#addComment" data-bs-photo_id="{{ $photo->id }}" data-bs-photo_path="{{ $photo->path }}">
+                            <a href="" class="btn btn-dark btn-circle add-comment" data-bs-title="Add Comment" data-bs-toggle="modal" data-bs-target="#addComment" data-photo_id="{{ $photo->id }}" data-photo_path="{{ $photo->path }}">
                                 <i class="material-icons {{ $photo->comments->count() != 0 ? "text-custom" : ""  }}">chat_bubble_outline</i>
                             </a>
                         </div>
@@ -123,6 +123,85 @@
                 </div>
             </div>
         @endauth
+
+        <!-- View Photo modal -->
+        <div class="modal fade" id="viewPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Photo</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="photo-view" src="" alt="photo" style="width: 100%">
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-center">Photo Details</h6>
+                            <table class="table table-borderless table-sm">
+                                <tbody>
+                                    <tr>
+                                        <td>Posted By: </td>
+                                        <td>{{ $photo->user_id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Posted On: </td>
+                                        <td>{{ $photo->created_at->toDateTimeString() }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Likes: </td>
+                                        <td>{{ $photo->likes->count() }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Views: </td>
+                                        <td>{{ $photo->views->count() }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="mt-4">
+                                <h3 class="text-center">Comments</h3>
+                                @if ($photo->comments->count() < 1)
+                                    <p>No comments posted</p>
+                                @elseif ($photo->comments->count() != 0)
+                                    @foreach ($photo->comments as $comment)
+                                        <div class="card">
+                                            <div class="card-header">
+                                                {{ $comment->user_id }}
+                                            </div>
+                                            <div class="card-body">
+                                                {{ $comment->body }}
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
+                                <form method="POST" enctype="multipart/form-data" action="{{ route('addComment') }}">
+                                    {{ csrf_field() }}
+                                    <div class="form-group form-elements form-group-custom label-floating co-md-12">
+                                        <label for="caption" class="control-label">Comments</label>
+                                        <input type="text" class="form-control form-custom" id="comment" name="comment" value="" placeholder="Add any comment... civility is advised">
+                                    </div>
+                                    <input type="hidden" class="form-control form-custom" id="user_id" name="user_id">
+                                    <input type="hidden" class="form-control form-custom" id="photo-comment" name="photo_id">
+                    
+                                    <button type="submit" class="btn btn-custom">Post Comment</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                    <form method="POST" enctype="multipart/form-data" action="">
+                        {{ csrf_field() }}
+                        <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Done</button>
+                    </form>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
 
@@ -130,7 +209,7 @@
 
 {{-- <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 <script src="/js/animations.js" type="text/javascript"></script> --}}
-<script src="/packages/propeller/propeller.min.js"></script>
+{{-- <script src="/packages/propeller/propeller.min.js"></script> --}}
 <script src="https://unpkg.com/colcade@0/colcade.js"></script>
 <script src="js/photo_resize.js"></script>
 

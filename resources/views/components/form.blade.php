@@ -1,10 +1,10 @@
-<div class="wizard-form">
+<div class="wizard-form membership-form">
     @if(Session::has('message'))
         <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
     @endif
 
     @if (Session::get('message') === 'Your form is submitted successfully!')
-      <div class="container my-4">
+      <div class="container">
         <div class="border border-dark rounded p-2">
           <p class="text-center">Thanks for filling in your details.</p>
           <div class="text-center">
@@ -30,7 +30,7 @@
           <h2 class="text-green alt-header-title">Membership Application</h2>
           <p>Please fill in the application form. It will take a couple of minutes. </p>
           <div class="disclaimer">
-              <img src="/icons/lock.svg" width="20px" alt="" style="width: fit-content;">
+              <img src="/icons/lock.svg" alt="">
               <div>
               We take privacy issues seriously. You can be sure that your personal data is securely protected.
 

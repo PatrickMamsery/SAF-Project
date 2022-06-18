@@ -18,6 +18,7 @@ class AdminPhotoController extends Controller
 {
     public function deletePhoto(Request $request)
     {
+        // dd($request->photo_id);
         if ($photo = Photo::with('comments', 'likes', 'views', 'tags')->find($request->photo_id)) {
             foreach ($photo->likes as $like) {
                 $like->delete();

@@ -20,6 +20,8 @@
         'sections/socialactivities',
         'sections/technical',
         'sections/register.scss',
-        'sections/dash';
+        'sections/dash',
+        'sections/user-profile';
 
-@import 'pages/gallery';
+@import 'pages/gallery',
+        'pages/membership-form';

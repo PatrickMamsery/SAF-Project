@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/css/snackbar.min.css">
 
     <script src="/packages/snackbar/dist/snackbar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
 </head>
 <body id="body-pd" class="dash__body">
     <header class="dash__header" id="header">
@@ -50,6 +52,9 @@
     <script src="/js/dash.js"></script>
     
     @yield('third-party-scripts')
+
+    <script src="{{ asset('js/multipleSelect.js') }}"></script>
+    <script src="{{ asset('js/multipleUsersSelect.js') }}"></script>
     
     <script>
         // $(window).ready(function() {
@@ -58,5 +63,11 @@
         $(window).on('load', function () {
             console.log("Loading...")
             $('#loader').hide();
-        }) 
+        });
+        
+        $(document).ready(function () {
+            $('.delete-photo').click(function(){
+                $('#photo-delete').val($(this).data('photo_id'));
+            });
+        });
     </script>

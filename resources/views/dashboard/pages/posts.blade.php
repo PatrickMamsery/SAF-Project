@@ -15,7 +15,7 @@
     <script>
         $(document).ready(function () {
             $('.delete-photo').click(function(){
-                $('#photo-delete').val($(this).data('photo_id'));
+                $('#admin-delete').val($(this).data('photo_id'));
             });
         });
 

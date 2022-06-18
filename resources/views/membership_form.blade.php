@@ -1,11 +1,13 @@
 @extends('layouts.app')
+
 @section('styles-links')
-<link rel="stylesheet" href="/css/form.css">
-<link rel="stylesheet" href="/css/gallery.css">
+
 @endsection
+
 @section('template')
     @include('components.form')
 @endsection
+
 @section('javascript')
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>

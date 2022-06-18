@@ -5,7 +5,7 @@
                     <table class="table table-responsive table-borderless">
                         <thead>
                             <tr class="bg-light">
-                                <th scope="col" width="5%"><input class="form-check-input" type="checkbox"></th>
+                                <th scope="col" width="5%"><input id="check_all" class="form-check-input" type="checkbox"></th>
                                 <th scope="col" width="5%">#</th>
                                 <th scope="col" width="5%">Preview</th>
                                 <th scope="col" width="25%">Caption</th>
@@ -20,7 +20,7 @@
             
                             @foreach ($photos as $photo)
                             <tr>
-                                <th scope="row"><input class="form-check-input" type="checkbox"></th>
+                                <th scope="row"><input class="form-check-input" type="checkbox" name="photo[]" value="{{ $photo->id }}"></th>
                                 <td>{{ $i++ }}</td>
                                 <td>
                                     <img width="25" height="25" style="object-fit: cover; border-radius: 50%" src="{{ $photo->path }}" alt="">
@@ -71,12 +71,11 @@
 
 <!-- Update Photo post modal -->
 <div class="modal fade" id="viewPhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
         <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel">Photo</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                aria-hidden="true">&times;</span></button>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="row">
@@ -85,6 +84,20 @@
                 </div>
                 <div class="col-md-6">
                     <h6 class="text-center">Photo Details</h6>
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Posted By</th>
+                                <th>Posted On</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ $photo->user_id }}</td>
+                                <td>{{ $photo->created_at->toFormattedDateString() }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -106,12 +119,11 @@
 
 <!-- Delete Photo post modal -->
 <div class="modal fade" id="deletePhoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel">Delete Photo</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                aria-hidden="true">&times;</span></button>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <p class="text-center">
@@ -121,9 +133,9 @@
             <form method="POST" enctype="multipart/form-data" action="{{ route('admin.deletePhoto') }}">
                 {{ csrf_field() }}
                 <input type="hidden" class="form-control form-custom" id="user_id" name="user_id">
-                <input type="hidden" class="form-control form-custom" id="photo-delete" name="photo_id">
+                <input type="hidden" class="form-control form-custom" id="admin-delete" name="photo_id">
 
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal">No</button>
                 <button type="submit" class="btn btn-custom">Delete</button>
             </form>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Photo;
 use App\Models\EducationRecord;
 use App\Models\EmploymentRecord;
 use App\Models\ProfessionalRecord;
@@ -36,6 +37,29 @@ class UserController extends Controller
             // dd($user->id);
             return view('membership_form', ['user' => $user]);
         }
+    }
+
+    public function userDash($id)
+    {
+    
+        $user_id = $id;
+
+        if($user = User::with('profilePhoto')->find($user_id)) {
+            // dd($photos);
+            return view('dashboard.user_content',
+                ['user' => $user],
+            );
+        }
+    }
+
+    public function getUserPosts($id)
+    {
+        $photos = Photo::where('user_id', $id)->paginate();
+        $loggedUser = User::with('profilePhoto')->find($id);
+
+        return view('dashboard.pages.user_posts',
+            ['user' => $loggedUser, 'photos' => $photos]
+        );
     }
 
     /**

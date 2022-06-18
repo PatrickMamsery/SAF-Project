@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\Admin\AdminPagesController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PagesController;
@@ -23,15 +24,23 @@ use App\Http\Controllers\ProfilePhotosController;
 */
 
 /* Dashboard routes */
-// Route::get('/dash', [HomeController::class, 'indexDash'])->name('dash');
-// Route::get('/user_dash', [HomeController::class, 'userDash'])->name('user_dash');
 Route::get('/admin/users', [AdminPagesController::class, 'getUsers'])->name('dash'); // Need to change this
 Route::get('/admin/posts', [AdminPagesController::class, 'getPosts'])->name('posts');
 
 /* Administrative dashboard routes */
 Route::post('/adminDeletePhoto', [AdminPhotoController::class, 'deletePhoto'])->name('admin.deletePhoto');
+Route::post('/adminDeleteUser', [AdminUserController::class, 'deleteUser'])->name('admin.deleteUser');
+Route::post('/adminUpdateUserUser', [AdminUserController::class, 'updateUserRole'])->name('admin.updateUserRole');
 
-/* User Dashboard routes */
+// User Dashboard routes
+Route::get('/user/user_profile/{id}', [UserController::class, 'userDash'])->name('user_dash');
+Route::get('/user/posts/{id}', [UserController::class, 'getUserPosts'])->name('user_posts');
+
+/* Membership form routes */
+Route::get('/membership_form', [UserController::class, 'index'])->name('membership_form');
+Route::post('/addUserDetails', [UserController::class, 'store']);
+
+
 Route::post('/deletePhoto', [PhotoController::class, 'deletePhoto'])->name('deletePhoto');
 Route::post('/addProfilePhoto', [ProfilePhotosController::class, 'addProfilePhoto']);
 Route::post('/editProfilePhoto', [ProfilePhotosController::class, 'editProfilePhoto']);
@@ -43,9 +52,6 @@ Route::get('/about', [PagesController::class, 'about'])->name('about');
 Route::post('/user/addLike', [PhotoController::class, 'addLike']);
 Route::post('/user/addComment', [PhotoController::class, 'addComment'])->name('addComment');
 
-/* Membership form routes */
-Route::get('/membership_form', [UserController::class, 'index'])->name('membership_form');
-Route::post('/addUserDetails', [UserController::class, 'store']);
 
 /* Register routes */
 Route::get('/register', [RegisterController::class, 'index'])->name('register');

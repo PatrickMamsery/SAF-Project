@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\UserRole;
 use App\Models\Photo;
 use App\Models\Upload;
 
@@ -30,11 +31,11 @@ class AdminPagesController extends Controller
     {
         $user_id = auth()->user()->id;
         $loggedUser = User::with('profilePhoto')->find($user_id);
+        $roles = UserRole::get();
         if($users = User::with('profilePhoto')->paginate()) {
-            // var_dump($users[1]->profilePhoto->path); die;
             
             return view('dashboard.pages.users',
-                ['user' => $loggedUser, 'users' => $users]
+                ['user' => $loggedUser, 'roles' => $roles, 'users' => $users]
             );
         }
     }

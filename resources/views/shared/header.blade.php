@@ -36,7 +36,7 @@
                   </li>
                 @else
                   <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('user_dash')) ? 'active' : '' }}" href="{{ route('user_dash') }}">Dashboard</a>
+                    <a class="nav-link {{ (request()->is('user_dash')) ? 'active' : '' }}" href="{{ route('user_dash', ['id' => auth()->user()->id]) }}">Dashboard</a>
                   </li>
                 @endif
               @endauth

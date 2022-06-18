@@ -7,11 +7,11 @@
             </a>
             <div class="nav__list">
                  <a href="/" class="nav__link active"> 
-                     <i class='bx bx-home nav__icon'></i> 
-                     <span class="nav__name">Website</span> 
+                    <i class='bx bx-home nav__icon'></i> 
+                    <span class="nav__name">Website</span> 
                 </a> 
                 <a href="{{ route('dash') }}" class="nav__link"> 
-                    <i class='bx bx-user nav__icon'></i> 
+                    <i class='bx bx-group nav__icon'></i> 
                     <span class="nav__name">Users</span> 
                 </a> 
                 <a href="" class="nav__link"> 
