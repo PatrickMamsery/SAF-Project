@@ -38,6 +38,14 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' => ['required', 'string', 'min:10', 'max:13'],
+            'password' => ['required', 'string', 'confirmed'],
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->with('msg', 'Validation Failed');
+
         $user_role = UserRole::where('title', 'user')->first();
         $user = new User;
             $user->fname = $request->fname;

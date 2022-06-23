@@ -1,5 +1,14 @@
 /* ========== REGISTER PAGE ============= */
 
+.error {
+  margin-top: -1rem;
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
 .clearfix {
 	&:after {
 		content: "";

@@ -30,15 +30,21 @@
                     <div class="input_field"> <span><i class="bx bxs-envelope"></i></span>
                       <input type="email" name="email" placeholder="Email" required />
                     </div>
+
                     <div class="input_field"> <span><i class="bx bxs-phone"></i></span>
-                      <input type="phone" name="phone" placeholder="Phone Number" required />
+                      <input type="phone" name="phone" placeholder="Phone Number" onkeyup="validatePhoneNumber(this.value)" required />
                     </div>
+
+                    <div id="phone_error" class="error hidden">Please enter a valid phone number</div>
+
                     <div class="input_field"> <span><i class="bx bxs-lock-alt"></i></span>
-                      <input type="password" name="password" placeholder="Password" required />
+                      <input type="password" name="password" placeholder="Password" id="pwd" required />
                     </div>
                     <div class="input_field"><span><i class="bx bxs-lock-alt"></i></span>
-                      <input type="password" name="password_confirmation" placeholder="Re-type Password" required />
+                      <input type="password" name="password_confirmation" placeholder="Re-type Password" onkeyup="checkPassword(this.value)" required />
                     </div>
+
+                    <div id="password_error" class="error hidden">Passwords do not match</div>
                     
                         <div class="input_field radio_option">
                           <input type="radio" name="gender" id="rd1" value="male">
