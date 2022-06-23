@@ -30,11 +30,14 @@ Route::get('/admin/posts', [AdminPagesController::class, 'getPosts'])->name('pos
 /* Administrative dashboard routes */
 Route::post('/adminDeletePhoto', [AdminPhotoController::class, 'deletePhoto'])->name('admin.deletePhoto');
 Route::post('/adminDeleteUser', [AdminUserController::class, 'deleteUser'])->name('admin.deleteUser');
-Route::post('/adminUpdateUserUser', [AdminUserController::class, 'updateUserRole'])->name('admin.updateUserRole');
+Route::post('/adminElevateUserRole', [AdminUserController::class, 'elevateUserRole'])->name('admin.elevateUserRole');
+Route::post('/adminDemoteAccess', [AdminUserController::class, 'demoteAccess'])->name('admin.demoteAccess');
+Route::post('/adminResetPassword', [AdminUserController::class, 'resetPassword'])->name('admin.resetPassword');
 
 // User Dashboard routes
 Route::get('/user/user_profile/{id}', [UserController::class, 'userDash'])->name('user_dash');
 Route::get('/user/posts/{id}', [UserController::class, 'getUserPosts'])->name('user_posts');
+Route::post('/user/{id}/password_reset', [UserController::class, 'passwordReset'])->name('user.passwordReset');
 
 /* Membership form routes */
 Route::get('/membership_form', [UserController::class, 'index'])->name('membership_form');

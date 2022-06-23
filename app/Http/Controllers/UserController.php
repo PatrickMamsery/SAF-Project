@@ -14,6 +14,8 @@ use App\Models\Upload;
 use App\Models\Document;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Hash;
+use Validator;
 use DB;
 use Illuminate\Support\Facades\Session;
 
@@ -175,6 +177,26 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //
+    }
+
+    public function passwordReset(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'current_password' => 'required',
+            'password' => 'required_with:password_confirmation|string|confirmed'
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->with('msg', 'Validation Failed');
+
+        $user = User::find($id);
+
+        if(!Hash::check($request->current_password, auth()->user()->password)){
+            return redirect()->back()->with('msg', 'Your current password is incorrect');
+        };
+
+        if ($user->update(['password' => Hash::make($request->password)])) {
+            return redirect()->back()->with('msg', 'Password changed successfully');
+        } else return redirect()->back()->with('msg', 'Failed to change password');
     }
 
     /**

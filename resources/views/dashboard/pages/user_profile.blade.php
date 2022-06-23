@@ -157,13 +157,17 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <h6 class="my-3 text-center">Password Reset</h6>
-                            <form action="">
+                            <form action="{{ route('user.passwordReset', ['id' => $user->id]) }}" method="POST">
+                                @csrf
                                 <div class="mb-2">
-                                    <input type="password" class="form-control" id="pwd" aria-describedby="pwdHelp">
-                                    <div id="pwdHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                    <input type="password" class="form-control" name="current_password" id="pwd" aria-describedby="pwdHelp" placeholder="Current Password">
                                 </div>
                                 <div class="mb-2">
-                                    <input type="password" class="form-control" id="" aria-describedby="pwdHelp" placeholder="Confirm password">
+                                    <input type="password" class="form-control" name="password" id="pwd" aria-describedby="pwdHelp" placeholder="New Password">
+                                    <div id="pwdHelp" class="form-text">Make sure your password is strong.</div>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="password" class="form-control" name="password_confirmation" id="" aria-describedby="pwdHelp" placeholder="Confirm password">
                                 </div>
                                 <button type="submit" class="btn btn-custom">Change</button>
                             </form>

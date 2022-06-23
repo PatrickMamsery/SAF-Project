@@ -37,3 +37,35 @@
         }
     }
 }
+
+@include media('<phone'){
+    .navbar-toggler {
+        border: none;
+        .navbar-toggler-icon {
+            background-image: url('/icons/menu.png');
+        }
+    }
+    .navbar-toggler:focus{
+        outline: 0px;
+        box-shadow: none;
+    }
+
+    .navbar-collapse {
+        ul {
+            li{
+                text-align: start;
+                margin-left: 0!important;
+            }
+            .auth-btn{
+                width: 100%!important;
+                border: none!important;
+                border-radius: 0!important;
+                padding: 0.3rem 0!important;
+            }
+            .auth-btn:hover{
+                background-color: color(primary);
+                color: white;
+            }
+        }
+    }
+}

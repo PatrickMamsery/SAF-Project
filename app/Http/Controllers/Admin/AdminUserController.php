@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserRole;
+use Validator;
+use Hash;
 
 class AdminUserController extends Controller
 {
@@ -18,17 +20,59 @@ class AdminUserController extends Controller
         } else return redirect()->back()->with('msg', 'User not found');
     }
 
-    public function updateUserRole(Request $request)
+    public function elevateUserRole(Request $request)
     {
-        // dd($request);
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'required|exists:users,id'
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->with('msg', 'Validation Failed');
+
         if ($user = User::with('userRole')->find($request->user_id)) {
-            if ($request->input('new_role') != NULL) {
-                $role = UserRole::where('id', $request->input('new_role'))->first();
-                $user->user_role_id = $role->id;
-                // dd($user->user_role_id);
-                return redirect()->back()->with('msg', 'Role updated Successfully');
+
+            $admin = UserRole::where('title', 'admin')->first();
+            $user->user_role_id = $admin->id;
+
+            if ($user->save()) {
+                return redirect()->back()->with('msg', 'User elevated to admin Successfully');
             }
-            else return redirect()->back()->with('msg', 'Failed to update user-role');
+            else return redirect()->back()->with('msg', 'Failed to elevate user to admin');
         } else return redirect()->back()->with('msg', 'User not found');
+    }
+
+    public function demoteAccess(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'required|exists:users,id'
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->with('msg', 'Validation Failed');
+
+        if ($user = User::with('userRole')->find($request->user_id)) {
+
+            $admin = UserRole::where('title', 'user')->first();
+            $user->user_role_id = $admin->id;
+
+            if ($user->save()) {
+                return redirect()->back()->with('msg', 'Admin demoted Successfully');
+            }
+            else return redirect()->back()->with('msg', 'Failed to demote admin');
+        } else return redirect()->back()->with('msg', 'User not found');
+    }
+
+    public function resetPassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'user_id' => 'required|exists:users,id'
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->with('msg', 'Validation Failed');
+
+        $user = User::find($request->user_id);
+        $user->password = Hash::make(strtolower($user->fname));
+
+        if ($user->save()) {
+            return redirect()->back()->with('msg', 'Password reset Successful');
+        } else return redirect()->back()->with('msg', 'Failed to reset password');
     }
 }
