@@ -23,30 +23,30 @@
 
     <script>
 
-        $(function () {
+        // $(function () {
             
-            var table = $('.yajra-datatable').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "{{ route('dash') }}",
-                columns: [
-                    {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                    {data: 'fname', 'fname'},
-                    {data: 'email', name: 'email'},
-                    {data: 'phone', name: 'phone'},
-                    {data: 'user_role_id', name: 'role'},
-                    {data: 'joindate', name: 'joindate'},
-                    // {data: 'dob', name: 'dob'},
-                    {
-                        data: 'action', 
-                        name: 'action', 
-                        orderable: true, 
-                        searchable: true
-                    },
-                ]
-            });
+        //     var table = $('.yajra-datatable').DataTable({
+        //         processing: true,
+        //         serverSide: true,
+        //         ajax: "{{ route('dash') }}",
+        //         columns: [
+        //             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+        //             {data: 'fname', 'fname'},
+        //             {data: 'email', name: 'email'},
+        //             {data: 'phone', name: 'phone'},
+        //             {data: 'user_role_id', name: 'role'},
+        //             {data: 'joindate', name: 'joindate'},
+        //             // {data: 'dob', name: 'dob'},
+        //             {
+        //                 data: 'action', 
+        //                 name: 'action', 
+        //                 orderable: true, 
+        //                 searchable: true
+        //             },
+        //         ]
+        //     });
             
-        });
+        // });
 
         $(document).ready(function () {
             $('.delete-user').click(function(){
