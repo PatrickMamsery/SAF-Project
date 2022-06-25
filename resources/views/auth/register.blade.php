@@ -37,6 +37,12 @@
 
                     <div id="phone_error" class="error hidden">Please enter a valid phone number</div>
 
+                    <div class="input_field"> <span><i class="bx bxs-shield"></i></span>
+                      <input type="number" name="access_token" placeholder="Access Token" onkeyup="validateAccessToken(this.value)" required />
+                    </div>
+
+                    <div id="access_error" class="error hidden">Access token invalid</div>
+
                     <div class="input_field"> <span><i class="bx bxs-lock-alt"></i></span>
                       <input type="password" name="password" placeholder="Password" id="pwd" required />
                     </div>

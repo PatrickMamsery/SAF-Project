@@ -38,9 +38,11 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        // dd(gettype($request->access_token));
         $validator = Validator::make($request->all(), [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'string', 'min:10', 'max:13'],
+            'access_token' => ['required', 'string', 'min:10'],
             'password' => ['required', 'string', 'confirmed'],
         ]);
 

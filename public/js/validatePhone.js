@@ -19,3 +19,15 @@ function checkPassword(str) {
         document.getElementById('password_error').classList.add('hidden');
     }
 }
+
+function validateAccessToken(str) {
+    let token = "1913192026";
+    console.log(str);
+    console.log(token);
+
+    if(!(token === str)) {
+        document.getElementById('access_error').classList.remove('hidden');
+    } else {
+        document.getElementById('access_error').classList.add('hidden');
+    }
+}
