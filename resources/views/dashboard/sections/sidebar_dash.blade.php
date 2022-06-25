@@ -14,9 +14,9 @@
                     <i class='bx bx-group nav__icon'></i> 
                     <span class="nav__name">Users</span> 
                 </a> 
-                <a href="" class="nav__link"> 
-                    <i class='bx bx-message-square-detail nav__icon'></i> 
-                    <span class="nav__name">Messages</span> 
+                <a href="{{ route('info_list') }}" class="nav__link"> 
+                    <i class='bx bx-news nav__icon'></i> 
+                    <span class="nav__name">Info</span> 
                 </a> 
 
                 @if(Auth::guard('web')->user())

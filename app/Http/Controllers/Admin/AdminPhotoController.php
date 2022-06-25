@@ -33,7 +33,8 @@ class AdminPhotoController extends Controller
             }
 
             if ($photo->delete()) {
-                Cloudinary::destroy($photo->path);
+                $public_id = preg_match("/upload\/(?:v\d+\/)?([^\.]+)/", $photo->path, $matches);
+                Cloudinary::destroy($matches[1]);
                 return redirect()->back()->with('msg', 'Photo deleted successfully');
             } else return redirect()->back()->with('msg', 'Failed to delete photo');
         } else return redirect()->back()->with('msg', 'Photo not found');

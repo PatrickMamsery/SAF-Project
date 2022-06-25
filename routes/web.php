@@ -6,11 +6,13 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\Admin\AdminPagesController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\AdminInfoController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProfilePhotosController;
+// use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +28,8 @@ use App\Http\Controllers\ProfilePhotosController;
 /* Dashboard routes */
 Route::get('/admin/users', [AdminPagesController::class, 'getUsers'])->name('dash'); // Need to change this
 Route::get('/admin/posts', [AdminPagesController::class, 'getPosts'])->name('posts');
+Route::get('/admin/infos', [AdminInfoController::class, 'getInfos'])->name('info_list');
+Route::get('/admin/addInfo', [AdminInfoController::class, 'addInfoView'])->name('addInfo');
 
 /* Administrative dashboard routes */
 Route::post('/adminDeletePhoto', [AdminPhotoController::class, 'deletePhoto'])->name('admin.deletePhoto');
@@ -33,6 +37,13 @@ Route::post('/adminDeleteUser', [AdminUserController::class, 'deleteUser'])->nam
 Route::post('/adminElevateUserRole', [AdminUserController::class, 'elevateUserRole'])->name('admin.elevateUserRole');
 Route::post('/adminDemoteAccess', [AdminUserController::class, 'demoteAccess'])->name('admin.demoteAccess');
 Route::post('/adminResetPassword', [AdminUserController::class, 'resetPassword'])->name('admin.resetPassword');
+
+/* Info Routes */
+Route::post('/adminAddInfo', [AdminInfoController::class, 'addInfo'])->name('admin.addInfo');
+Route::post('/adminDeleteInfo', [AdminInfoController::class, 'deleteInfo'])->name('admin.deleteInfo');
+
+/* Mail Routes */
+// Route::get('/send-mail', [MailController::class, 'sendEmail']);
 
 // User Dashboard routes
 Route::get('/user/user_profile/{id}', [UserController::class, 'userDash'])->name('user_dash');
@@ -72,7 +83,10 @@ Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
 
 Route::get('/', function () {
     // $user = App\Models\User::with('profilePhoto')->find(auth()->user()->id);
-    return view('index');
+    $infos = App\Models\Info::where('inhouse', 0)->get();
+    return view('index', [
+        'infos' => $infos,
+    ]);
 });
 
 Route::get('test', function () {

@@ -1,7 +1,7 @@
 <div class="work-wrapper pt-section pb-section">
         <div class="container">
             <h2 class="section-title text-center ">Works</h2>
-            <p class="section-subtitle text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            <p class="section-subtitle text-center">Our Works | Albums</p>
          <div class="row ">
              <div class="col-md-4">
                     <div class="body">
