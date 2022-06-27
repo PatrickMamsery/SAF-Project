@@ -1,9 +1,9 @@
 @extends('layouts.dash')
 
 @section('info')
-    <div class="">
-        <div class="mt-3 py-3 px-0 custom-title">
-            <h4 class="custom-title">
+    <div class="container">
+        <div class="m-0">
+            <h4 class="">
                 Welcome, {{Auth::guard('web')->user()?Auth::guard('web')->user()->fname.' '.Auth::guard('web')->user()->sname:'Guest User'}}
             </h4>
         </div>

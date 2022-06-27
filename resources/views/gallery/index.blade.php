@@ -19,7 +19,7 @@
                 <div class="grid-item">
                     <div class="content">
                         <div class="overlay">
-                            <a role="button" class="btn btn-dark btn-circle view-photo" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_id="{{ $photo->id }}" data-user_id="{{ $photo->user_id }}" data-photo_path="{{ $photo->path }}">
+                            <a role="button" class="btn btn-dark btn-circle view-photo" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_by="{{ $photo->user->fname }} {{ $photo->user->sname }}" data-photo_on="{{ $photo->created_at->diffForHumans() }}" data-photo_details_likes="{{ $photo->likes->count() }}" data-photo_details_views="{{ $photo->views->count() }}" data-photo_id="{{ $photo->id }}" data-user_id="{{ $photo->user_id }}" data-photo_path="{{ $photo->path }}">
                                 <i class="material-icons">visibility</i>
                             </a>
                             <form action="/user/addLike" method="POST">
@@ -143,19 +143,19 @@
                                 <tbody>
                                     <tr>
                                         <td>Posted By: </td>
-                                        <td>{{ $photo->user_id }}</td>
+                                        <td id="photo-details-postedBy"></td>
                                     </tr>
                                     <tr>
                                         <td>Posted On: </td>
-                                        <td>{{ $photo->created_at->toDateTimeString() }}</td>
+                                        <td id="photo-details-postedOn"></td>
                                     </tr>
                                     <tr>
                                         <td>Likes: </td>
-                                        <td>{{ $photo->likes->count() }}</td>
+                                        <td id="photo-details-likes"></td>
                                     </tr>
                                     <tr>
                                         <td>Views: </td>
-                                        <td>{{ $photo->views->count() }}</td>
+                                        <td id="photo-details-views"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -168,7 +168,7 @@
                                     @foreach ($photo->comments as $comment)
                                         <div class="card">
                                             <div class="card-header">
-                                                {{ $comment->user_id }}
+                                                {{ $comment->user->fname }} {{ $comment->user->sname }}
                                             </div>
                                             <div class="card-body">
                                                 {{ $comment->body }}
@@ -222,6 +222,10 @@
     $(document).ready(function () {
         $('.view-photo').click(function(){
             // alert($(this).data('photo_id'));
+            $('#photo-details-likes').html($(this).data('photo_details_likes'));
+            $('#photo-details-views').html($(this).data('photo_details_views'));
+            $('#photo-details-postedBy').html($(this).data('photo_by'));
+            $('#photo-details-postedOn').html($(this).data('photo_on'));
             $('#photo-view').attr("src", $(this).data('photo_path'));
             $('#photo-comment').val($(this).data('photo_id'));
             $('#user_id').val($(this).data('user_id'));

@@ -1,4 +1,4 @@
-<div class="container mt-5 px-2">
+<div class="container mt-4 px-2">
     <div class="mb-2 d-flex justify-content-between align-items-center">
         <div class="position-relative"> 
             {{-- <span class="position-absolute search"><i class="bx bx-search"></i></span>  --}}
@@ -45,7 +45,7 @@
                         </span>
                     </td>
                     <td class="text-end">
-                        <span class="fw-bolder">0</span> 
+                        <span class="fw-bolder">{{ $user->photos? $user->photos->count() : 0 }}</span> 
                     </td>
                     <td>
                         <span>

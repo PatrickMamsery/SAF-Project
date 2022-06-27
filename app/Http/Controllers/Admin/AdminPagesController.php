@@ -30,7 +30,7 @@ class AdminPagesController extends Controller
     public function getUsers()
     {
         $user_id = auth()->user()->id;
-        $loggedUser = User::with('profilePhoto')->find($user_id);
+        $loggedUser = User::with('profilePhoto', 'photos')->find($user_id);
         $roles = UserRole::get();
         if($users = User::with('profilePhoto')->paginate()) {
             
@@ -42,7 +42,7 @@ class AdminPagesController extends Controller
 
     public function getPosts()
     {
-        $photos = Photo::paginate();
+        $photos = Photo::with('views', 'likes')->paginate();
         $user_id = auth()->user()->id;
         $loggedUser = User::with('profilePhoto')->find($user_id);
 

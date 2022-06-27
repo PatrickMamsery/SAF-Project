@@ -19,11 +19,17 @@
                         <div class="col-md-4">
                                 <ul >
                             <strong>Upcoming Events</strong>
-
-                                    <li><a href="">First</a></li>
-                                    <li><a href="">Second</a></li>
-                                    <li><a href="">Third</a></li>
-                                    <li><a href="">Fourth</a></li>
+                            
+                                    @if($infos == NULL)
+                                        <li><a href="">First</a></li>
+                                        <li><a href="">Second</a></li>
+                                        <li><a href="">Third</a></li>
+                                        <li><a href="">Fourth</a></li>
+                                    @else
+                                        @foreach($infos as $info)
+                                            <li><a href="">{{ $info->title }}</a></li>
+                                        @endforeach
+                                    @endif
                                 </ul>
                         </div>
                         <div class="col-md-4 social-media">

@@ -64,9 +64,9 @@ class User extends Authenticatable
         return $this->belongsTo(UserRole::class, 'user_role_id');
     }
 
-    public function caption()
+    public function captions()
     {
-        return $this->belongsTo(Caption::class);
+        return $this->hasMany(Caption::class);
     }
 
     public function contacts()
@@ -74,14 +74,14 @@ class User extends Authenticatable
         return $this->hasMany(Contact::class);
     }
 
-    public function comment()
+    public function comments()
     {
-        return $this->belongsTo(Comment::class);
+        return $this->hasMany(Comment::class);
     }
 
-    public function view()
+    public function views()
     {
-        return $this->belongsTo(View::class);
+        return $this->hasMany(View::class);
     }
 
     public function like()
@@ -94,14 +94,14 @@ class User extends Authenticatable
         return $this->belongsTo(Profession::class);
     }
 
-    public function photo()
+    public function photos()
     {
-        return $this->belongsTo(Photo::class);
+        return $this->hasMany(Photo::class);
     }
 
-    public function video()
+    public function videos()
     {
-        return $this->belongsTo(Video::class);
+        return $this->hasMany(Video::class);
     }
 
     public function tag()
@@ -119,9 +119,9 @@ class User extends Authenticatable
         return $this->hasOne(ProfilePhoto::class,'user_id');
     }
 
-    public function upload()
+    public function uploads()
     {
-        return $this->belongsTo(Upload::class);
+        return $this->hasMany(Upload::class);
     }
 
     public function education_records()

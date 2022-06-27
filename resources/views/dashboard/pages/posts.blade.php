@@ -22,6 +22,7 @@
         $(document).ready(function () {
             $('.view-photo').click(function(){
                 // alert($(this).data('photo_id'));
+                $('#photo-details-postedBy').html($(this).data('photo_by'));
                 $('#photo-view').attr("src", $(this).data('photo_path'));
             });
         });

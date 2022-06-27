@@ -20,15 +20,15 @@ class GalleryController extends Controller
 
     public function getPhotos()
     {
-        if($photos = Photo::all()){
+        if($photos = Photo::with('user', 'views', 'likes')->get()){
             return view('gallery.index', ['photos' => $photos]);
         }
     }
 
-    public function getUploads()
-    {
-        if($uploads = Upload::all()){
-            return view('gallery.index', ['photos' => $uploads]);
-        }
-    }
+    // public function getUploads()
+    // {
+    //     if($uploads = Upload::all()){
+    //         return view('gallery.index', ['photos' => $uploads]);
+    //     }
+    // }
 }

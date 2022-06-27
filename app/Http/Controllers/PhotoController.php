@@ -22,11 +22,12 @@ class PhotoController extends Controller
     {
         // validate the incoming request 
         $validator = Validator::make($request->all(), [
-            'photo' => 'required|file',
+            'photo' => 'required|file|max:2048',
             'photo.*' => 'mimes:jpeg,image/jpeg,jpg,png,gif,csv,txt,pdf,svg'            
         ]);
 
-        if ($validator->fails()) return redirect()->back()->with('msg', 'Invalid data submitted');
+        if ($validator->fails() && ($validator->errors()->first() == "The photo failed to upload.")) return redirect()->back()->with('msg', 'Photo is too large please resize');
+        else if ($validator->fails()) return redirect()->back()->with('msg', 'Invalid photo data submitted');
 
         $photo = new Photo;
         $user_id = auth()->user()->id;

@@ -1,6 +1,7 @@
 <!-- Posts Section -->
         <div class="works-section mb-3" id="photo_posts">
             <div class="row mt-3">
+                <h2>Posts | Photos | {{ $photos->count() }}</h2>
                 <div class="table-responsive">
                     <table class="table table-responsive table-borderless">
                         <thead>
@@ -25,7 +26,7 @@
                                 <td>
                                     <img width="25" height="25" style="object-fit: cover; border-radius: 50%" src="{{ $photo->path }}" alt="">
                                     <span>
-                                        <a href="" class="text-reset view-photo" data-title="View Photo" data-toggle="modal" data-target="#viewPhoto" data-photo_id="{{ $photo->id }}" data-photo_path="{{ $photo->path }}">
+                                        <a href="" class="text-reset view-photo" data-title="View Photo" data-toggle="modal" data-target="#viewPhoto" data-photo_id="{{ $photo->id }}" data-photo_by="{{ $photo->user->fname }} {{ $photo->user->sname }}" data-photo_path="{{ $photo->path }}">
                                             <i class='bx bx-show'></i>
                                         </a>
                                     </span>
@@ -37,10 +38,10 @@
                                     {{ $photo->created_at->toFormattedDateString() }}
                                 </td>
                                 <td class="text-end">
-                                    <span class="fw-bolder">0</span>
+                                    <span class="fw-bolder">{{ $photo->likes ? $photo->likes->count() : 0 }}</span>
                                 </td>
                                 <td class="text-end">
-                                    <span class="fw-bolder">0</span> 
+                                    <span class="fw-bolder">{{ $photo->views ? $photo->views->count() : 0 }}</span> 
                                 </td>
                                 <td class="text-center">
                                     <span>
@@ -93,7 +94,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{ $photo->user_id }}</td>
+                                <td id="photo-details-postedBy"></td>
                                 <td>{{ $photo->created_at->toFormattedDateString() }}</td>
                             </tr>
                         </tbody>
