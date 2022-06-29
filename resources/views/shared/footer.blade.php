@@ -20,16 +20,20 @@
                                 <ul >
                             <strong>Upcoming Events</strong>
                             
-                                    @if($infos == NULL)
+                                    @isset ($infos)
+
+                                        @if ($infos != NULL)
+                                            @foreach($infos as $info)
+                                                <li><a href="">{{ $info->title }}</a></li>
+                                            @endforeach
+                                        @endif
+                                        @else
                                         <li><a href="">First</a></li>
                                         <li><a href="">Second</a></li>
                                         <li><a href="">Third</a></li>
                                         <li><a href="">Fourth</a></li>
-                                    @else
-                                        @foreach($infos as $info)
-                                            <li><a href="">{{ $info->title }}</a></li>
-                                        @endforeach
                                     @endif
+
                                 </ul>
                         </div>
                         <div class="col-md-4 social-media">

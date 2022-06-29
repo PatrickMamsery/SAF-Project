@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\UserRole;
 use App\Models\Photo;
 use App\Models\Upload;
+use App\Models\Info;
 
 class AdminPagesController extends Controller
 {
@@ -26,6 +27,24 @@ class AdminPagesController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    public function overview()
+    {
+        $user_id = auth()->user()->id;
+        $loggedUser = User::with('profilePhoto')->find($user_id);
+        $users = User::all();
+        $photos = Photo::all();
+        $infos = Info::all();
+        $verified_users = User::where('joindate', '!=',  NULL)->where('voice', '!=', NULL)->get();
+
+        return view('dashboard.home', [
+            'user' => $loggedUser,
+            'users' => $users,
+            'verified_users' => $verified_users,
+            'photos' => $photos,
+            'infos' => $infos,
+        ]);
+    }
 
     public function getUsers()
     {

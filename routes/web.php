@@ -26,10 +26,11 @@ use App\Http\Controllers\ProfilePhotosController;
 */
 
 /* Dashboard routes */
-Route::get('/admin/users', [AdminPagesController::class, 'getUsers'])->name('dash'); // Need to change this
+Route::get('/admin/users', [AdminPagesController::class, 'getUsers'])->name('users'); // Need to change this
 Route::get('/admin/posts', [AdminPagesController::class, 'getPosts'])->name('posts');
 Route::get('/admin/infos', [AdminInfoController::class, 'getInfos'])->name('info_list');
 Route::get('/admin/addInfo', [AdminInfoController::class, 'addInfoView'])->name('addInfo');
+Route::get('/admin/home', [AdminPagesController::class, 'overview'])->name('dash');
 
 /* Administrative dashboard routes */
 Route::post('/adminDeletePhoto', [AdminPhotoController::class, 'deletePhoto'])->name('admin.deletePhoto');

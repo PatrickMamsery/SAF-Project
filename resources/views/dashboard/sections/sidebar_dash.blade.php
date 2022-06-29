@@ -1,16 +1,16 @@
 <div class="l-navbar" id="nav-bar">
     <nav class="sidebar__nav">
         <div> 
-            <a href="#" class="nav__logo"> 
+            <a href="/" class="nav__logo"> 
                 <i class='bx bx-leaf nav__logo-icon'></i> 
                 <span class="nav__logo-name">St. Augustine Family</span> 
             </a>
             <div class="nav__list">
-                 <a href="/" class="nav__link active"> 
+                <a href="{{ route('dash') }}" class="nav__link active"> 
                     <i class='bx bx-home nav__icon'></i> 
                     <span class="nav__name">Website</span> 
                 </a> 
-                <a href="{{ route('dash') }}" class="nav__link"> 
+                <a href="{{ route('users') }}" class="nav__link"> 
                     <i class='bx bx-group nav__icon'></i> 
                     <span class="nav__name">Users</span> 
                 </a> 
