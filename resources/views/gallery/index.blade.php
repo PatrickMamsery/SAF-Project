@@ -19,7 +19,7 @@
                 <div class="grid-item">
                     <div class="content">
                         <div class="overlay">
-                            <a role="button" class="btn btn-dark btn-circle view-photo" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_by="{{ $photo->user->fname }} {{ $photo->user->sname }}" data-photo_on="{{ $photo->created_at->diffForHumans() }}" data-photo_details_likes="{{ $photo->likes->count() }}" data-photo_details_views="{{ $photo->views->count() }}" data-photo_id="{{ $photo->id }}" data-user_id="{{ auth()->user()->id }}" data-photo_path="{{ $photo->path }}" data-photo_caption="{{ $photo->caption == NULL ? 'No Caption' : strip_tags(substr($photo->caption,0,300)) }}">
+                            <a role="button" class="btn btn-dark btn-circle view-photo" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_by="{{ $photo->user->fname }} {{ $photo->user->sname }}" data-photo_on="{{ $photo->created_at->diffForHumans() }}" data-photo_details_likes="{{ $photo->likes->count() }}" data-photo_details_views="{{ $photo->views->count() }}" data-photo_id="{{ $photo->id }}" data-user_id="{{ Auth::check() ? auth()->user()->id : 1 }}" data-photo_path="{{ $photo->path }}" data-photo_caption="{{ $photo->caption == NULL ? 'No Caption' : strip_tags(substr($photo->caption,0,300)) }}">
                                 <i class="material-icons">visibility</i>
                             </a>
                             <form action="/user/addLike" method="POST">
@@ -41,7 +41,7 @@
                                 <i class="material-icons {{ $photo->comments->count() != 0 ? "text-custom" : ""  }}">more_vert</i>
                             </a>
                             <div class="dropdown-menu custom-dropdown" aria-labelledby="dropdownMenu2">
-                                <a class="dropdown-item view-photo" type="button" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_by="{{ $photo->user->fname }} {{ $photo->user->sname }}" data-photo_on="{{ $photo->created_at->diffForHumans() }}" data-photo_details_likes="{{ $photo->likes->count() }}" data-photo_details_views="{{ $photo->views->count() }}" data-photo_id="{{ $photo->id }}" data-user_id="{{ auth()->user()->id }}" data-photo_path="{{ $photo->path }}" data-photo_caption="{{ $photo->caption == NULL ? 'No Caption' : strip_tags(substr($photo->caption,0,300)) }}">
+                                <a class="dropdown-item view-photo" type="button" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_by="{{ $photo->user->fname }} {{ $photo->user->sname }}" data-photo_on="{{ $photo->created_at->diffForHumans() }}" data-photo_details_likes="{{ $photo->likes->count() }}" data-photo_details_views="{{ $photo->views->count() }}" data-photo_id="{{ $photo->id }}" data-user_id="{{ Auth::check() ? auth()->user()->id : 1 }}" data-photo_path="{{ $photo->path }}" data-photo_caption="{{ $photo->caption == NULL ? 'No Caption' : strip_tags(substr($photo->caption,0,300)) }}">
                                     <i class="material-icons">visibility</i>
                                 </a>
                                 <form action="/user/addLike" method="POST">
@@ -203,17 +203,19 @@
                                         </div>
                                     @endforeach
                                 @endif
-                                <form method="POST" enctype="multipart/form-data" action="{{ route('addComment') }}">
-                                    {{ csrf_field() }}
-                                    <div class="form-group form-elements form-group-custom label-floating co-md-12">
-                                        <label for="caption" class="control-label">Comments</label>
-                                        <input type="text" class="form-control form-custom" id="comment" name="comment" value="" placeholder="Add any comment... civility is advised">
-                                    </div>
-                                    <input type="hidden" class="form-control form-custom" id="user" name="user_id">
-                                    <input type="hidden" class="form-control form-custom" id="photo-comment" name="photo_id">
-                    
-                                    <button type="submit" class="btn btn-custom">Post Comment</button>
-                                </form>
+                                @auth
+                                    <form method="POST" enctype="multipart/form-data" action="{{ route('addComment') }}">
+                                        {{ csrf_field() }}
+                                        <div class="form-group form-elements form-group-custom label-floating co-md-12">
+                                            <label for="caption" class="control-label">Comments</label>
+                                            <input type="text" class="form-control form-custom" id="comment" name="comment" value="" placeholder="Add any comment... civility is advised">
+                                        </div>
+                                        <input type="hidden" class="form-control form-custom" id="user" name="user_id">
+                                        <input type="hidden" class="form-control form-custom" id="photo-comment" name="photo_id">
+                        
+                                        <button type="submit" class="btn btn-custom">Post Comment</button>
+                                    </form>
+                                @endauth
                             </div>
                         </div>
                     </div>
