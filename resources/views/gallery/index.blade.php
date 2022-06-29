@@ -194,7 +194,7 @@
                                     @foreach ($photo->comments as $comment)
                                         <div class="card">
                                             <div class="card-header">
-                                                <img src="{{ $comment->user->profilePhoto->path ? $comment->user->profilePhoto->path : '/img/profile_photos/avatar.png' }}" width="25" height="25" alt="profile">
+                                                {{-- <img src="{{ $comment->user->profilePhoto->path ? $comment->user->profilePhoto->path : '/img/profile_photos/avatar.png' }}" width="25" height="25" alt="profile"> --}}
                                                 {{ $comment->user->fname }} {{ $comment->user->sname }}
                                             </div>
                                             <div class="card-body">
