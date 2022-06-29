@@ -46,6 +46,9 @@
                     }
                 }
             }
+            .phone-only {
+                display: none;
+            }
         }
     }
     
@@ -71,6 +74,10 @@
                 opacity: 1;
                 transform: translateX(0);
             }
+
+            .phone-only {
+                display: none;
+            }
         }
     }
     
@@ -95,7 +102,18 @@
         color: white;
     }
     
-    
+    .caption {
+        background: black;
+        opacity: 0.8;
+        padding: .5rem;
+        margin-top: .8rem;
+        justify-content: space-between;
+        border-radius: 5px;
+        p {
+            color: #fff;
+            font-size: 18px;
+        }
+    }
     
 
     .custom-file {
@@ -118,6 +136,45 @@
             background: #ccc;
             display: inline-block;
             cursor: pointer;
+        }
+    }
+}
+
+@include media('<phone'){
+    .grid-item {
+        .content {
+            margin: .3rem auto;
+            position: relative;
+            .overlay {
+                display: none;
+            }
+
+            .phone-only {
+                display: block!important;
+                position: absolute;
+                color: white!important;
+                .btn {
+                    width: 30px!important;
+                    height: 30px!important;
+                    padding: 6px 0px!important;
+                    border-radius: 100%!important;
+                    font-size: 8px!important;
+                    text-align: center!important;
+                    opacity: 0.8;
+                    i {
+                        font-size: 18px;
+                        color: white;
+                    }
+                }
+                .custom-dropdown {
+                    opacity: 0.8;
+                    background: black;
+                    min-width: 18px!important;
+                    i {
+                        color: white;
+                    }
+                }
+            }
         }
     }
 }

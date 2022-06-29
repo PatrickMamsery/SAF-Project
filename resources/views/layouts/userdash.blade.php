@@ -22,11 +22,11 @@
                 <img src="{{ $user->profilePhoto->path }}" alt="user_profile">
             @elseif($user->profilePhoto == NULL)
                 @if ($user->gender == 'male')
-                    <img src="img/profile_photos/avatar.png" alt="user_profile">
+                    <img src="/img/profile_photos/avatar.png" alt="user_profile">
                 @elseif ($user->gender == 'female')
-                    <img src="img/profile_photos/avatar-female.png" alt="user_profile">
+                    <img src="/img/profile_photos/avatar-female.png" alt="user_profile">
                 @else
-                    <img src="img/profile_photos/avatar.png" alt="user_profile">
+                    <img src="/img/profile_photos/avatar.png" alt="user_profile">
                 @endif
             @endif
             <!--<i class="bx bx-user-circle"></i> -->

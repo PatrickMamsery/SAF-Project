@@ -19,7 +19,7 @@
                 <div class="grid-item">
                     <div class="content">
                         <div class="overlay">
-                            <a role="button" class="btn btn-dark btn-circle view-photo" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_by="{{ $photo->user->fname }} {{ $photo->user->sname }}" data-photo_on="{{ $photo->created_at->diffForHumans() }}" data-photo_details_likes="{{ $photo->likes->count() }}" data-photo_details_views="{{ $photo->views->count() }}" data-photo_id="{{ $photo->id }}" data-user_id="{{ $photo->user_id }}" data-photo_path="{{ $photo->path }}">
+                            <a role="button" class="btn btn-dark btn-circle view-photo" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_by="{{ $photo->user->fname }} {{ $photo->user->sname }}" data-photo_on="{{ $photo->created_at->diffForHumans() }}" data-photo_details_likes="{{ $photo->likes->count() }}" data-photo_details_views="{{ $photo->views->count() }}" data-photo_id="{{ $photo->id }}" data-user_id="{{ auth()->user()->id }}" data-photo_path="{{ $photo->path }}" data-photo_caption="{{ $photo->caption == NULL ? 'No Caption' : strip_tags(substr($photo->caption,0,300)) }}">
                                 <i class="material-icons">visibility</i>
                             </a>
                             <form action="/user/addLike" method="POST">
@@ -35,6 +35,29 @@
                             <a href="" class="btn btn-dark btn-circle add-comment" data-bs-title="Add Comment" data-bs-toggle="modal" data-bs-target="#addComment" data-photo_id="{{ $photo->id }}" data-photo_path="{{ $photo->path }}">
                                 <i class="material-icons {{ $photo->comments->count() != 0 ? "text-custom" : ""  }}">chat_bubble_outline</i>
                             </a>
+                        </div>
+                        <div class="phone-only dropdown">
+                            <a href="#" role="button" class="btn btn-dark btn-circle add-comment" id="dropdownMenu2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons {{ $photo->comments->count() != 0 ? "text-custom" : ""  }}">more_vert</i>
+                            </a>
+                            <div class="dropdown-menu custom-dropdown" aria-labelledby="dropdownMenu2">
+                                <a class="dropdown-item view-photo" type="button" data-bs-title="View Photo" data-bs-toggle="modal" data-bs-target="#viewPhoto" data-photo_by="{{ $photo->user->fname }} {{ $photo->user->sname }}" data-photo_on="{{ $photo->created_at->diffForHumans() }}" data-photo_details_likes="{{ $photo->likes->count() }}" data-photo_details_views="{{ $photo->views->count() }}" data-photo_id="{{ $photo->id }}" data-user_id="{{ auth()->user()->id }}" data-photo_path="{{ $photo->path }}" data-photo_caption="{{ $photo->caption == NULL ? 'No Caption' : strip_tags(substr($photo->caption,0,300)) }}">
+                                    <i class="material-icons">visibility</i>
+                                </a>
+                                <form action="/user/addLike" method="POST">
+                                    @csrf 
+                                    <input type="text" 
+                                    name="photo_id" style="display: none" value="{{ $photo->id }}">
+                                    <input type="text" 
+                                    name="user_id" style="display: none" value="{{ $photo->user_id }}">
+                                    <button type="submit" class="dropdown-item">
+                                        <i class="material-icons {{ $photo->likes->count() != 0 ? "text-danger" : ""  }}">favorite_border</i>
+                                    </button>
+                                </form>
+                                <a class="dropdown-item" type="button">
+                                    <i class="material-icons {{ $photo->comments->count() != 0 ? "text-custom" : ""  }}">chat_bubble_outline</i>
+                                </a>
+                            </div>
                         </div>
                         <img src="{{ $photo->path }}" alt="pic">
                     </div>
@@ -136,6 +159,9 @@
                     <div class="row">
                         <div class="col-md-6">
                             <img id="photo-view" src="" alt="photo" style="width: 100%">
+                            <div class="caption text-align center">
+                                <p id="photo-caption"></p>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <h6 class="text-center">Photo Details</h6>
@@ -168,6 +194,7 @@
                                     @foreach ($photo->comments as $comment)
                                         <div class="card">
                                             <div class="card-header">
+                                                <img src="{{ $comment->user->profilePhoto->path ? $comment->user->profilePhoto->path : '/img/profile_photos/avatar.png' }}" width="25" height="25" alt="profile">
                                                 {{ $comment->user->fname }} {{ $comment->user->sname }}
                                             </div>
                                             <div class="card-body">
@@ -182,7 +209,7 @@
                                         <label for="caption" class="control-label">Comments</label>
                                         <input type="text" class="form-control form-custom" id="comment" name="comment" value="" placeholder="Add any comment... civility is advised">
                                     </div>
-                                    <input type="hidden" class="form-control form-custom" id="user_id" name="user_id">
+                                    <input type="hidden" class="form-control form-custom" id="user" name="user_id">
                                     <input type="hidden" class="form-control form-custom" id="photo-comment" name="photo_id">
                     
                                     <button type="submit" class="btn btn-custom">Post Comment</button>
@@ -228,7 +255,8 @@
             $('#photo-details-postedOn').html($(this).data('photo_on'));
             $('#photo-view').attr("src", $(this).data('photo_path'));
             $('#photo-comment').val($(this).data('photo_id'));
-            $('#user_id').val($(this).data('user_id'));
+            $('#photo-caption').text($(this).data('photo_caption'));
+            $('#user').val($(this).data('user_id'));
         });
     });
 </script>

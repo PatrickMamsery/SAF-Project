@@ -20,7 +20,7 @@ class GalleryController extends Controller
 
     public function getPhotos()
     {
-        if($photos = Photo::with('user', 'views', 'likes')->get()){
+        if($photos = Photo::with('user', 'views', 'likes', 'comments')->get()){
             return view('gallery.index', ['photos' => $photos]);
         }
     }
