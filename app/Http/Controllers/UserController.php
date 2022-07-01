@@ -128,13 +128,13 @@ class UserController extends Controller
                     if($request->hasFile('cv')) $this->createDocumentRecord($member_id,'cv',$request);
 
                 // create default profile photo
-                    $profile_photo = new ProfilePhoto;
-                    $profile_photo->path = $member->gender == 'male' || $member->gender == NULL ? 'img/profile_photos/avatar.png' : 'img/profile_photos/avatar-female.png';
-                    $profile_photo->user_id = $member_id;
+                    // $profile_photo = new ProfilePhoto;
+                    // $profile_photo->path = $member->gender == 'male' || $member->gender == NULL ? 'https://res.cloudinary.com/staugustine/image/upload/v1656684936/Profile%20Photos/avatar_vrscem.png' : '/img/profile_photos/avatar-female.png';
+                    // $profile_photo->user_id = $member_id;
 
-                    if(!$profile_photo->save()){
-                        Log::error("Default profile photo failed to be saved. ///".$request);
-                    }    
+                    // if(!$profile_photo->save()){
+                    //     Log::error("Default profile photo failed to be saved. ///".$request);
+                    // }    
                     
             });
 
