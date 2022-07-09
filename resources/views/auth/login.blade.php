@@ -23,7 +23,7 @@
                     </div>
                     
                       <div class="input_field checkbox_option">
-                          <input type="checkbox" id="cb1">
+                          <input type="checkbox" id="cb1" name="remember">
                           <label for="cb1">Remember me</label>
                       </div>
                     <input class="button" type="submit" value="Login" />
