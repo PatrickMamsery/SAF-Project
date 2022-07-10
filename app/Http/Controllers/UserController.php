@@ -15,9 +15,10 @@ use App\Models\Document;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use Hash;
-use Validator;
-use DB;
+use Illuminate\Support\Facades\DB as FacadesDB;
+use Illuminate\Support\Facades\Hash as FacadesHash;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class UserController extends Controller
 {
@@ -98,7 +99,7 @@ class UserController extends Controller
             $member->marital_status=$request->marital_status;
 
 
-            DB::transaction(function () use($request,$member) {
+            FacadesDB::transaction(function () use($request,$member) {
                 
                 $member->save();
                 $member_id=$member->id;
@@ -181,7 +182,7 @@ class UserController extends Controller
 
     public function passwordReset(Request $request, $id)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = FacadesValidator::make($request->all(), [
             'current_password' => 'required',
             'password' => 'required_with:password_confirmation|string|confirmed'
         ]);
@@ -190,11 +191,11 @@ class UserController extends Controller
 
         $user = User::find($id);
 
-        if(!Hash::check($request->current_password, auth()->user()->password)){
+        if(!FacadesHash::check($request->current_password, auth()->user()->password)){
             return redirect()->back()->with('msg', 'Your current password is incorrect');
         };
 
-        if ($user->update(['password' => Hash::make($request->password)])) {
+        if ($user->update(['password' => FacadesHash::make($request->password)])) {
             return redirect()->back()->with('msg', 'Password changed successfully');
         } else return redirect()->back()->with('msg', 'Failed to change password');
     }

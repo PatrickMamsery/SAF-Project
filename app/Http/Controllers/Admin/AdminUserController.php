@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\UserRole;
-use Validator;
-use Hash;
+use Illuminate\Support\Facades\Hash as FacadesHash;
+use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class AdminUserController extends Controller
 {
@@ -22,7 +22,7 @@ class AdminUserController extends Controller
 
     public function elevateUserRole(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = FacadesValidator::make($request->all(), [
             'user_id' => 'required|exists:users,id'
         ]);
 
@@ -42,7 +42,7 @@ class AdminUserController extends Controller
 
     public function demoteAccess(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = FacadesValidator::make($request->all(), [
             'user_id' => 'required|exists:users,id'
         ]);
 
@@ -62,14 +62,14 @@ class AdminUserController extends Controller
 
     public function resetPassword(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = FacadesValidator::make($request->all(), [
             'user_id' => 'required|exists:users,id'
         ]);
 
         if ($validator->fails()) return redirect()->back()->with('msg', 'Validation Failed');
 
         $user = User::find($request->user_id);
-        $user->password = Hash::make(strtolower($user->fname));
+        $user->password = FacadesHash::make(strtolower($user->fname));
 
         if ($user->save()) {
             return redirect()->back()->with('msg', 'Password reset Successful');
