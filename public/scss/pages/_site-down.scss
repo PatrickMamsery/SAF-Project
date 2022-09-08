@@ -1,0 +1,45 @@
+.site-down {
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    height: 100vh;
+
+    .info {
+    
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+    
+        p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: white;
+        }
+    }
+
+    .social {
+        // text-align: center;
+        ul{
+            list-style: none;
+            li{
+                display: inline-block;
+                margin: 0 1rem;
+                color: color(primary);
+                a{
+                    img{
+                        width: 30px;
+                    }
+                }
+
+                a:hover {
+                    color: color(primary);
+                }
+            }
+        }
+    }
+}
