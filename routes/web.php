@@ -82,18 +82,18 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
 
 
-// Route::get('/', function () {
-//     // $user = App\Models\User::with('profilePhoto')->find(auth()->user()->id);
-//     $infos = App\Models\Info::where('inhouse', 0)->get();
-//     return view('index', [
-//         'infos' => $infos,
-//     ]);
-// });
-
-/* Redirect if server is down */
-Route::get('/', function() {
-    return view('site_down');
+Route::get('/', function () {
+    // $user = App\Models\User::with('profilePhoto')->find(auth()->user()->id);
+    $infos = App\Models\Info::where('inhouse', 0)->get();
+    return view('index', [
+        'infos' => $infos,
+    ]);
 });
+
+// /* Redirect if server is down */
+// Route::get('/', function() {
+//     return view('site_down');
+// });
 
 Route::get('test', function () {
 	event(new App\Events\NewRegisteredMember('Patrick'));
