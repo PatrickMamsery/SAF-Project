@@ -32,6 +32,9 @@ Route::get('/admin/infos', [AdminInfoController::class, 'getInfos'])->name('info
 Route::get('/admin/addInfo', [AdminInfoController::class, 'addInfoView'])->name('addInfo');
 Route::get('/admin/home', [AdminPagesController::class, 'overview'])->name('dash');
 
+/* Admin actions --> search routes */
+Route::get('search_users/{q?}', [AdminUserController::class, 'search']);
+
 /* Administrative dashboard routes */
 Route::post('/adminDeletePhoto', [AdminPhotoController::class, 'deletePhoto'])->name('admin.deletePhoto');
 Route::post('/adminDeleteUser', [AdminUserController::class, 'deleteUser'])->name('admin.deleteUser');
@@ -82,18 +85,18 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::post('/addPhoto', [PhotoController::class, 'addPhoto']);
 
 
-Route::get('/', function () {
-    // $user = App\Models\User::with('profilePhoto')->find(auth()->user()->id);
-    $infos = App\Models\Info::where('inhouse', 0)->get();
-    return view('index', [
-        'infos' => $infos,
-    ]);
-});
-
-// /* Redirect if server is down */
-// Route::get('/', function() {
-//     return view('site_down');
+// Route::get('/', function () {
+//     // $user = App\Models\User::with('profilePhoto')->find(auth()->user()->id);
+//     $infos = App\Models\Info::where('inhouse', 0)->get();
+//     return view('index', [
+//         'infos' => $infos,
+//     ]);
 // });
+
+/* Redirect if server is down */
+Route::get('/', function() {
+    return view('site_down');
+});
 
 Route::get('test', function () {
 	event(new App\Events\NewRegisteredMember('Patrick'));
