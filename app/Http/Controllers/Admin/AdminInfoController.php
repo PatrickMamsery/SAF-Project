@@ -63,13 +63,13 @@ class AdminInfoController extends Controller
             return redirect()->back()->with('msg', 'Failed to post info');
         }
 
-        $users = User::all();
+        // $users = User::all();
 
-        foreach ($users as $key => $user) {
-            Mail::to($user->email)->send(new InfoEmail($user, $info));
-        }
+        // foreach ($users as $key => $user) {
+        //     Mail::to($user->email)->send(new InfoEmail($user, $info));
+        // }
 
-        if(Mail::failures())  return back()->with('msg', 'Emails could not be sent!');
+        // if(Mail::failures())  return back()->with('msg', 'Emails could not be sent!');
 
         return redirect()->back()->with('msg', 'Info posted successfully');
     }

@@ -9,7 +9,7 @@
             <div class="my-slider">
                 <div>
                     <div class="tile">
-                        <img src="/img/about_photos/eun.jpg" alt="leaders">
+                        <img src="/img/about_photos/eunice.jpg" alt="leaders">
                         <div class="triangle"></div>
                         <div class="description">
                             <p>Eunice Kazimili-Treasurer</p>
@@ -18,37 +18,37 @@
                 </div>
                 <div>
                     <div class="tile">
-                        <img src="/img/about_photos/chair2.png" alt="leaders">
+                        <img src="/img/about_photos/bakhita1.jpg" alt="leaders">
                         <div class="triangle"></div>
                         <div class="description">
-                            <p>Maria Peter - Vice Chair</p>
+                            <p>Bakhita Missanga - Vice Chair</p>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="tile">
-                        <img src="/img/about_photos/chair.png" alt="leaders">
+                        <img src="/img/about_photos/ngowi.jpg" alt="leaders">
                         <div class="triangle"></div>
                         <div class="description">
-                            <p>Sita Majessy - Chair</p>
+                            <p>Ngowi John John - Chair</p>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="tile">
-                        <img src="/img/about_photos/secretary.jpg" alt="leaders">
+                        <img src="/img/about_photos/kisomeko.jpg" alt="leaders">
                         <div class="triangle"></div>
                         <div class="description">
-                            <p>Laurent Luziga - Secretary</p>
+                            <p>Francis Kisomeko - Secretary</p>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="tile">
-                        <img src="/img/about_photos/secretary2.jpg" alt="leaders">
+                        <img src="/img/about_photos/janet.jpg" alt="leaders">
                         <div class="triangle"></div>
                         <div class="description">
-                            <p>William Kidala - Vice Secretary</p>
+                            <p>Janeth Nikiba - Vice Secretary</p>
                         </div>
                     </div>
                 </div>

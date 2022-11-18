@@ -8,12 +8,12 @@
             </div>
         </form>
         <div class="px-2 d-flex flex-row gap-3">
-            <span>
+            {{-- <span>
                 <form action="{{ route('admin.sendWelcomeEmails') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <button class="btn btn-success" type="submit">Send Emails</button>
                 </form>
-            </span>
+            </span> --}}
             <span><button class="btn btn-success" data-toggle="modal" data-target="#bulk">Bulk upload users</button></span>
             <span>Filters <i class="bx bx-chevron-down"></i></span> 
         </div>
