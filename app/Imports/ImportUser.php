@@ -29,7 +29,7 @@ class ImportUser implements ToModel, WithHeadingRow , WithMultipleSheets
         $phone = $row['phone'];
 
         //check if required fields are missing; do not execute; continue
-        if (!$fname|| !$mname || !$sname || !$phone) {
+        if (!$fname || !$sname || !$phone) {
             Log::error("Failed to record from excel some data are missing".  implode(',',$row));
             return;
         }
