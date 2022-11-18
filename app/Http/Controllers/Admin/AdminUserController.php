@@ -9,8 +9,18 @@ use App\Models\UserRole;
 use Illuminate\Support\Facades\Hash as FacadesHash;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ImportUser;
+
 class AdminUserController extends Controller
 {
+    public function bulkUploadUsers(Request $request)
+    {
+        // dd($request->file('file'));
+        Excel::import(new ImportUser, $request->file('file')->store('files'));
+        return back()->with('msg', 'Users uploaded successfully.');
+    }
+
     public function deleteUser(Request $request)
     {
         if ($user = User::with('userRole')->find($request->user_id)) {

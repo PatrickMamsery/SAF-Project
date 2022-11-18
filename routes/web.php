@@ -42,6 +42,9 @@ Route::post('/adminElevateUserRole', [AdminUserController::class, 'elevateUserRo
 Route::post('/adminDemoteAccess', [AdminUserController::class, 'demoteAccess'])->name('admin.demoteAccess');
 Route::post('/adminResetPassword', [AdminUserController::class, 'resetPassword'])->name('admin.resetPassword');
 
+/* New admininistrative dashboard routes and actions */
+Route::post('/adminBulkUploadUsers', [AdminUserController::class, 'bulkUploadUsers'])->name('admin.bulkUploadUsers');
+
 /* Info Routes */
 Route::post('/adminAddInfo', [AdminInfoController::class, 'addInfo'])->name('admin.addInfo');
 Route::post('/adminDeleteInfo', [AdminInfoController::class, 'deleteInfo'])->name('admin.deleteInfo');
