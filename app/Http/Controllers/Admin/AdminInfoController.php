@@ -12,6 +12,9 @@ use Carbon;
 use DB;
 use Validator;
 
+use App\Mail\InfoEmail;
+use Illuminate\Support\Facades\Mail;
+
 class AdminInfoController extends Controller
 {
     public function getInfos()
@@ -59,6 +62,15 @@ class AdminInfoController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->with('msg', 'Failed to post info');
         }
+
+        $users = User::all();
+
+        foreach ($users as $key => $user) {
+            Mail::to($user->email)->send(new InfoEmail($user, $info));
+        }
+
+        if(Mail::failures())  return back()->with('msg', 'Emails could not be sent!');
+
         return redirect()->back()->with('msg', 'Info posted successfully');
     }
 

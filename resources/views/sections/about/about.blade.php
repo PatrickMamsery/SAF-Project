@@ -36,7 +36,7 @@
                             St. Augustine's Choir is a choir that serves in the weekly Mass in the University Parish.
                             The choir is headquartered in Dar es Salaam, due to the fact that a large percentage of its choristers are located at the University of Dar es Salaam.
                             The St. Augustine Choir was formed in 1979 by Father Stephan Mbuga with only twelve (12) choristers without a teacher, two years later in 1981 this choir received the very first teacher who was D. R. Mbilinyi.
-                            A large group of these choristers are found at the University of Dar es Salaam, the Water Institute, the University of the Land and non-students from various parts of the country.
+                            A large group of these choristers are found at the University of Dar es Salaam, the Water Institute, Ardhi University and non-students from various parts of the country.
                             The choir consists of student choristers (also called BAC) and non-student choristers (called BBC). To date the choir has more than 100 choristers serving in various Sunday Masses at the University Parish and more than 500 choristers who are from different parts of Tanzania and different countries in the world who have sung in this choir and are still part of this choir because when they get a chance they join us.
                             The majority of these choristers are found in Dar es Salaam, Tanzania.
                             In the country, other choristers are found in various regions including Arusha, Kilimanjaro, Katavi, Tanga, Zanzibar, Dodoma and Mwanza.

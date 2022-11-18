@@ -44,6 +44,7 @@ Route::post('/adminResetPassword', [AdminUserController::class, 'resetPassword']
 
 /* New admininistrative dashboard routes and actions */
 Route::post('/adminBulkUploadUsers', [AdminUserController::class, 'bulkUploadUsers'])->name('admin.bulkUploadUsers');
+Route::post('/adminSendMultipleWelcomeEmails', [AdminUserController::class, 'sendMultipleWelcomeEmails'])->name('admin.sendWelcomeEmails');
 
 /* Info Routes */
 Route::post('/adminAddInfo', [AdminInfoController::class, 'addInfo'])->name('admin.addInfo');

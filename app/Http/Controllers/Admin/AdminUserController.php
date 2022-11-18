@@ -9,6 +9,9 @@ use App\Models\UserRole;
 use Illuminate\Support\Facades\Hash as FacadesHash;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\UserEmail;
+
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\ImportUser;
 
@@ -19,6 +22,22 @@ class AdminUserController extends Controller
         // dd($request->file('file'));
         Excel::import(new ImportUser, $request->file('file')->store('files'));
         return back()->with('msg', 'Users uploaded successfully.');
+    }
+
+    public function sendMultipleWelcomeEmails(Request $request)
+    {
+        // $users = User::whereIn("id", $request->ids)->get();
+        $users = User::all();
+        // dd($users);
+
+        // Mail::to($users)->send(new UserEmail());
+        foreach ($users as $key => $user) {
+            Mail::to($user->email)->send(new UserEmail($user));
+        }
+
+        if(Mail::failures())  return back()->with('msg', 'Emails could not be sent!');
+
+        return back()->with('msg', 'Emails sent successfully.');
     }
 
     public function deleteUser(Request $request)
