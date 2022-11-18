@@ -94,7 +94,7 @@ Route::get('/', function () {
 });
 
 /* Redirect if server is down */
-// Route::get('/', function() {
+// Route::get('/site-down', function() {
 //     return view('site_down');
 // });
 

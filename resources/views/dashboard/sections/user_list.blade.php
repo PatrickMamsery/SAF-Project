@@ -1,13 +1,16 @@
 <div class="container mt-4 px-2">
     <div class="mb-2 d-flex justify-content-between align-items-center">
-        <div class="position-relative"> 
-            {{-- <span class="position-absolute search"><i class="bx bx-search"></i></span>  --}}
-            <input class="form-control w-100" placeholder="Search by name..."> 
-        </div>
+        <form action="">
+            <div class="position-relative"> 
+                {{-- <span class="position-absolute search"><i class="bx bx-search"></i></span>  --}}
+                <input class="form-control w-100" id="search" placeholder="Search by name..." onkeyup="showResult(this.value)"> 
+                <div id="livesearch"></div>
+            </div>
+        </form>
         <div class="px-2"> <span>Filters <i class="bx bx-chevron-down"></i></span> </div>
     </div>
     <div class="table-responsive">
-        <table class="table table-responsive table-borderless yajra-datatable">
+        <table class="table table-responsive table-borderless yajra-datatable" id="allusers">
             <thead>
                 <tr class="bg-light">
                     <th scope="col" width="5%"><input id="check_all" class="form-check-input" type="checkbox"></th>

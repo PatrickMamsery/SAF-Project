@@ -75,4 +75,16 @@ class AdminUserController extends Controller
             return redirect()->back()->with('msg', 'Password reset Successful');
         } else return redirect()->back()->with('msg', 'Failed to reset password');
     }
+
+
+    // Search users by name
+    public function search(Request $request)
+    {
+        dd("here");
+        $customers = Customer::where('fname', 'LIKE', '%' . $request->q . '%')->orWhere('sname', 'LIKE', '%' . $request->q . '%')->get();
+
+        return response()->json([
+            'results' => $customers
+        ]);
+    }
 }
