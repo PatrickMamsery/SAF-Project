@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactsTable extends Migration
+class CreateProfessionalRecordsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'contacts';
+    public $tableName = 'professional_records';
 
     /**
      * Run the migrations.
-     * @table contacts
+     * @table professional_records
      *
      * @return void
      */
@@ -23,21 +23,18 @@ class CreateContactsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('whatsapp', 45)->nullable();
-            $table->string('ig', 45)->nullable();
-            $table->string('twitter', 45)->nullable();
-            $table->string('fb', 45)->nullable();
-            $table->string('linked_in', 45)->nullable();
+            $table->string('qualification')->nullable()->default(null);
+            $table->string('institute')->nullable()->default(null);
             $table->unsignedBigInteger('user_id');
 
-            $table->index(["user_id"], 'fk_contacts_users1_idx');
+            $table->index(["user_id"], 'fk_professional_records_users1_idx');
             $table->nullableTimestamps();
 
 
-            $table->foreign('user_id', 'fk_contacts_users1_idx')
+            $table->foreign('user_id', 'fk_professional_records_users1_idx')
                 ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 

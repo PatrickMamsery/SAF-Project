@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserRolesTable extends Migration
+class CreatePasswordResetsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'user_roles';
+    public $tableName = 'password_resets';
 
     /**
      * Run the migrations.
-     * @table user_roles
+     * @table password_resets
      *
      * @return void
      */
@@ -22,14 +22,12 @@ class CreateUserRolesTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id');
-            $table->string('title', 45)->nullable();
-            $table->nullableTimestamps();
-        });
+            $table->string('email');
+            $table->string('token');
+            $table->timestamp('created_at');
 
-        DB::table('user_roles')->insert(['title' => 'root']);
-        DB::table('user_roles')->insert(['title' => 'admin']);
-        DB::table('user_roles')->insert(['title' => 'user']);
+            $table->index(["email"], 'password_resets_email_index');
+        });
     }
 
     /**

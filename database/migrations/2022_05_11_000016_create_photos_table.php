@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsTable extends Migration
+class CreatePhotosTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'news';
+    public $tableName = 'photos';
 
     /**
      * Run the migrations.
-     * @table news
+     * @table photos
      *
      * @return void
      */
@@ -23,24 +23,20 @@ class CreateNewsTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->unsignedInteger('tag_id');
             $table->unsignedBigInteger('user_id');
+            $table->string('posted_on', 45)->nullable()->default(null);
+            $table->string('link')->nullable()->default(null);
+            $table->string('path')->nullable()->default(null);
+            $table->string('caption')->nullable()->default(null);
 
-            $table->index(["tag_id"], 'fk_news_tags1_idx');
-
-            $table->index(["user_id"], 'fk_news_users1_idx');
+            $table->index(["user_id"], 'fk_photos_users1_idx');
             $table->nullableTimestamps();
 
 
-            $table->foreign('tag_id', 'fk_news_tags1_idx')
-                ->references('id')->on('tags')
-                ->onDelete('no action')
-                ->onUpdate('no action');
-
-            $table->foreign('user_id', 'fk_news_users1_idx')
+            $table->foreign('user_id', 'fk_photos_users1_idx')
                 ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 

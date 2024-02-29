@@ -24,36 +24,35 @@ class CreateUsersTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('fname', 45);
-            $table->string('mname', 45)->nullable();
-            $table->string('sname', 45)->nullable();
-            $table->enum('gender', ['male', 'female'])->nullable();
+            $table->string('mname', 45)->nullable()->default(null);
+            $table->string('sname', 45)->nullable()->default(null);
+            $table->enum('gender', ['male', 'female'])->nullable()->default(null);
             $table->unsignedInteger('user_role_id');
-            $table->integer('phone')->nullable();
-            $table->string('joindate')->nullable();
-            $table->string('entrydate')->nullable();
-            $table->string('citizenship')->nullable();
-            $table->string('work_address')->nullable();
-            $table->string('voice')->nullable();
-            $table->enum('marital_status', ['single', 'married'])->nullable();
-            $table->enum('role', ['root', 'admin', 'user'])->nullable();
+            $table->integer('phone')->nullable()->default(null);
+            $table->string('joindate')->nullable()->default(null);
+            $table->string('entrydate')->nullable()->default(null);
+            $table->string('citizenship', 30)->nullable()->default(null);
+            $table->string('work_address', 125)->nullable()->default(null);
+            $table->string('voice', 10)->nullable()->default(null);
+            $table->string('marital_status', 10)->nullable()->default(null);
+            $table->enum('role', ['root', 'admin', 'user'])->nullable()->default(null);
             $table->string('email');
             $table->timestamp('email_verified_at')->nullable()->default(null);
             $table->string('password');
             $table->rememberToken();
-            $table->timestamp('created_at')->nullable()->default(null);
-            $table->timestamp('updated_at')->nullable()->default(null);
 
             $table->unique(["email"], 'users_email_unique');
 
             $table->index(["user_role_id"], 'fk_users_user_roles1_idx');
+            $table->nullableTimestamps();
 
 
             $table->foreign('user_role_id', 'fk_users_user_roles1_idx')
                 ->references('id')->on('user_roles')
-                ->onDelete('no action')
-                ->onUpdate('no action');
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
-
+        
         DB::table('users')->insert([
             'fname' => 'Test', 'mname' => NULL, 'sname' => 'User', 'user_role_id' => 1, 'phone' => '0629134542', 'role' => 'admin', 'email' => 'test@example.com', 'password' => bcrypt('123456')
         ]);

@@ -1,24 +1,32 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateUploadsTable extends Migration
 {
     /**
+     * Schema table name to migrate
+     * @var string
+     */
+    public $tableName = 'uploads';
+
+    /**
      * Run the migrations.
+     * @table uploads
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('uploads', function (Blueprint $table) {
+        Schema::create($this->tableName, function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
             $table->string('path');
             $table->enum('owner', ['admin', 'user']);
-            $table->timestamps();
+            $table->nullableTimestamps();
         });
     }
 
@@ -29,6 +37,6 @@ class CreateUploadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('uploads');
+        Schema::dropIfExists($this->tableName);
     }
 }

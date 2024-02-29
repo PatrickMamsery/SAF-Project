@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhotosTable extends Migration
+class CreateUserRolesTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'photos';
+    public $tableName = 'user_roles';
 
     /**
      * Run the migrations.
-     * @table photos
+     * @table user_roles
      *
      * @return void
      */
@@ -23,23 +23,13 @@ class CreatePhotosTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->unsignedBigInteger('user_id');
-            $table->string('posted_on', 45)->nullable();
-            $table->string('link')->nullable();
-            $table->string('path')->nullable();
-            $table->string('caption', 2000)->nullable();
-
-            $table->index(["user_id"], 'fk_photos_users1_idx');
-
+            $table->string('title', 45)->nullable()->default(null);
             $table->nullableTimestamps();
-
-
-            $table->foreign('user_id', 'fk_photos_users1_idx')
-                ->references('id')->on('users')
-                ->onDelete('no action')
-                ->onUpdate('no action');
-                
         });
+        
+        DB::table('user_roles')->insert(['title' => 'root']);
+        DB::table('user_roles')->insert(['title' => 'admin']);
+        DB::table('user_roles')->insert(['title' => 'user']);
     }
 
     /**
